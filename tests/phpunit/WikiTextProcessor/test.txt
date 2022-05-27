@@ -1,0 +1,48 @@
+
+=====<span style='color: #0070C0;'>Bearbeitung Registerkarten</span>=====
+
+# <span style='color: #0070C0;'>''Registerkarte – ''</span><span style='color: #0070C0;'>'''''Hauptseite'''''</span>
+
+In der Registerkarte – „'''Hauptseite“''' sind alle Sachdaten einzutragen. Ebenso wird hier die entsprechende graphische Darstellung im Bestandsplan platziert. Es besteht eine '''Verknüpfung '''zum''' '''Objekt '''„''''''Wasser''''''-Zone''''''“'''.
+
+Verknüpfung mit einer Zone erfolgt, sofern die Lage eine Zonenzugehörigkeit vorgibt###IMAGE {"size":"217x201px","inline":true,"id":"rId87"}###Inhalte aus analogen UnterlagenGeometrie - Bestandsplan
+
+<span style='color: #0070C0;'>'''Abbildung '''</span><span style='color: #0070C0;'>'''74'''</span><span style='color: #0070C0;'>''': '''</span><span style='color: #0070C0;'>'''Registerkarte'''</span><span style='color: #0070C0;'>''' – '''</span><span style='color: #0070C0;'>'''„Hauptseite“'''</span>
+
+Folgende '''''Felder'''''''' '''sind von dem GIS-Sachbearbeiter/in '''detaillierter zu bearbeiten''':
+
+# <span style='color: #0070C0;'>''Sachdatenf''</span><span style='color: #0070C0;'>''elder:''</span><span style='color: #0070C0;'>'' ''</span><span style='color: #0070C0;'>''–''</span><span style='color: #0070C0;'>'' ''</span><span style='color: #0070C0;'>'''''Behältername, HW Höhe ('''''</span><span style='color: #0070C0;'>'''''mNN'''''</span><span style='color: #0070C0;'>'''''), '''''</span><span style='color: #0070C0;'>'''''M'''''</span><span style='color: #0070C0;'>'''''W Höhe ('''''</span><span style='color: #0070C0;'>'''''mNN'''''</span><span style='color: #0070C0;'>'''''), '''''</span><span style='color: #0070C0;'>'''''N'''''</span><span style='color: #0070C0;'>'''''W'''''</span><span style='color: #0070C0;'>''''' Höhe ('''''</span><span style='color: #0070C0;'>'''''mNN'''''</span><span style='color: #0070C0;'>'''''),'''''</span><span style='color: #0070C0;'>''''' '''''</span><span style='color: #0070C0;'>'''''Speichervolumen (m³'''''</span><span style='color: #0070C0;'>'''''), '''''</span><span style='color: #0070C0;'>'''''Nutzvolumen (m³), '''''</span><span style='color: #0070C0;'>'''''zus. Text 1, zus. Text 2'''''</span><span style='color: #0070C0;'>'' –''</span>
+
+Diese alphanummerischen Felder sind anhand der vorhandenen Informationen in dem in der obigen Abbildung vorgegeben Format zu befüllen.
+
+Eine Ausplatzierung der einzelnen Sachdatenfelder erfolgt analog dazu über die Geometriefelder '''''„''''''''''Beh''''''''''ältername (Text)“, „HW ''''''''''Höhe''''''''''“'''''''''','''''''''' „MW ''''''''''Höhe''''''''''“'''''''''', ''''''''''„NW ''''''''''Höhe''''''''''“'''''''''', ''''''''''„Speichervolumen“'''''''''', ''''''''''„Nutzvolumen“, „zus. ''''''''''Text 1'''''''''' (Geometrie)''''''''''“, „zus. Text 2 (Geometrie)“''''''' ''im Bestandsplan.
+
+Die Sachdatenfelder '''''„zus. Text 1“''''' und '''''„zus. Text 2“''''' stehen für beliebige, ergänzende Informationen zur Verfügung.
+# <span style='color: #0070C0;'>''Geometrief''</span><span style='color: #0070C0;'>''eld: ''</span><span style='color: #0070C0;'>''–''</span><span style='color: #0070C0;'>'' ''</span><span style='color: #0070C0;'>'''''Linie'''''</span><span style='color: #0070C0;'>'' ''</span><span style='color: #0070C0;'>''–''</span>
+
+Der '''Umring des Behälters''' wird im Bestandsplanwerk frei, mittels einer geschlossenen in sich zurücklaufender '''Linie''' über das Geometriefeld '''''„Linie“''''' digitalisiert.
+# <span style='color: #0070C0;'>''Sachdatenf''</span><span style='color: #0070C0;'>''eld: – ''</span><span style='color: #0070C0;'>'''''Zone'''''</span><span style='color: #0070C0;'>'' ''</span><span style='color: #0070C0;'>''–''</span>
+
+Sofern das Objekt''' ''''''„''''''Wasser-Behälter''''''“'''''' '''innerhalb einer Fläche '''Wasser-Zone liegt''', erfolgt der Eintrag über das Sachdatenfeld '''„''''''''Zone“''''' mittels Verknüpfung mit dem übergeordneten Objekt '''„''''''W''''''asser-Zone''''''“''''''.'''
+
+Aufruf: Auswahl der Zone aus dem angehängten Verzeichnis###IMAGE {"size":"183x42px","inline":true,"id":"rId88"}###
+
+<span style='color: #0070C0;'>'''Abbildung '''</span><span style='color: #0070C0;'>'''75'''</span><span style='color: #0070C0;'>''': '''</span><span style='color: #0070C0;'>'''Auszug aus der Registerkarte'''</span><span style='color: #0070C0;'>''' – '''</span><span style='color: #0070C0;'>'''„Hauptseite“'''</span>
+
+Nach der Auswahl erfolgt die Verknüpfung - automatisiert###IMAGE {"size":"209x85px","inline":true,"id":"rId89"}###
+
+<span style='color: #0070C0;'>'''Abbildung '''</span><span style='color: #0070C0;'>'''76'''</span><span style='color: #0070C0;'>''': Auswahlliste'''</span><span style='color: #0070C0;'>''' – '''</span><span style='color: #0070C0;'>'''Zone'''</span>
+
+Verknüpftes Objekt „Wasser-Behälter“###IMAGE {"size":"153x149px","inline":true,"id":"rId90"}###
+
+<span style='color: #0070C0;'>'''Abbildung '''</span><span style='color: #0070C0;'>'''77'''</span><span style='color: #0070C0;'>''': übergeordnetes Objekt "Wasser-Zone"'''</span><span style='color: #0070C0;'>''' '''</span><span style='color: #0070C0;'>'''–'''</span><span style='color: #0070C0;'>''' '''</span><span style='color: #0070C0;'>'''Registerkarte'''</span><span style='color: #0070C0;'>''' – '''</span><span style='color: #0070C0;'>'''„Hauptseite“'''</span>
+
+<span style='color: #FF3399;'>'''''Absprung „Wasser-Zone“'''''</span>
+
+<span style='color: #0070C0;'>''(2) Registerkarte – ''</span><span style='color: #0070C0;'>'''''ÜPL'''''</span><span style='color: #0070C0;'>''''' '''''</span><span style='color: #0070C0;'>''–''</span>
+
+Diese Registerkarte enthält '''ausschließlich''' die Geometriefelder zur graphischen Ausgestaltung eines Objektes '''„''''''Wasser-Behälter''''''“''' innerhalb des '''Übersichtsplanwerkes'''.
+
+Geometrie – ÜPL – 1:5000Geometrie – TK100Geometrie – TK 25###IMAGE {"size":"177x118px","inline":true,"id":"rId91"}###
+
+<span style='color: #0070C0;'>'''Abbildung '''</span><span style='color: #0070C0;'>'''78'''</span><span style='color: #0070C0;'>''': '''</span><span style='color: #0070C0;'>'''Registerkarte'''</span><span style='color: #0070C0;'>''' – '''</span><span style='color: #0070C0;'>'''„'''</span><span style='color: #0070C0;'>'''ÜPL"'''</span>
