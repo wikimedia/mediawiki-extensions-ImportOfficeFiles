@@ -4,7 +4,7 @@ window.officeimport = {
 };
 
 $( function () {
-	$( document ).on( '#ca-import_word', 'click', function () {
+	$( document ).on( 'click', '#ca-import_word', function () {
 		mw.loader.using( [ 'ext.importofficefiles.ui.form' ], function () {
 			const windowManager = new OO.ui.WindowManager();
 			$( document.body ).append( windowManager.$element );
