@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"MathXplore"
+		]
+	},
+	"importofficefiles-ui-import-completed": "インポートを完了しました",
+	"importofficefiles-ui-dialog-action-cancel": "キャンセル",
+	"importofficefiles-ui-dialog-action-import": "インポート",
+	"importofficefiles-ui-dialog-action-next": "次へ",
+	"importofficefiles-ui-dialog-action-back": "戻る",
+	"importofficefiles-ui-dialog-action-done": "完了",
+	"importofficefiles-ui-dialog-label-select-file": "ファイルを選択",
+	"importofficefiles-ui-dialog-settings-page-title": "タイトル",
+	"importofficefiles-ui-dialog-settings-conflicts-rename": "改名",
+	"importofficefiles-ui-dialog-settings-conflicts-override": "上書き",
+	"importofficefiles-ui-dialog-preview-title": "プレビュー",
+	"importofficefiles-ui-progress-import-images-step": "画像を取り込み中..."
+}

@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"importofficefiles-desc": "Permitte importar files Office como paginas wiki",
+	"importofficefiles-ui-action-new-import-text": "Nove importation",
+	"importofficefiles-ui-action-new-import-title": "Facer nove importation",
+	"importofficefiles-ui-import-dialog-title": "Importar file",
+	"importofficefiles-ui-import-completed": "Importation complete!",
+	"importofficefiles-ui-import-in-progress": "Importation in progresso…",
+	"importofficefiles-ui-dialog-action-cancel": "Cancellar",
+	"importofficefiles-ui-dialog-action-import": "Importar",
+	"importofficefiles-ui-dialog-action-next": "Sequente",
+	"importofficefiles-ui-dialog-action-back": "Retro",
+	"importofficefiles-ui-dialog-action-done": "Facite",
+	"importofficefiles-ui-dialog-label-select-file": "Seliger file",
+	"importofficefiles-ui-dialog-configuration-settings-title": "Configurar parametros de importation",
+	"importofficefiles-ui-dialog-settings-page-title": "Titulo",
+	"importofficefiles-ui-dialog-settings-pagetitle-label": "Selige un titulo pro le nove pagina",
+	"importofficefiles-ui-dialog-settings-structure-label": "Structura de contento",
+	"importofficefiles-ui-dialog-settings-structure-label-checkbox": "Divider contento sur paginas",
+	"importofficefiles-ui-dialog-settings-conflicts-title": "Conflige con titulo del pagina",
+	"importofficefiles-ui-dialog-settings-conflicts-behavior-label": "Comportamento si le nomine del pagina ja existe",
+	"importofficefiles-ui-dialog-settings-conflicts-rename": "Renominar",
+	"importofficefiles-ui-dialog-settings-conflicts-override": "Superscriber",
+	"importofficefiles-ui-dialog-settings-choose-split-level-label": "Selige le nivello sur le qual le paginas debe esser dividite"
+}
