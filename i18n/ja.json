@@ -4,6 +4,7 @@
 			"MathXplore"
 		]
 	},
+	"importofficefiles-ui-import-dialog-title": "ファイルをインポートする",
 	"importofficefiles-ui-import-completed": "インポートを完了しました",
 	"importofficefiles-ui-dialog-action-cancel": "キャンセル",
 	"importofficefiles-ui-dialog-action-import": "インポート",
