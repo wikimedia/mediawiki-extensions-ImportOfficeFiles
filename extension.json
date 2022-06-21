@@ -34,8 +34,11 @@
 				"textrun": {
 					"factory": "\\MediaWiki\\Extension\\ImportOfficeFiles\\Reader\\Tag\\Textrun::factory"
 				},
-				"bookmark": {
-					"factory": "\\MediaWiki\\Extension\\ImportOfficeFiles\\Reader\\Tag\\Bookmark::factory"
+				"bookmarkStart": {
+					"factory": "\\MediaWiki\\Extension\\ImportOfficeFiles\\Reader\\Tag\\BookmarkStart::factory"
+				},
+				"bookmarkEnd": {
+					"factory": "\\MediaWiki\\Extension\\ImportOfficeFiles\\Reader\\Tag\\BookmarkEnd::factory"
 				},
 				"hyperlink": {
 					"factory": "\\MediaWiki\\Extension\\ImportOfficeFiles\\Reader\\Tag\\Hyperlink::factory"
@@ -237,7 +240,7 @@
 			"public": false
 		},
 		"Word2007TagProcessorPipeline": {
-			"value": [ "instr-text", "drawing", "tabulator", "line-break", "text", "textrun", "bookmark", "hyperlink", "paragraph", "table" ],
+			"value": [ "instr-text", "drawing", "tabulator", "line-break", "text", "textrun", "bookmarkStart", "bookmarkEnd", "hyperlink", "paragraph", "table" ],
 			"public": true
 		},
 		"Word2007TagPropertyProcessorPipeline": {
