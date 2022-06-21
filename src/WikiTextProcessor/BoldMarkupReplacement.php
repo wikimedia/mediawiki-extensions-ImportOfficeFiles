@@ -27,7 +27,7 @@ class BoldMarkupReplacement implements IWikiTextProcessor {
 		$wikiText = str_replace( '###PRESERVEBOLD######PRESERVEBOLD###', '', $wikiText );
 
 		$matches = explode( '###PRESERVEBOLD###', $wikiText );
-		if ( !$matches || count( $matches ) < 1 ) {
+		if ( !$matches || count( $matches ) <= 1 ) {
 			return $wikiText;
 		}
 
