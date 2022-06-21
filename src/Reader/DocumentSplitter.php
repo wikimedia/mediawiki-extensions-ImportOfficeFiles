@@ -38,7 +38,7 @@ class DocumentSplitter {
 			return [ $dom ];
 		}
 
-		$status = wfMkdirParents( "$path/raw", 755, get_class( $this ) );
+		$status = wfMkdirParents( "$path/raw", null, get_class( $this ) );
 
 		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
 		$childNodes = $body->childNodes;
