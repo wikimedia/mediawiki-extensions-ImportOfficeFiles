@@ -21,14 +21,15 @@ class ModuleFactory {
 		$module = null;
 		$objectFactory = MediaWikiServices::getInstance()->getObjectFactory();
 		foreach ( $moduleSpecs as $name => $specs ) {
-			$module = $objectFactory->createObject( $specs );
+			$curModule = $objectFactory->createObject( $specs );
 
-			if ( !( $module instanceof IModule ) ) {
+			if ( !( $curModule instanceof IModule ) ) {
 				throw new Exception( "$name is not instance of IModule" );
 			}
 
-			$module->setWorkspace( $workspace );
-			if ( $module->canHandle() ) {
+			$curModule->setWorkspace( $workspace );
+			if ( $curModule->canHandle() ) {
+				$module = $curModule;
 				break;
 			}
 		}
