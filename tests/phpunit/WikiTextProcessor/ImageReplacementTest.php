@@ -45,7 +45,7 @@ class ImageReplacementTest extends TestCase {
 
 		$expectedWikitext = 'Hello [[File:TestCase_Some_base_title_filename1.jpg|border]]';
 		$expectedWikitext .= ' world ';
-		$expectedWikitext .= '[[File:TestCase_Some_base_title_filename2.png|frame|center|100x200px]] !';
+		$expectedWikitext .= '[[File:TestCase_Some_base_title_filename2.png|thumb|center|100x200px]] !';
 		$expectedWikitext .= ' [[File:TestCase_Some_base_title_filename2.png|border|100x30px]] !';
 
 		$this->assertEquals( $expectedWikitext, $actualWikitext );
