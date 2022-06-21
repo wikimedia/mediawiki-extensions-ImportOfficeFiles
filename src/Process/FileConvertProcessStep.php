@@ -110,6 +110,8 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 
 		$logger = LoggerFactory::getInstance( 'ImportOfficeFiles' );
 		$this->setLogger( $logger );
+
+		$this->logger->debug( "Convert process launched." );
 	}
 
 	/**
@@ -124,6 +126,9 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 		$this->logger->debug( "Source file: '{$this->source->getFilename()}'..." );
 
 		$this->source = $this->workspace->uploadSourceFile( $this->source );
+		if ( $this->source === null ) {
+			throw new Exception( 'Source file failed to upload into workspace directory' );
+		}
 
 		$this->workspace->addToBucket(
 			MSOfficeWord::BUCKET_ANALYZER_PARAMS,
