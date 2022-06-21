@@ -36,7 +36,7 @@ class Word2007Document {
 
 		$this->verbose = $verbose;
 
-		$status = wfMkdirParents( "$path/raw", 755, get_class( $this ) );
+		$status = wfMkdirParents( "$path/raw", null, get_class( $this ) );
 
 		$this->documentData = $documentData;
 
