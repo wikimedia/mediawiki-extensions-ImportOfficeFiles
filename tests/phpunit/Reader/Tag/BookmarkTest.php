@@ -18,7 +18,6 @@ class BookmarkTest extends TagProcessorTestBase {
 		// It is replaced with a "<wikitext>" node in conversion process
 		$this->assertSame( 1, $bookmarkStart->length );
 
-		$this->assertSame( 0, $bookmarkEnd->length );
 		$this->assertSame( 1, $anchorSpan->length );
 
 		$anchorId = $anchorSpan->item( 0 )->getAttribute( 'id' );
@@ -29,7 +28,7 @@ class BookmarkTest extends TagProcessorTestBase {
 	 * @inheritDoc
 	 */
 	protected function getProcessorName(): string {
-		return 'bookmark';
+		return 'bookmarkStart';
 	}
 
 	/**
