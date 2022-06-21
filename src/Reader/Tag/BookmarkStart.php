@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\ImportOfficeFiles\Reader\Tag;
 
 use DOMNode;
 
-class Bookmark extends TagProcessorBase {
+class BookmarkStart extends TagProcessorBase {
 
 	/**
 	 * @inheritDoc
@@ -19,14 +19,7 @@ class Bookmark extends TagProcessorBase {
 		$anchorNode->setAttribute( 'class', 'bookmark' );
 		$anchorNode->setAttribute( 'id', $name );
 
-		$anchorParentNode->parentNode->insertBefore( $anchorNode, $anchorParentNode );
-
-		// Remove bookmarks, they were replaced by anchor node above
-		$bookmarkEnd = $anchorParentNode->getElementsByTagName( 'bookmarkEnd' );
-
-		if ( $bookmarkEnd->item( 0 ) ) {
-			$anchorParentNode->removeChild( $bookmarkEnd->item( 0 ) );
-		}
+		$anchorParentNode->insertBefore( $anchorNode, $node );
 
 		return "";
 	}
