@@ -6,6 +6,7 @@ use DOMDocument;
 use DOMNode;
 use DOMNodeList;
 use ExtensionRegistry;
+use MediaWiki\Extension\ImportOfficeFiles\Reader\DocumentPreprocessor;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\DocumentSplitter;
 use MediaWiki\Extension\ImportOfficeFiles\Segment;
 use MediaWiki\MediaWikiServices;
@@ -42,6 +43,9 @@ class Word2007Document {
 
 		$dom = new DOMDocument();
 		$dom->load( $filePath );
+
+		$documentPreprocessor = new DocumentPreprocessor();
+		$documentPreprocessor->execute( $dom );
 
 		// split document
 		$documentSplitter = new DocumentSplitter();
@@ -131,7 +135,7 @@ class Word2007Document {
 	 */
 	private function convertSegment( $dom ): string {
 		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
-		$wikiText =	$this->getwikiTextNodeContent( $body );
+		$wikiText =	$this->getWikiTextNodeContent( $body );
 		return $wikiText;
 	}
 
@@ -139,15 +143,14 @@ class Word2007Document {
 	 * @param DOMNode $node
 	 * @return string
 	 */
-	private function getwikiTextNodeContent( $node ): string {
+	private function getWikiTextNodeContent( $node ): string {
 		$nodeText = '';
 		if ( !$node->childNodes ) {
 			return $nodeText;
 		}
-		foreach ( $node->childNodes as $childNode ) {
-			if ( $childNode->nodeName === 'wikitext' ) {
-				$nodeText .= $childNode->textContent;
-			}
+		$wikiTextNodes = $node->getElementsByTagName( 'wikitext' );
+		foreach ( $wikiTextNodes as $wikiTextNode ) {
+			$nodeText .= $wikiTextNode->textContent;
 		}
 		return $nodeText;
 	}
