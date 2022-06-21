@@ -3,6 +3,9 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\MimeValidator;
 
 use MediaWiki\Extension\ImportOfficeFiles\IModuleMimeValidator;
+use MediaWiki\MediaWikiServices;
+use MimeAnalyzer;
+use SplFileInfo;
 
 class MSOfficeMimeValidator implements IModuleMimeValidator {
 
@@ -17,11 +20,15 @@ class MSOfficeMimeValidator implements IModuleMimeValidator {
 	}
 
 	/**
-	 * @param SplFile $file
+	 * @param SplFileInfo $file
 	 * @return bool
 	 */
 	public function canHandle( $file ): bool {
-		$mimeType = mime_content_type( $file->getPathname() );
+		$services = MediaWikiServices::getInstance();
+		/** @var MimeAnalyzer */
+		$mimeAnalyzer = $services->getService( 'MimeAnalyzer' );
+		$mimeType = $mimeAnalyzer->getMimeTypeFromExtensionOrNull( $file->getExtension() );
+
 		$supportedMimeTypes = $this->getSupportedMimeTypes();
 		if ( in_array( $mimeType, $supportedMimeTypes ) ) {
 			return true;
