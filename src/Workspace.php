@@ -53,7 +53,7 @@ class Workspace {
 		}
 		$this->path = $this->dir . $id;
 		if ( !file_exists( "$this->path/workspace.json" ) ) {
-			$status = wfMkdirParents( $this->path, 755, get_class( $this ) );
+			$status = wfMkdirParents( $this->path, null, get_class( $this ) );
 			$this->addToBucket( 'workspace', [ 'id' => $id ] );
 			$this->saveBucket( 'workspace' );
 		}
@@ -65,7 +65,7 @@ class Workspace {
 	 * @return string|null
 	 */
 	public function createSubDir( $name ): ?string {
-		$status = wfMkdirParents( "$this->path/$name", 755, get_class( $this ) );
+		$status = wfMkdirParents( "$this->path/$name", null, get_class( $this ) );
 		if ( !$status ) {
 			return false;
 		}
