@@ -134,9 +134,7 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 				'split' => $this->split,
 				'ns-filerepo-compat' => 'false',
 				'uncollide' => $this->uncollide,
-				'categories' => [
-					'Office import'
-				],
+				'categories' => [],
 			]
 		);
 		$this->workspace->saveBucket( MSOfficeWord::BUCKET_ANALYZER_PARAMS );
