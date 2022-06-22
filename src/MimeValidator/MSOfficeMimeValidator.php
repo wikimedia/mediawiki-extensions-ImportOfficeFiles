@@ -14,7 +14,6 @@ class MSOfficeMimeValidator implements IModuleMimeValidator {
 	 */
 	protected function getSupportedMimeTypes(): array {
 		return [
-			'application/msword',
 			'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 		];
 	}
