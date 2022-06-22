@@ -2,14 +2,16 @@
 
 namespace MediaWiki\Extension\ImportOfficeFiles\Modules;
 
+use Config;
 use MediaWiki\Extension\ImportOfficeFiles\Analyzer\MSOfficeWordAnalyzer;
 use MediaWiki\Extension\ImportOfficeFiles\Converter\MSOfficeWordConverter;
 use MediaWiki\Extension\ImportOfficeFiles\IAnalyzer;
 use MediaWiki\Extension\ImportOfficeFiles\IConverter;
+use MediaWiki\Extension\ImportOfficeFiles\IModule;
 use MediaWiki\Extension\ImportOfficeFiles\IModuleMimeValidator;
 use MediaWiki\Extension\ImportOfficeFiles\MimeValidator\MSOfficeMimeValidator;
 
-class MSOfficeWord extends ModuleBase {
+class MSOfficeWord implements IModule {
 
 	public const BUCKET_ANALYZER = 'analyzer';
 	public const BUCKET_ANALYZER_PARAMS = 'analyzer-params';
@@ -27,6 +29,40 @@ class MSOfficeWord extends ModuleBase {
 	public const BUCKET_CONVERTED_TITLE_FILEPATH = 'import-title-filepath';
 
 	/**
+	 * @var Config
+	 */
+	private $config;
+
+	/**
+	 * @var Workspace
+	 */
+	protected $workspace = null;
+
+	/**
+	 *
+	 * @param Config $config
+	 */
+	public function __construct( $config ) {
+		$this->config = $config;
+	}
+
+	/**
+	 * @param Config $config
+	 * @return IModule
+	 */
+	public static function factory( Config $config ): IModule {
+		return new static( $config );
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function canHandle(): bool {
+		$mimeValidator = $this->getMimeValidator();
+		return $mimeValidator->canHandle( $this->workspace->getSourceFile(), $this->config );
+	}
+
+	/**
 	 * @return IAnalyzer
 	 */
 	public function getAnalyzer(): IAnalyzer {
@@ -37,14 +73,21 @@ class MSOfficeWord extends ModuleBase {
 	 * @return IConverter
 	 */
 	public function getConverter(): IConverter {
-		// TODO: Do we better use workspace directory instead of file?
 		return new MSOfficeWordConverter();
 	}
 
 	/**
 	 * @return IModuleMimeValidator
 	 */
-	protected function getMimeValidator(): IModuleMimeValidator {
-		return new MSOfficeMimeValidator();
+	private function getMimeValidator(): IModuleMimeValidator {
+		return new MSOfficeMimeValidator( $this->config );
+	}
+
+	/**
+	 * @param Workspace $workspace
+	 * @return void
+	 */
+	public function setWorkspace( $workspace ) {
+		$this->workspace = $workspace;
 	}
 }
