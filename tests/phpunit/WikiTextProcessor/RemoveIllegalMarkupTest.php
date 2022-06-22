@@ -33,7 +33,17 @@ class RemoveIllegalMarkupTest extends TestCase {
 	 */
 	private function getTestText(): string {
 		$text = "Lorem ipsum dolor ''''''sit amet,";
-		$text .= " consectetuer ''''adipiscing elit.";
+		$text .= " consectetuer ''''adipiscing elit.\n";
+		$text .= "==asadf 1==\n";
+		$text .= "===asadf 2===\n";
+		$text .= "# ==asadf 3==\n";
+		$text .= "# ===asadf 4===\n";
+		$text .= "#==asadf 5==\n";
+		$text .= "#===asadf 6===\n";
+		$text .= "# ==asadf 7==\n";
+		$text .= "# ===asadf 8===\n";
+		$text .= "##==asadf 9==\n";
+		$text .= "##===asadf 10===\n";
 		return $text;
 	}
 
@@ -42,7 +52,17 @@ class RemoveIllegalMarkupTest extends TestCase {
  */
 	private function getExpectedText(): string {
 		$text = "Lorem ipsum dolor sit amet,";
-		$text .= " consectetuer adipiscing elit.";
+		$text .= " consectetuer adipiscing elit.\n";
+		$text .= "==asadf 1==\n";
+		$text .= "===asadf 2===\n";
+		$text .= "==asadf 3==\n";
+		$text .= "===asadf 4===\n";
+		$text .= "==asadf 5==\n";
+		$text .= "===asadf 6===\n";
+		$text .= "==asadf 7==\n";
+		$text .= "===asadf 8===\n";
+		$text .= "==asadf 9==\n";
+		$text .= "===asadf 10===\n";
 		return $text;
 	}
 }
