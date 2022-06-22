@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hallo Welt GmbH"
+			"Hallo Welt GmbH",
+			"Robby"
 		]
 	},
 	"importofficefiles-desc": "Description of ImportOfficeFiles for [[Special:Version]]",
@@ -23,8 +24,8 @@
 	"importofficefiles-ui-dialog-settings-structure-label-checkbox": "Label for checkbox to select options if content should be divided",
 	"importofficefiles-ui-dialog-settings-conflicts-title": "Label for setting conflicts with title",
 	"importofficefiles-ui-dialog-settings-conflicts-behavior-label": "Label for setting how conflicts with page title should be handled",
-	"importofficefiles-ui-dialog-settings-conflicts-rename": "Label for option rename",
-	"importofficefiles-ui-dialog-settings-conflicts-override": "Label for option override",
+	"importofficefiles-ui-dialog-settings-conflicts-rename": "Label for option rename\n{{identical|Rename}}",
+	"importofficefiles-ui-dialog-settings-conflicts-override": "Label for option override\n{{identical|Override}}",
 	"importofficefiles-ui-dialog-settings-choose-split-level-label": "Label for dropdown widget to select split level of content",
 	"importofficefiles-ui-dialog-settings-split-level-1": "Label for option level 1 in dropdown",
 	"importofficefiles-ui-dialog-settings-split-level-2": "Label for option level 2 in dropdown",
