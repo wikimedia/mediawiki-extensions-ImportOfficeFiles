@@ -18,7 +18,8 @@
 		"ImportOfficeFiles": {
 			"ModuleRegistry": {
 				"ms-office-word": {
-					"factory": "\\MediaWiki\\Extension\\ImportOfficeFiles\\Modules\\MSOfficeWord::factory"
+					"factory": "\\MediaWiki\\Extension\\ImportOfficeFiles\\Modules\\MSOfficeWord::factory",
+					"services": [ "MainConfig" ]
 				}
 			},
 			"Word2007TagProcessorRegistry": {
