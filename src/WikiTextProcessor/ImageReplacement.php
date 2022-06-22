@@ -96,7 +96,7 @@ class ImageReplacement implements IWikiTextProcessor {
 			if ( isset( $imageProps['inline'] ) && ( $height <= 32 ) ) {
 				$props .= '|border';
 			} else {
-				$props .= '|frame|center';
+				$props .= '|thumb|center';
 			}
 
 			if ( !empty( $width ) && !empty( $height ) ) {
