@@ -73,7 +73,8 @@ class RemoveIllegalMarkup implements IWikiTextProcessor {
 			$curText .= $matches[4][$index];
 			$curText .= $matches[5][$index];
 
-			$wikiText = preg_replace( "/$curHeading/s", $curText, $wikiText );
+			$regEx = preg_quote( $curHeading );
+			$wikiText = str_replace( $curHeading, $curText, $wikiText );
 		}
 
 		return $wikiText;
