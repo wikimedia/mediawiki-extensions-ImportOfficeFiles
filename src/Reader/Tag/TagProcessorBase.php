@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\ImportOfficeFiles\Reader\Tag;
 
 use DOMElement;
 use DOMNode;
-use DOMNodeList;
 use ExtensionRegistry;
 use MediaWiki\Extension\ImportOfficeFiles\ITagProcessor;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\Component\Word2007DocumentData;
@@ -47,10 +46,15 @@ abstract class TagProcessorBase implements ITagProcessor {
 
 	/**
 	 * @param DOMNode $node
-	 * @return DOMNodeList
+	 * @return DOMNode[]
 	 */
-	public function getProcessableElementsFromDocument( $node ): DOMNodeList {
-		return $node->getElementsByTagName( $this->getName() );
+	public function getProcessableElementsFromDocument( $node ): array {
+		$processableNodes = $node->getElementsByTagName( $this->getName() );
+		$nodes = [];
+		foreach ( $processableNodes as $processableNode ) {
+			$nodes[] = $processableNode;
+		}
+		return $nodes;
 	}
 
 	/**

@@ -3,8 +3,9 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\Reader\Tag;
 
 use DOMNode;
-use DOMNodeList;
-use DOMXPath;
+use MediaWiki\Extension\ImportOfficeFiles\Reader\Tag\Table\TableCell;
+use MediaWiki\Extension\ImportOfficeFiles\Reader\Tag\Table\TableRecursive;
+use MediaWiki\Extension\ImportOfficeFiles\Reader\Tag\Table\TableRow;
 
 class Table extends TagProcessorBase {
 
@@ -15,6 +16,7 @@ class Table extends TagProcessorBase {
 	public function process( DOMNode $node ): string {
 		$wikitext = $this->processTable( $node );
 		$wikitext .= "\n";
+
 		return $wikitext;
 	}
 
@@ -34,17 +36,18 @@ class Table extends TagProcessorBase {
 
 	/**
 	 * @param DOMNode $node
-	 * @return DOMNodeList
+	 * @return DOMNode[]
 	 */
-	public function getProcessableElementsFromDocument( $node ): DOMNodeList {
-		$xpath = new DOMXPath( $node->ownerDocument );
-		$xpath->registerNamespace( 'w', 'w' );
-		$nodePath = $node->getNodePath();
-		$liveList = $xpath->query( $nodePath . '/w:tbl' );
-		if ( !$liveList ) {
-			return new DOMNodeList();
+	public function getProcessableElementsFromDocument( $node ): array {
+		$tables = $node->getElementsByTagName( 'tbl' );
+		$nodes = [];
+		foreach ( $node->childNodes as $childNode ) {
+			if ( $childNode->nodeName !== 'w:tbl' ) {
+				continue;
+			}
+			$nodes[] = $childNode;
 		}
-		return $liveList;
+		return $nodes;
 	}
 
 	/**
@@ -54,43 +57,54 @@ class Table extends TagProcessorBase {
 	private function processTable( $node ): string {
 		$node = $this->replaceTableCells( $node );
 		$node = $this->replaceTableRows( $node );
-		$node = $this->replaceTable( $node );
-
-		$wikiText = '{| class="wikitable"';
-		$wikiText .= "\n";
-		$wikiText .= $node->textContent;
-		$wikiText .= "|}";
+		$wikiText = $this->replaceTable( $node );
 
 		return $wikiText;
 	}
 
 	/**
 	 * @param DOMNode $node
-	 * @param string $path
-	 * @return array
+	 * @return DOMNode
 	 */
-	private function nodesNonLiveList( $node, $path ) {
-		$xpath = new DOMXPath( $node->ownerDocument );
-		$nodePath = $node->getNodePath();
-		$liveList = $xpath->query( $nodePath . $path );
+	private function replaceTableCells( $node ): DOMNode {
+		$tcProcessor = new TableCell();
+
+		$liveList = $node->getElementsByTagName( 'tc' );
 		$nonLiveList = [];
 		foreach ( $liveList as $liveNode ) {
 			$nonLiveList[] = $liveNode;
 		}
-		return $nonLiveList;
-	}
-
-	/**
-	 * @param DOMNode $node
-	 * @return DOMNode
-	 */
-	private function replaceTableCells( $node ) {
-		$nonLiveList = $this->nodesNonLiveList( $node, '/w:tr/w:tc' );
 
 		foreach ( $nonLiveList as $nonLiveNode ) {
-			$relacementNode = $this->replaceTableCell( $nonLiveNode );
-			$nonLiveNode->parentNode->replaceChild( $relacementNode, $nonLiveNode );
+			$tables = $nonLiveNode->getElementsByTagName( 'tbl' );
+			$nonLiveTables = [];
+			foreach ( $tables as $table ) {
+				$nonLiveTables[] = $table;
+			}
+
+			if ( count( $nonLiveTables ) > 0 ) {
+				$tableProcessor = new TableRecursive();
+				foreach ( $nonLiveTables as $nonLiveTable ) {
+					$replacementText = $tableProcessor->process( $nonLiveTable );
+					$replacementNode = $nonLiveNode->ownerDocument->createElement( 'wikitext', $replacementText );
+					$nonLiveTable->parentNode->replaceChild( $replacementNode, $nonLiveTable );
+				}
+			}
 		}
+
+		// Refresh nonLiveList
+		$liveList = $node->getElementsByTagName( 'tc' );
+		$nonLiveList = [];
+		foreach ( $liveList as $liveNode ) {
+			$nonLiveList[] = $liveNode;
+		}
+
+		foreach ( $nonLiveList as $nonLiveNode ) {
+			$replacementText = $tcProcessor->process( $nonLiveNode );
+			$replacementNode = $nonLiveNode->ownerDocument->createElement( 'wikitext', $replacementText );
+			$nonLiveNode->parentNode->replaceChild( $replacementNode, $nonLiveNode );
+		}
+
 		return $node;
 	}
 
@@ -98,56 +112,36 @@ class Table extends TagProcessorBase {
 	 * @param DOMNode $node
 	 * @return DOMNode
 	 */
-	private function replaceTableCell( $node ) {
-		$xpath = new DOMXPath( $node->ownerDocument );
-		$nodePath = $node->getNodePath();
-		$liveList = $xpath->query( $nodePath . '/w:tbl' );
-		$nodeText = '';
-		if ( $liveList && $liveList->count() > 0 ) {
-			$nonLiveList = [];
-			foreach ( $liveList as $liveNode ) {
-				$nonLiveList[] = $liveNode;
-			}
-			foreach ( $nonLiveList as $nonLiveNode ) {
-				$nodeText .= $this->processTable( $nonLiveNode );
-			}
-		} else {
-			$nodeText = $this->getWikiTextNodeContent( $node );
-		}
-		$relacementNode = $node->ownerDocument->createElement( 'wikitext', "|$nodeText\n" );
-		return $relacementNode;
-	}
+	private function replaceTableRows( $node ): DOMNode {
+		$trProcessor = new TableRow();
 
-	/**
-	 * @param DOMNode $node
-	 * @return DOMNode
-	 */
-	private function replaceTableRows( $node ) {
-		$nonLiveList = $this->nodesNonLiveList( $node, '/w:tr' );
-		foreach ( $nonLiveList as $nonLiveNode ) {
-			$relacementNode = $this->replaceTableRow( $nonLiveNode );
-			$nonLiveNode->parentNode->replaceChild( $relacementNode, $nonLiveNode );
+		$liveList = $node->getElementsByTagName( 'tr' );
+		$nonLiveList = [];
+		foreach ( $liveList as $liveNode ) {
+			$nonLiveList[] = $liveNode;
 		}
+
+		foreach ( $nonLiveList as $nonLiveNode ) {
+			$replacementText = $trProcessor->process( $nonLiveNode );
+			$replacementNode = $nonLiveNode->ownerDocument->createElement( 'wikitext', $replacementText );
+			$nonLiveNode->parentNode->replaceChild( $replacementNode, $nonLiveNode );
+		}
+
 		return $node;
 	}
 
 	/**
 	 * @param DOMNode $node
-	 * @return DOMNode
+	 * @return string
 	 */
-	private function replaceTableRow( $node ) {
-		$nodeText = $this->getWikiTextNodeContent( $node );
-		$relacementNode = $node->ownerDocument->createElement( 'wikitext', "|-\n$nodeText" );
-		return $relacementNode;
-	}
+	protected function replaceTable( $node ): string {
+			$replacementText = "\n";
+			$replacementText .= '{| class="wikitable"';
+			$replacementText .= "\n";
+			$replacementText .= $this->getWikiTextNodeContent( $node );
+			$replacementText .= "|}";
+			$replacementText .= "\n";
 
-	/**
-	 * @param DOMNode $node
-	 * @return DOMNode
-	 */
-	private function replaceTable( $node ) {
-		$nodeText = $this->getWikiTextNodeContent( $node );
-		$relacementNode = $node->ownerDocument->createElement( 'wikitext', "$nodeText" );
-		return $relacementNode;
+		return $replacementText;
 	}
 }
