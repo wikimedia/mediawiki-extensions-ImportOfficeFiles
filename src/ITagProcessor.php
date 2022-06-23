@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\ImportOfficeFiles;
 
 use DOMNode;
-use DOMNodeList;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\Component\Word2007DocumentData;
 
 interface ITagProcessor {
@@ -26,9 +25,9 @@ interface ITagProcessor {
 
 	/**
 	 * @param DOMNode $node
-	 * @return DOMNodeList
+	 * @return DOMNode[]
 	 */
-	public function getProcessableElementsFromDocument( $node ): DOMNodeList;
+	public function getProcessableElementsFromDocument( $node ): array;
 
 	/**
 	 * @param Word2007DocumentData $documentData
