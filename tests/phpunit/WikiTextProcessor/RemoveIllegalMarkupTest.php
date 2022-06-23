@@ -44,6 +44,7 @@ class RemoveIllegalMarkupTest extends TestCase {
 		$text .= "# ===asadf 8===\n";
 		$text .= "##==asadf 9==\n";
 		$text .= "##===asadf 10===\n";
+		$text .= "### ====asadf 11====";
 		return $text;
 	}
 
@@ -63,6 +64,7 @@ class RemoveIllegalMarkupTest extends TestCase {
 		$text .= "===asadf 8===\n";
 		$text .= "==asadf 9==\n";
 		$text .= "===asadf 10===\n";
+		$text .= "====asadf 11====";
 		return $text;
 	}
 }
