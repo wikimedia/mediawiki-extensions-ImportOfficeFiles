@@ -100,11 +100,11 @@ class CollectionBuilderTest extends TestCase {
 	 */
 	private function getExpected(): string {
 		$wikiText = "* [[Test:My Test|My Test]]\n";
-		$wikiText .= "** [[Test:My Test/First|First]]\n";
-		$wikiText .= "*** [[Test:My Test/First/Sub|Sub]]\n";
-		$wikiText .= "** [[Test:My Test/Second|Second]]\n";
-		$wikiText .= "*** [[Test:My Test/Second/Sub|Sub]]\n";
-		$wikiText .= "**** [[Test:My Test/Second/Sub/Sub sub|Sub sub]]\n";
+		$wikiText .= "* [[Test:My Test/First|First]]\n";
+		$wikiText .= "** [[Test:My Test/First/Sub|Sub]]\n";
+		$wikiText .= "* [[Test:My Test/Second|Second]]\n";
+		$wikiText .= "** [[Test:My Test/Second/Sub|Sub]]\n";
+		$wikiText .= "*** [[Test:My Test/Second/Sub/Sub sub|Sub sub]]\n";
 		return $wikiText;
 	}
 }
