@@ -25,5 +25,19 @@
 	"importofficefiles-ui-dialog-settings-conflicts-behavior-label": "Comportamento si le nomine del pagina ja existe",
 	"importofficefiles-ui-dialog-settings-conflicts-rename": "Renominar",
 	"importofficefiles-ui-dialog-settings-conflicts-override": "Superscriber",
-	"importofficefiles-ui-dialog-settings-choose-split-level-label": "Selige le nivello sur le qual le paginas debe esser dividite"
+	"importofficefiles-ui-dialog-settings-choose-split-level-label": "Selige le nivello sur le qual le paginas debe esser dividite",
+	"importofficefiles-ui-dialog-settings-split-level-1": "Titulos de nivello 1",
+	"importofficefiles-ui-dialog-settings-split-level-2": "Titulos de nivello 2",
+	"importofficefiles-ui-dialog-settings-split-level-3": "Titulos de nivello 3",
+	"importofficefiles-ui-dialog-preview-title": "Previsualisation",
+	"importofficefiles-ui-dialog-preview-label": "Le sequente paginas essera importate",
+	"importofficefiles-ui-dialog-link-import-files-text": "Lista de files importate exportate a $1",
+	"importofficefiles-filecollection-prefix": "Collection de files",
+	"importofficefiles-api-storage-error-no-available-file": "Nulle file incargate es disponibile",
+	"importofficefiles-api-storage-error-save-temp": "Le salveguarda temporari non es possibile",
+	"importofficefiles-ui-progress-import-images-step": "Importation de imagines in curso…",
+	"importofficefiles-ui-progress-import-pages-step": "Importation de paginas in curso…",
+	"importofficefiles-ui-progress-remove-files-step": "Deletion de files temporari in curso…",
+	"importofficefiles-ui-import-error": "Un error ha occurrite durante le importation.",
+	"importofficefiles-ui-analyze-error": "Le processo de analyse ha fallite a causa de un error incognite."
 }
