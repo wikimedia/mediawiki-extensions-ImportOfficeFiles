@@ -7,6 +7,19 @@ use MediaWiki\MediaWikiServices;
 class CollectionBuilder {
 
 	/**
+	 * @var array
+	 */
+	private $levelMap = [
+		0 => '*',
+		1 => '*',
+		2 => '*',
+		3 => '**',
+		4 => '***',
+		5 => '****',
+		6 => '*****',
+	];
+
+	/**
 	 * @param SegmentList $segments
 	 * @return string
 	 */
@@ -19,18 +32,15 @@ class CollectionBuilder {
 		$wikiText = '';
 		for ( $index = 0; $index < $segments->count(); $index++ ) {
 			$segment = $segments->item( $index );
-			// TODO: Improve level handling, for now level 1 is ignored for splitting
+			// TODO: Improve level handling, for now level 1 (subtitle) is ignored for splitting
 			// See WikiPageStructureBuilder
-			if ( $segment->getLevel() === 0 ) {
-				$wikiText .= "*";
-			} elseif ( $segment->getLevel() === 1 ) {
-				continue;
+			$level = $segment->getLevel();
+			if ( $level < 2 ) {
+				$listLevel = $this->levelMap[$level];
 			} else {
 				$titleParts = explode( '/', $segment->getLabel() );
 				$segmentlevel = count( $titleParts );
-				for ( $level = 0; $level < $segmentlevel; $level++ ) {
-					$wikiText .= "*";
-				}
+				$listLevel = $this->levelMap[$segmentlevel];
 			}
 
 			$title = $titleFactory->newFromText( $segment->getLabel() );
@@ -40,6 +50,7 @@ class CollectionBuilder {
 			$labelParts = explode( '/', $titleText );
 			$label = array_pop( $labelParts );
 
+			$wikiText .= $listLevel;
 			$wikiText .= " [[$target|$label]]\n";
 		}
 		return $wikiText;
