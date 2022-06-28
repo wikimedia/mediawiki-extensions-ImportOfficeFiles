@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\ImportOfficeFiles\Converter;
 
+use MediaWiki\Extension\ImportOfficeFiles\BookmarkResolver;
 use MediaWiki\Extension\ImportOfficeFiles\CollectionBuilder;
 use MediaWiki\Extension\ImportOfficeFiles\ConverterResult;
 use MediaWiki\Extension\ImportOfficeFiles\IConverter;
@@ -193,7 +194,9 @@ class MSOfficeWordConverter implements IConverter {
 		}
 		$this->workspace->saveBucket( MSOfficeWord::BUCKET_CONVERTED_TITLE_FILEPATH );
 
-		return $converterSegments;
+		$bookmarkResolver = new BookmarkResolver();
+		$convertedSegments = $bookmarkResolver->resolve( $converterSegments );
+		return $convertedSegments;
 	}
 
 	/**
