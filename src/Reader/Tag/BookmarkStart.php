@@ -11,17 +11,7 @@ class BookmarkStart extends TagProcessorBase {
 	 */
 	public function process( DOMNode $node ): string {
 		$name = $node->getAttribute( 'w:name' );
-
-		// Prepend "<span>" with anchor (id) to the parent node
-		$anchorParentNode = $node->parentNode;
-
-		$anchorNode = $node->ownerDocument->createElement( 'span' );
-		$anchorNode->setAttribute( 'class', 'bookmark' );
-		$anchorNode->setAttribute( 'id', $name );
-
-		$anchorParentNode->insertBefore( $anchorNode, $node );
-
-		return "";
+		return '<span class="bookmark-start" id="' . $name . '"></span>';
 	}
 
 	/**
