@@ -32,7 +32,6 @@
 	"importofficefiles-ui-dialog-preview-title": "Preview",
 	"importofficefiles-ui-dialog-preview-label": "The following pages will be imported",
 	"importofficefiles-ui-dialog-link-import-files-text": "List of imported files exported to $1",
-	"importofficefiles-filecollection-prefix": "Files collection",
 	"importofficefiles-api-storage-error-no-available-file": "No upload files available",
 	"importofficefiles-api-storage-error-save-temp": "No temporary save possible",
 	"importofficefiles-ui-progress-import-images-step": "Importing images...",

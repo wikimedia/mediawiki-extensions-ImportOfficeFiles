@@ -53,10 +53,12 @@ OO.inheritClass( officeimport.ui.ImportProgressPage, OO.ui.PageLayout );
 officeimport.ui.ImportProgressPage.prototype.onImportDone = function ( pages, title ) {
 	const namespaceIds = mw.config.get( 'wgNamespaceIds' );
 	const namespaceKey = namespaceIds.mediawiki;
-	let text = mw.message( 'importofficefiles-filecollection-prefix' ).plain();
-	text += '/';
-	text += title;
-	this.targetTitle = mw.Title.newFromText( text, namespaceKey );
+	const params = { prefix: 'Page collection' };
+
+	mw.hook( 'importOffice.collectionPrefix' ).fire( params );
+
+	const pageTitle = params.prefix + '/' + title;
+	this.targetTitle = mw.Title.newFromText( pageTitle, namespaceKey );
 
 	this.setImportDoneUI();
 
