@@ -130,11 +130,27 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 			throw new Exception( 'Source file failed to upload into workspace directory' );
 		}
 
+		$services = MediaWikiServices::getInstance();
+		$titleFactory = $services->get( 'TitleFactory' );
+		$title = $titleFactory->newFromText( $this->baseTitle );
+		$titleText = $title->getText();
+		$namespace = $title->getNamespace();
+		$namespaceText = '';
+		if ( $namespace !== NS_MAIN && $title->isContentPage() ) {
+			$namespaceText = $title->getNsText();
+		}
+
+		$titleParts = explode( ':', $title );
+		if ( count( $titleParts ) > 1 ) {
+			$namespace = array_pop( $titleParts );
+			$title = implode( '_', $titleParts );
+		}
+
 		$this->workspace->addToBucket(
 			MSOfficeWord::BUCKET_ANALYZER_PARAMS,
 			[
-				'namespace' => '',
-				'base-title' => $this->baseTitle,
+				'namespace' => $namespaceText,
+				'base-title' => $titleText,
 				'verbose' => false,
 				'split' => $this->split,
 				'ns-filerepo-compat' => 'false',
