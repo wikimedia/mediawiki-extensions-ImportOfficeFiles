@@ -32,7 +32,6 @@
 	"importofficefiles-ui-dialog-preview-title": "Title for dialog page preview",
 	"importofficefiles-ui-dialog-preview-label": "Label for preview widget with pages which will be imported",
 	"importofficefiles-ui-dialog-link-import-files-text": "Label for import page with link to file collection",
-	"importofficefiles-filecollection-prefix": "Prefix for naming file collections created by importing office files",
 	"importofficefiles-api-storage-error-no-available-file": "Error message returned by an API module in case a requested file was not found",
 	"importofficefiles-api-storage-error-save-temp": "Error message returned by an API module in case the temporary directory could not be written",
 	"importofficefiles-ui-progress-import-images-step": "Label, associated with import process step, displayed above import progress bar",
