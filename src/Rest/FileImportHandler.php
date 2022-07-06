@@ -10,7 +10,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Rest\SimpleHandler;
 use MWStake\MediaWiki\Component\ProcessManager\ManagedProcess;
 use Wikimedia\ParamValidator\ParamValidator;
-use function Sabre\HTTP\decodePath;
 
 class FileImportHandler extends SimpleHandler {
 
@@ -33,10 +32,6 @@ class FileImportHandler extends SimpleHandler {
 		$request = $this->getRequest();
 
 		$uploadId = $request->getPathParam( "uploadId" );
-
-		$params = $request->getUri()->getQuery();
-		$config = json_decode( decodePath( $params ), true );
-		$conflict = $config['config']['conflict'];
 
 		$importXmlScript = $GLOBALS['IP'] . '/maintenance/importDump.php';
 		$importImagesScript = $GLOBALS['IP'] . '/maintenance/importImages.php';

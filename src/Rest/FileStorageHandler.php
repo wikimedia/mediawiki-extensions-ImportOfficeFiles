@@ -67,7 +67,7 @@ class FileStorageHandler extends SimpleHandler {
 		while ( true ) {
 			$uniqueID = MWCryptRand::generateHex( 6 );
 
-			$path = $this->uploadDirectory . '/cache/' . $uniqueID . '/';
+			$path = $this->uploadDirectory . '/cache/ImportOfficeFiles/' . $uniqueID . '/upload/';
 
 			if ( !file_exists( $path ) ) {
 				break;

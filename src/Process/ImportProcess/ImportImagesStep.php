@@ -35,12 +35,12 @@ class ImportImagesStep implements InterruptingProcessStep, LoggerAwareInterface 
 	 * @param string $importImagesScript
 	 */
 	public function __construct( string $uploadId, string $uploadDirectory, string $importImagesScript ) {
-		$importResultsDir = $uploadDirectory . '/cache/' . $uploadId . '/workspace/';
+		$workspaceDir = $uploadDirectory . '/cache/ImportOfficeFiles';
 
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		$this->workspace = new Workspace( $config );
-		$this->workspace->init( 'ImportOffice', $importResultsDir );
+		$this->workspace->init( $uploadId, $workspaceDir );
 
 		$this->importImagesScript = $importImagesScript;
 
@@ -68,7 +68,7 @@ class ImportImagesStep implements InterruptingProcessStep, LoggerAwareInterface 
 		$this->logger->debug( 'Importing images from directory: ' . $imagesDir );
 
 		try {
-			// php {IP}/maintenance/importImages.php {$uploadDir}/{id}/workspace/result/ImportOffice/result/images/
+			// php {IP}/maintenance/importImages.php images/cache/ImportOfficeFiles/{uploadId}/result/images/
 			$processImages = new Process( [ $GLOBALS['wgPhpCli'], $this->importImagesScript, $imagesDir ] );
 			$processImages->run();
 		} catch ( Exception $e ) {
