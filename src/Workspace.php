@@ -35,8 +35,7 @@ class Workspace {
 	 * @param Config $config
 	 */
 	public function __construct( $config ) {
-		$this->dir = $config->get( 'OfficeImportWorkspace' );
-		// TODO: $IP
+		$this->dir = $config->get( 'UploadDirectory' );
 	}
 
 	/**
@@ -51,7 +50,7 @@ class Workspace {
 		if ( $dir !== false ) {
 			$this->dir = $dir;
 		}
-		$this->path = $this->dir . $id;
+		$this->path = $this->dir . '/' . $id;
 		if ( !file_exists( "$this->path/workspace.json" ) ) {
 			$status = wfMkdirParents( $this->path, null, get_class( $this ) );
 			$this->addToBucket( 'workspace', [ 'id' => $id ] );
