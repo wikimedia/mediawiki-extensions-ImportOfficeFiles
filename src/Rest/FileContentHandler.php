@@ -44,9 +44,9 @@ class FileContentHandler extends Handler {
 		$config = json_decode( decodePath( $params ), true );
 		$title = $config['title'];
 
-		$importResultsDir = $this->uploadDirectory . '/cache/' . $uploadId . '/workspace/';
+		$workspaceDir = $this->uploadDirectory . '/cache/ImportOfficeFiles';
 
-		$this->workspace->init( 'ImportOffice', $importResultsDir );
+		$this->workspace->init( $uploadId, $workspaceDir );
 
 		// Read out "result.xml" and create array with pages titles and pages content
 		$xmlReader = new ImportResultReader( $this->workspace );

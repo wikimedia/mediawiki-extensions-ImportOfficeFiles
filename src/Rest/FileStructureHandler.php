@@ -40,9 +40,9 @@ class FileStructureHandler extends Handler {
 		$request = $this->getRequest();
 		$uploadId = $request->getPathParam( "uploadId" );
 
-		$importResultsDir = $this->uploadDirectory . '/cache/' . $uploadId . '/workspace/';
+		$workspaceDir = $this->uploadDirectory . '/cache/ImportOfficeFiles';
 
-		$this->workspace->init( 'ImportOffice', $importResultsDir );
+		$this->workspace->init( $uploadId, $workspaceDir );
 
 		// Read out "result.xml" and create array with pages titles and pages content
 		$xmlReader = new ImportResultReader( $this->workspace );

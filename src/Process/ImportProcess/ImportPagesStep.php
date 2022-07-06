@@ -35,12 +35,12 @@ class ImportPagesStep implements InterruptingProcessStep, LoggerAwareInterface {
 	 * @param string $importXmlScript
 	 */
 	public function __construct( string $uploadId, string $uploadDirectory, string $importXmlScript ) {
-		$importResultsDir = $uploadDirectory . '/cache/' . $uploadId . '/workspace/';
+		$workspaceDir = $uploadDirectory . '/cache/ImportOfficeFiles';
 
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		$this->workspace = new Workspace( $config );
-		$this->workspace->init( 'ImportOffice', $importResultsDir );
+		$this->workspace->init( $uploadId, $workspaceDir );
 
 		$this->importXmlScript = $importXmlScript;
 
@@ -68,7 +68,7 @@ class ImportPagesStep implements InterruptingProcessStep, LoggerAwareInterface {
 		$this->logger->debug( 'Importing pages from XML: ' . $importXmlPath );
 
 		try {
-			// php {$IP}/maintenance/importDump.php {$uploadDir}/{id}/workspace/result/ImportOffice/result/import.xml
+			// php {$IP}/maintenance/importDump.php images/cache/ImportOfficeFiles/{uploadId}/result/import.xml
 			$processPages = new Process( [ $GLOBALS['wgPhpCli'], $this->importXmlScript, $importXmlPath ] );
 			$processPages->run();
 		} catch ( Exception $e ) {
