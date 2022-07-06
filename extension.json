@@ -236,10 +236,6 @@
 	],
 	"config_prefix": "wg",
 	"config": {
-		"OfficeImportWorkspace": {
-			"value": "../../../images/cache/OfficeImport",
-			"public": false
-		},
 		"Word2007TagProcessorPipeline": {
 			"value": [ "instr-text", "drawing", "tabulator", "line-break", "text", "textrun", "bookmarkStart", "bookmarkEnd", "hyperlink", "paragraph", "table" ],
 			"public": true
