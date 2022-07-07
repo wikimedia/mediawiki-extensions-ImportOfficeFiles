@@ -24,7 +24,7 @@ class RemoveFilesStep implements InterruptingProcessStep, LoggerAwareInterface {
 	 * @param string $uploadDirectory
 	 */
 	public function __construct( string $uploadId, string $uploadDirectory ) {
-		$this->workspaceDirectory = $uploadDirectory . '/cache/' . $uploadId . '/';
+		$this->workspaceDirectory = $uploadDirectory . '/cache/ImportOfficeFiles/' . $uploadId;
 
 		$logger = LoggerFactory::getInstance( 'ImportOfficeFiles_UI' );
 		$this->setLogger( $logger );
