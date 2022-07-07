@@ -59,6 +59,11 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 	private $uncollide;
 
 	/**
+	 * @var string
+	 */
+	private $uploadId;
+
+	/**
 	 * @param string $uploadId
 	 * @param string $file
 	 * @param string $title
@@ -96,10 +101,12 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 			$this->uncollide = false;
 		}
 
-		$workspaceDirectory = $config->get( 'UploadDirectory' ) . '/cache/' . $uploadId;
+		$workspaceDirectory = $config->get( 'UploadDirectory' ) . '/cache/ImportOfficeFiles';
 
-		$this->destination = $workspaceDirectory . '/workspace/';
-		$sourceFilePath = trim( $workspaceDirectory . '/' . $file );
+		$this->uploadId = $uploadId;
+
+		$this->destination = $workspaceDirectory;
+		$sourceFilePath = trim( "$workspaceDirectory/$uploadId/upload/$file" );
 
 		$this->baseTitle = $title;
 
@@ -167,7 +174,7 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 	private function setWorkspace( $path ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$this->workspace = new Workspace( $config );
-		$workspaceInfo = $this->workspace->init( 'ImportOffice', $path );
+		$workspaceInfo = $this->workspace->init( $this->uploadId, $path );
 		$workspacePath = $workspaceInfo['id'];
 
 		$this->logger->debug( "Workspace: '{$workspacePath}'" );
