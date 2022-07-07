@@ -161,7 +161,8 @@
 	"Hooks": {
 		"BlueSpiceDiscoveryTemplateDataProviderAfterInit": "discovery-skin",
 		"SkinTemplateNavigation::Universal": "addContentActions",
-		"BeforePageDisplay": "addBootstrap"
+		"BeforePageDisplay": "addBootstrap",
+		"MWStakeRunJobsTriggerRegisterHandlers": "MediaWiki\\Extension\\ImportOfficeFiles\\MediaWiki\\Hook\\MWStakeRunJobsTriggerRegisterHandlers\\AddOrphanedDirectoriesHandler::callback"
 	},
 	"HookHandlers": {
 		"discovery-skin": {
