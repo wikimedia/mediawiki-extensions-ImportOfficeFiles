@@ -159,18 +159,18 @@
 	},
 	"Hooks": {
 		"BlueSpiceDiscoveryTemplateDataProviderAfterInit": "discovery-skin",
-		"SkinTemplateNavigation::Universal": "addContentActions",
-		"BeforePageDisplay": "addBootstrap",
+		"SkinTemplateNavigation::Universal": "skin",
+		"BeforePageDisplay": "skin",
 		"MWStakeRunJobsTriggerRegisterHandlers": "MediaWiki\\Extension\\ImportOfficeFiles\\MediaWiki\\Hook\\MWStakeRunJobsTriggerRegisterHandlers\\AddOrphanedDirectoriesHandler::callback"
 	},
 	"HookHandlers": {
 		"discovery-skin": {
 			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\MediaWiki\\HookHandler\\DiscoverySkin"
 		},
-		"addContentActions": {
-			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\MediaWiki\\HookHandler\\AddContentActions",
+		"skin": {
+			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\MediaWiki\\HookHandler\\Skin",
 			"services": [
-				"PermissionManager"
+				"MainConfig", "PermissionManager"
 			]
 		},
 		"addBootstrap": {
@@ -236,11 +236,11 @@
 	],
 	"config_prefix": "wg",
 	"config": {
-		"Word2007TagProcessorPipeline": {
+		"ImportOfficeFilesWord2007TagProcessorPipeline": {
 			"value": [ "instr-text", "drawing", "tabulator", "line-break", "text", "textrun", "bookmarkStart", "bookmarkEnd", "hyperlink", "paragraph", "table" ],
 			"public": true
 		},
-		"Word2007TagPropertyProcessorPipeline": {
+		"ImportOfficeFilesWord2007TagPropertyProcessorPipeline": {
 			"value": [ "style", "color", "highlight", "shadow", "verticalalign", "italic", "strikethrough", "underline", "bold" ],
 			"public": true
 		}
