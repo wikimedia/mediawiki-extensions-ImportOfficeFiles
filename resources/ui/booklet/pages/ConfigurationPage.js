@@ -131,7 +131,7 @@ officeimport.ui.ConfigurationPage.prototype.toggleSplitProperty = function () {
 };
 
 officeimport.ui.ConfigurationPage.prototype.getData = function () {
-	const titleConfig = this.titleInput.getValue();
+	this.title = this.titleInput.getValue();
 	let structureConfig = false;
 	if ( this.fileStructureCheckbox.isSelected() ) {
 		structureConfig = this.fileStructure.getMenu().findSelectedItem().getData();
@@ -139,7 +139,7 @@ officeimport.ui.ConfigurationPage.prototype.getData = function () {
 	const conflictsConfig = this.titleConflicts.getMenu().findSelectedItem().getData();
 
 	return {
-		title: titleConfig,
+		title: this.title,
 		structure: structureConfig,
 		conflict: conflictsConfig
 	};
@@ -192,5 +192,6 @@ officeimport.ui.ConfigurationPage.prototype.checkAnalyzeStatus =
 
 officeimport.ui.ConfigurationPage.prototype.setDefaultValue = function ( filename ) {
 	filename = filename.replace( /\..*/, '' );
-	this.titleInput.setValue( filename );
+	this.title = this.title || filename;
+	this.titleInput.setValue( this.title );
 };
