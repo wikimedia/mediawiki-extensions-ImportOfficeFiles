@@ -98,7 +98,7 @@ class Word2007Document {
 		// TODO: inject MediaWikiServices
 		$services = MediaWikiServices::getInstance();
 		$config = $services->getMainConfig();
-		$pipeline = $config->get( 'Word2007TagProcessorPipeline' );
+		$pipeline = $config->get( 'ImportOfficeFilesWord2007TagProcessorPipeline' );
 
 		$objectFactory = $services->getObjectFactory();
 

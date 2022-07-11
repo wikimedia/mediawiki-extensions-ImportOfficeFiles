@@ -1,14 +1,18 @@
 <?php
 
-namespace MediaWiki\Extension\ImportOfficeFiles\MimeValidator;
+namespace MediaWiki\Extension\ImportOfficeFiles;
 
 use Config;
-use MediaWiki\Extension\ImportOfficeFiles\IModuleMimeValidator;
 use MediaWiki\MediaWikiServices;
 use MimeAnalyzer;
 use SplFileInfo;
 
-class MSOfficeMimeValidator implements IModuleMimeValidator {
+class MimeValidator implements IModuleMimeValidator {
+
+	/**
+	 * @var IModule
+	 */
+	private $module;
 
 	/**
 	 * @var Config
@@ -16,19 +20,12 @@ class MSOfficeMimeValidator implements IModuleMimeValidator {
 	private $config;
 
 	/**
+	 * @param IModule $module
 	 * @param Config $config
 	 */
-	public function __construct( Config $config ) {
+	public function __construct( IModule $module, Config $config ) {
+		$this->module = $module;
 		$this->config = $config;
-	}
-
-	/**
-	 * @return array
-	 */
-	protected function getSupportedMimeTypes(): array {
-		return [
-			'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-		];
 	}
 
 	/**
@@ -41,8 +38,13 @@ class MSOfficeMimeValidator implements IModuleMimeValidator {
 		if ( $verifyMimeType === true ) {
 			// Mime type check can be disabled because not all docx documents do have the correct mimetype.
 
-			$extension = $file->getExtension();
-			if ( strtolower( $extension ) === 'docx' ) {
+			$fileExtension = $file->getExtension();
+			$fileExtension = strtolower( $fileExtension );
+
+			$supportedFileExtensions = $this->module->getSupportedFileExtensions();
+			$supportedFileExtensions = array_map( 'strtolower', $supportedFileExtensions );
+
+			if ( in_array( $fileExtension, $supportedFileExtensions ) ) {
 				return true;
 			}
 
@@ -54,7 +56,7 @@ class MSOfficeMimeValidator implements IModuleMimeValidator {
 		$mimeAnalyzer = $services->getService( 'MimeAnalyzer' );
 		$mimeType = $mimeAnalyzer->getMimeTypeFromExtensionOrNull( $file->getExtension() );
 
-		$supportedMimeTypes = $this->getSupportedMimeTypes();
+		$supportedMimeTypes = $this->module->getSupportedMimeTypes();
 		if ( in_array( $mimeType, $supportedMimeTypes ) ) {
 			return true;
 		}

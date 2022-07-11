@@ -114,9 +114,12 @@ class ImportOfficeFile extends Maintenance {
 		$moduleFactory = new ModuleFactory();
 		$this->module = $moduleFactory->getModule( $this->workspace );
 
-		$analyzerResult = $this->runAnalyzer( $this->workspace );
-
-		$converterResult = $this->runConvertStep( $this->workspace, $analyzerResult );
+		if ( $this->module !== null ) {
+			$analyzerResult = $this->runAnalyzer( $this->workspace );
+			$converterResult = $this->runConvertStep( $this->workspace, $analyzerResult );
+		} else {
+			throw new Exception( "No module defined for this file type" );
+		}
 	}
 
 	/**

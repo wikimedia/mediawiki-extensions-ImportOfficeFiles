@@ -5,8 +5,8 @@
 		]
 	},
 	"importofficefiles-desc": "Allows importing office files as wikipages",
-	"importofficefiles-ui-action-new-import-text": "New import",
-	"importofficefiles-ui-action-new-import-title": "Make new import",
+	"importofficefiles-ui-action-import-msword-text": "Import Word file",
+	"importofficefiles-ui-action-import-msword-title": "Create pages from Microsoft Word file",
 	"importofficefiles-ui-import-dialog-title": "Import file",
 	"importofficefiles-ui-import-completed": "Import completed!",
 	"importofficefiles-ui-import-in-progress": "Import in progress ...",
@@ -34,6 +34,7 @@
 	"importofficefiles-ui-dialog-link-import-files-text": "List of imported files exported to $1",
 	"importofficefiles-api-storage-error-no-available-file": "No upload files available",
 	"importofficefiles-api-storage-error-save-temp": "No temporary save possible",
+	"importofficefiles-api-storage-error-no-valid-module": "No module available to handle this file",
 	"importofficefiles-ui-progress-import-images-step": "Importing images...",
 	"importofficefiles-ui-progress-import-pages-step": "Importing pages...",
 	"importofficefiles-ui-progress-remove-files-step": "Removing temporary files...",

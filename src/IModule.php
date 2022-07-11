@@ -24,4 +24,14 @@ interface IModule {
 	 * @return void
 	 */
 	public function setWorkspace( $workspace );
+
+	/**
+	 * @return array
+	 */
+	public function getSupportedMimeTypes(): array;
+
+	/**
+	 * @return array
+	 */
+	public function getSupportedFileExtensions(): array;
 }

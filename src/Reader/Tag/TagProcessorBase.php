@@ -132,7 +132,7 @@ abstract class TagProcessorBase implements ITagProcessor {
 		// TODO: inject MediaWikiServices
 		$services = MediaWikiServices::getInstance();
 		$config = $services->getMainConfig();
-		$pipeline = $config->get( 'Word2007TagPropertyProcessorPipeline' );
+		$pipeline = $config->get( 'ImportOfficeFilesWord2007TagPropertyProcessorPipeline' );
 
 		$htmlWrapper = null;
 		if ( $this->wrapHtmlTag ) {
