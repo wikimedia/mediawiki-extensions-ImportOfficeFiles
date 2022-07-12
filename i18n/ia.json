@@ -32,7 +32,6 @@
 	"importofficefiles-ui-dialog-preview-title": "Previsualisation",
 	"importofficefiles-ui-dialog-preview-label": "Le sequente paginas essera importate",
 	"importofficefiles-ui-dialog-link-import-files-text": "Lista de files importate exportate a $1",
-	"importofficefiles-filecollection-prefix": "Collection de files",
 	"importofficefiles-api-storage-error-no-available-file": "Nulle file incargate es disponibile",
 	"importofficefiles-api-storage-error-save-temp": "Le salveguarda temporari non es possibile",
 	"importofficefiles-ui-progress-import-images-step": "Importation de imagines in curso…",

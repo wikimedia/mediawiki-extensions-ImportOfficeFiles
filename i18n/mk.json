@@ -32,7 +32,6 @@
 	"importofficefiles-ui-dialog-preview-title": "Преглед",
 	"importofficefiles-ui-dialog-preview-label": "Ќе се увезат следниве страници:",
 	"importofficefiles-ui-dialog-link-import-files-text": "Список на увезени податотеки извезени во $1",
-	"importofficefiles-filecollection-prefix": "Податотечна збирка",
 	"importofficefiles-api-storage-error-no-available-file": "Нема подигнати податотеки",
 	"importofficefiles-api-storage-error-save-temp": "Привременото зачувување не е возможно",
 	"importofficefiles-ui-progress-import-images-step": "Увезувам слики...",

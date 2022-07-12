@@ -32,7 +32,6 @@
 	"importofficefiles-ui-dialog-preview-title": "Förhandsgranska",
 	"importofficefiles-ui-dialog-preview-label": "Följande sidor kommer importeras",
 	"importofficefiles-ui-dialog-link-import-files-text": "Lista över importerade filer som exporterats till $1",
-	"importofficefiles-filecollection-prefix": "Filsamling",
 	"importofficefiles-api-storage-error-no-available-file": "Inga uppladdningsfiler tillgängliga",
 	"importofficefiles-api-storage-error-save-temp": "Ingen temporär sparfil tillgänglig",
 	"importofficefiles-ui-progress-import-images-step": "Importerar bilder...",

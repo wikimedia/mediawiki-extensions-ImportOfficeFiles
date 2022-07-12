@@ -32,7 +32,6 @@
 	"importofficefiles-ui-dialog-preview-title": "Önizleme",
 	"importofficefiles-ui-dialog-preview-label": "Aşağıdaki sayfalar içe aktarılacak",
 	"importofficefiles-ui-dialog-link-import-files-text": "$1 sayfasına aktarılarak içe aktarılan dosyaların listesi",
-	"importofficefiles-filecollection-prefix": "Dosya koleksiyonu",
 	"importofficefiles-api-storage-error-no-available-file": "Yüklenen dosyası yok",
 	"importofficefiles-api-storage-error-save-temp": "Geçici kaydetme mümkün değil",
 	"importofficefiles-ui-progress-import-images-step": "Görüntüler içe aktarılıyor...",

@@ -24,7 +24,6 @@
 	"importofficefiles-ui-dialog-settings-choose-split-level-label": "حدد المستوى الذي يجب أن تقسم الصفحات عليه",
 	"importofficefiles-ui-dialog-preview-label": "الصفحات التالية سيتم استيرادها",
 	"importofficefiles-ui-dialog-link-import-files-text": "قائمة الملفات المستوردة التي تم تصديرها إلى $1",
-	"importofficefiles-filecollection-prefix": "مجموعة الملفات",
 	"importofficefiles-api-storage-error-no-available-file": "لا توجد ملفات تحميل متاحة",
 	"importofficefiles-api-storage-error-save-temp": "لا يمكن الحفظ المؤقت",
 	"importofficefiles-ui-progress-import-images-step": "استيراد الصور ...",

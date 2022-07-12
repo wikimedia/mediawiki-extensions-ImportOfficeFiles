@@ -31,6 +31,5 @@
 	"importofficefiles-ui-dialog-settings-split-level-3": "Level 3 Überschriften",
 	"importofficefiles-ui-dialog-preview-title": "Vorschau",
 	"importofficefiles-ui-dialog-preview-label": "Die folgenden Seiten werden importiert",
-	"importofficefiles-ui-dialog-link-import-files-text": "Liste der importierten Dateien nach $1 exportiert",
-	"importofficefiles-filecollection-prefix": "Dateiensammlung"
+	"importofficefiles-ui-dialog-link-import-files-text": "Liste der importierten Dateien nach $1 exportiert"
 }

@@ -26,7 +26,6 @@
 	"importofficefiles-ui-dialog-preview-title": "Pratayang",
 	"importofficefiles-ui-dialog-preview-label": "Halaman berikut ini akan diimpor",
 	"importofficefiles-ui-dialog-link-import-files-text": "Daftar berkas impor yang diekspor ke $1",
-	"importofficefiles-filecollection-prefix": "Koleksi berkas",
 	"importofficefiles-ui-progress-import-images-step": "Mengimpor gambar...",
 	"importofficefiles-ui-progress-import-pages-step": "Mengimpor halaman...",
 	"importofficefiles-ui-progress-remove-files-step": "Menghapus berkas sementara..."
