@@ -5,8 +5,6 @@
 		]
 	},
 	"importofficefiles-desc": "Ofis dosyalarının viki sayfası olarak içe aktarılmasına izin verir",
-	"importofficefiles-ui-action-new-import-text": "Yeni içe aktarma",
-	"importofficefiles-ui-action-new-import-title": "Yeni içe aktarma oluştur",
 	"importofficefiles-ui-import-dialog-title": "Dosyayı içe aktar",
 	"importofficefiles-ui-import-completed": "İçe aktarma tamamlandı!",
 	"importofficefiles-ui-import-in-progress": "İçe aktarma devam ediyor ...",

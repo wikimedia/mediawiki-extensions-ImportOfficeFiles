@@ -5,8 +5,6 @@
 		]
 	},
 	"importofficefiles-desc": "Gör det möjligt att importera kontorsfiler som wikisidor",
-	"importofficefiles-ui-action-new-import-text": "Ny importering",
-	"importofficefiles-ui-action-new-import-title": "Utför ny importering",
 	"importofficefiles-ui-import-dialog-title": "Importera fil",
 	"importofficefiles-ui-import-completed": "Importering slutförd!",
 	"importofficefiles-ui-import-in-progress": "Importering pågår...",

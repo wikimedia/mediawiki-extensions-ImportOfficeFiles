@@ -5,8 +5,6 @@
 		]
 	},
 	"importofficefiles-desc": "Овозможува увоз на податотеки од Office како викистраници",
-	"importofficefiles-ui-action-new-import-text": "Нов увоз",
-	"importofficefiles-ui-action-new-import-title": "Направете нов увоз",
 	"importofficefiles-ui-import-dialog-title": "Увези податотека",
 	"importofficefiles-ui-import-completed": "Увозот е готов!",
 	"importofficefiles-ui-import-in-progress": "Увозот е во тек...",

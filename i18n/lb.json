@@ -5,8 +5,6 @@
 		]
 	},
 	"importofficefiles-desc": "Erlaabt et fir Office-Fichieren als Wiki-Säiten z'importéieren",
-	"importofficefiles-ui-action-new-import-text": "Neien Import",
-	"importofficefiles-ui-action-new-import-title": "En neien Import maachen",
 	"importofficefiles-ui-import-dialog-title": "Fichier importéieren",
 	"importofficefiles-ui-import-completed": "Import fäerdeg!",
 	"importofficefiles-ui-import-in-progress": "Import ass am gaangen ...",
