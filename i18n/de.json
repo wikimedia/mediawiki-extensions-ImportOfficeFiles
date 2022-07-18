@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hallo Welt GmbH"
+			"Hallo Welt GmbH",
+			"Brettchenweber"
 		]
 	},
 	"importofficefiles-desc": "Erlaubt das Importieren von Office-Dateien als Wikiseiten",
-	"importofficefiles-ui-action-import-msword-text": "Word Datei importieren",
-	"importofficefiles-ui-action-import-msword-title": "Seiten mit einer Microsoft Word Datei erzeugen",
+	"importofficefiles-ui-action-import-msword-text": "Word-Datei importieren",
+	"importofficefiles-ui-action-import-msword-title": "Seiten mit einer Microsoft-Word-Datei erzeugen",
 	"importofficefiles-ui-import-dialog-title": "Datei importieren",
 	"importofficefiles-ui-import-completed": "Import abgeschlossen!",
 	"importofficefiles-ui-import-in-progress": "Import wird durchgeführt ...",
@@ -32,6 +33,5 @@
 	"importofficefiles-ui-dialog-preview-title": "Vorschau",
 	"importofficefiles-ui-dialog-preview-label": "Die folgenden Seiten werden importiert",
 	"importofficefiles-ui-dialog-link-import-files-text": "Liste der importierten Dateien nach $1 exportiert",
-	"importofficefiles-filecollection-prefix": "Dateiensammlung",
 	"importofficefiles-api-storage-error-no-valid-module": "Kein Modul zur Verarbeitung dieser Datei verfügbar"
 }
