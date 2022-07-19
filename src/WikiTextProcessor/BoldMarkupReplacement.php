@@ -3,21 +3,8 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\WikiTextProcessor;
 
 use MediaWiki\Extension\ImportOfficeFiles\IWikiTextProcessor;
-use MediaWiki\Extension\ImportOfficeFiles\Workspace;
 
 class BoldMarkupReplacement implements IWikiTextProcessor {
-
-	/**
-	 * @var Workspace
-	 */
-	private $workspace;
-
-	/**
-	 * @param Workspace $workspace
-	 */
-	public function __construct( Workspace $workspace ) {
-		$this->workspace = $workspace;
-	}
 
 	/**
 	 * @param string $wikiText
