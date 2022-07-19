@@ -6,6 +6,7 @@ use MediaWiki\Extension\ImportOfficeFiles\Process\FileConvertProcessStep;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Rest\SimpleHandler;
 use MWStake\MediaWiki\Component\ProcessManager\ManagedProcess;
+use RequestContext;
 use Wikimedia\ParamValidator\ParamValidator;
 use function Sabre\HTTP\decodePath;
 
@@ -25,6 +26,8 @@ class FileAnalyzeHandler extends SimpleHandler {
 		$structure = $config['config']['structure'];
 		$conflict = $config['config']['conflict'];
 
+		$context = RequestContext::getMain();
+
 		$process = new ManagedProcess( [
 			'file-convert-step' => [
 				'class' => FileConvertProcessStep::class,
@@ -33,7 +36,8 @@ class FileAnalyzeHandler extends SimpleHandler {
 					$file,
 					$title,
 					$structure,
-					$conflict
+					$conflict,
+					$context->getUser()->getName()
 				]
 			]
 		], 300 );

@@ -39,6 +39,11 @@ class MSOfficeWordConverter implements IConverter {
 	private $verbose;
 
 	/**
+	 * @var string
+	 */
+	private $username = '';
+
+	/**
 	 * @param Workspace $workspace
 	 * @return ConverterResult
 	 */
@@ -50,6 +55,7 @@ class MSOfficeWordConverter implements IConverter {
 		$this->namespace = $params->getNamespace();
 		$this->categories = $params->getCategories();
 		$this->verbose = $params->getVerbose();
+		$this->username = $params->getUsername();
 
 		$this->resultDir = $this->workspace->createSubDir( self::DIR_RESULT );
 
@@ -223,7 +229,7 @@ class MSOfficeWordConverter implements IConverter {
 		for ( $index = 0; $index < $converted->count(); $index++ ) {
 			$title = $converted->item( $index )->getLabel();
 			$text = file_get_contents( $converted->item( $index )->getFilePath() );
-			$pageXmls[] = $importXmlBuilder->buildPageXml( $title, $this->namespace, $text );
+			$pageXmls[] = $importXmlBuilder->buildPageXml( $title, $text, $this->username );
 		}
 		$importXml = $importXmlBuilder->buildImportXml( $pageXmls );
 		file_put_contents( "$this->resultDir/import.xml", $importXml );
