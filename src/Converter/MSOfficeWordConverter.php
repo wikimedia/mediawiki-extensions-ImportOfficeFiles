@@ -125,9 +125,9 @@ class MSOfficeWordConverter implements IConverter {
 	private function getWikiTextProcessors(): array {
 		return [
 			new ImageReplacement( $this->workspace ),
-			new BoldMarkupReplacement( $this->workspace ),
-			new ItalicMarkupReplacement( $this->workspace ),
-			new RemoveIllegalMarkup( $this->workspace )
+			new BoldMarkupReplacement(),
+			new ItalicMarkupReplacement(),
+			new RemoveIllegalMarkup()
 		];
 	}
 
