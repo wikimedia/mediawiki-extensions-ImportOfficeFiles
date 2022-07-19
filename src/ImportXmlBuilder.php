@@ -6,22 +6,29 @@ class ImportXmlBuilder {
 
 	/**
 	 * @param string $title
-	 * @param string $namespace
 	 * @param string $wikiText
+	 * @param string $username
 	 * @return string
 	 */
-	public function buildPageXml( $title, $namespace, $wikiText ): string {
+	public function buildPageXml( $title, $wikiText, $username ): string {
+		$contributor = '';
+		if ( $username !== '' ) {
+			$contributor = '
+			<contributor>
+				<username>' . $username . '</username>
+			</contributor>';
+		}
+
 		$xml = '<page>
-		  <title>' . $title . '</title>
-		  <ns>' . $namespace . '</ns>
-		  <revision>
-			<model>wikitext</model>
-			<format>text/x-wiki</format>
-			<text bytes="' . strlen( $wikiText ) . '" xml:space="preserve">
-			' . htmlspecialchars( $wikiText ) . '
-			</text>
-		  </revision>
-		</page>';
+	<title>' . $title . '</title>
+	<revision>' . $contributor . '
+		<model>wikitext</model>
+		<format>text/x-wiki</format>
+		<text bytes="' . strlen( $wikiText ) . '" xml:space="preserve">
+		' . htmlspecialchars( $wikiText ) . '
+		</text>
+	</revision>
+</page>';
 		return $xml;
 	}
 
