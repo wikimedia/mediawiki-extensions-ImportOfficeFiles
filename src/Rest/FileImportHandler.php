@@ -9,6 +9,7 @@ use MediaWiki\Extension\ImportOfficeFiles\Process\ImportProcess\RemoveFilesStep;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Rest\SimpleHandler;
 use MWStake\MediaWiki\Component\ProcessManager\ManagedProcess;
+use RequestContext;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class FileImportHandler extends SimpleHandler {
@@ -33,6 +34,13 @@ class FileImportHandler extends SimpleHandler {
 
 		$uploadId = $request->getPathParam( "uploadId" );
 
+		$context = RequestContext::getMain();
+		$user = $context->getUser();
+		$username = '';
+		if ( !$user->isAnon() ) {
+			$username = $user->getName();
+		}
+
 		$importXmlScript = $GLOBALS['IP'] . '/maintenance/importDump.php';
 		$importImagesScript = $GLOBALS['IP'] . '/maintenance/importImages.php';
 
@@ -43,6 +51,7 @@ class FileImportHandler extends SimpleHandler {
 					$uploadId,
 					$this->uploadDirectory,
 					$importImagesScript,
+					$username
 				]
 			],
 			'import-pages-step' => [

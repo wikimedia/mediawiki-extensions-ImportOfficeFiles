@@ -69,7 +69,12 @@ class ImportPagesStep implements InterruptingProcessStep, LoggerAwareInterface {
 
 		try {
 			// php {$IP}/maintenance/importDump.php images/cache/ImportOfficeFiles/{uploadId}/result/import.xml
-			$processPages = new Process( [ $GLOBALS['wgPhpCli'], $this->importXmlScript, $importXmlPath ] );
+			$processPages = new Process(
+				[ $GLOBALS['wgPhpCli'],
+				$this->importXmlScript,
+				$importXmlPath,
+				'--username-prefix=""'
+			] );
 			$processPages->run();
 		} catch ( Exception $e ) {
 			return [ 'output_pages' => $e->getMessage() ];

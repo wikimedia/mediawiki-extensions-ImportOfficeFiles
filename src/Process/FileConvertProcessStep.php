@@ -64,11 +64,17 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 	private $uploadId;
 
 	/**
+	 * @var string
+	 */
+	private $username;
+
+	/**
 	 * @param string $uploadId
 	 * @param string $file
 	 * @param string $title
 	 * @param string $structure
 	 * @param string $conflict
+	 * @param string $username
 	 * @throws Exception
 	 */
 	public function __construct(
@@ -76,7 +82,8 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 		string $file,
 		string $title,
 		string $structure,
-		string $conflict
+		string $conflict,
+		string $username
 	) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
@@ -114,6 +121,8 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 			throw new Exception( 'File does not exist' );
 		}
 		$this->source = new SplFileInfo( $sourceFilePath );
+
+		$this->username = $username;
 
 		$logger = LoggerFactory::getInstance( 'ImportOfficeFiles' );
 		$this->setLogger( $logger );
@@ -230,13 +239,14 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 			'split' => $result->getSplit(),
 			'categories' => $result->getCategories(),
 			'ns-filerepo-compat' => $result->getNsFileRepoCompat(),
-			'title-map' => $result->getTitleMap()
+			'title-map' => $result->getTitleMap(),
+			'username' => $this->username
 		];
 
 		$workspace->addToBucket( MSOfficeWord::BUCKET_CONVERTER_PARAMS, $params );
 		$workspace->saveBucket( MSOfficeWord::BUCKET_CONVERTER_PARAMS );
-		$extractor = $this->module->getConverter();
-		$result = $extractor->convert( $workspace );
+		$converter = $this->module->getConverter();
+		$result = $converter->convert( $workspace );
 		$status = $result->getStatus();
 
 		if ( $status ) {

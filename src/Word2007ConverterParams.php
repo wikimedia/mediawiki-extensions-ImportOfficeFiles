@@ -20,6 +20,11 @@ class Word2007ConverterParams {
 	private $verbose = false;
 
 	/**
+	 * @var string
+	 */
+	private $username = '';
+
+	/**
 	 * @param array $params
 	 */
 	public function __construct( $params ) {
@@ -31,6 +36,9 @@ class Word2007ConverterParams {
 		}
 		if ( isset( $params['verbose'] ) ) {
 			$this->verbose = $params['verbose'];
+		}
+		if ( isset( $params['username'] ) ) {
+			$this->username = $params['username'];
 		}
 	}
 
@@ -53,5 +61,12 @@ class Word2007ConverterParams {
 	 */
 	public function getVerbose(): bool {
 		return $this->verbose;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getUsername(): string {
+		return $this->username;
 	}
 }
