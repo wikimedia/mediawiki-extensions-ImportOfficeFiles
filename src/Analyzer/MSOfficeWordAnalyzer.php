@@ -154,7 +154,7 @@ class MSOfficeWordAnalyzer implements IAnalyzer {
 		$result = [
 			'filename' => $this->file->getFilename(),
 			'namespace' => $analyzerParams->getNamespace(),
-			'base-title' => $this->baseTitle,
+			'base-title' => $titleMap[0],
 			'split' => $analyzerParams->getSplit(),
 			'categories' => $analyzerParams->getCategories(),
 			'ns-filerepo-compat' => $analyzerParams->getNsFileRepoCompat(),
