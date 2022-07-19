@@ -123,7 +123,7 @@ officeimport.ui.ImportDialog.prototype.switchPage = function ( name, data ) {
 				importDone: function ( processId, timer ) {
 					clearInterval( timer );
 
-					page.onImportDone( data.pageTitles, this.targetTitle );
+					page.onImportDone( data.pageTitles, data.pageTitles[ 0 ] );
 					this.actions.setMode( 'ImportDone' );
 					this.actions.setAbilities( { done: true } );
 
