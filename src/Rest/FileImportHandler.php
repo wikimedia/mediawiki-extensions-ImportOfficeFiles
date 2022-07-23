@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\Rest;
 
 use Config;
+use Exception;
 use MediaWiki\Extension\ImportOfficeFiles\Process\ImportProcess\ImportImagesStep;
 use MediaWiki\Extension\ImportOfficeFiles\Process\ImportProcess\ImportPagesStep;
 use MediaWiki\Extension\ImportOfficeFiles\Process\ImportProcess\RemoveFilesStep;
@@ -73,7 +74,15 @@ class FileImportHandler extends SimpleHandler {
 
 		/** @var \MWStake\MediaWiki\Component\ProcessManager\ProcessManager $processManager */
 		$processManager = MediaWikiServices::getInstance()->getService( 'ProcessManager' );
-		$processId = $processManager->startProcess( $process );
+
+		try {
+			$processId = $processManager->startProcess( $process );
+		} catch ( Exception $e ) {
+			return $this->getResponseFactory()->createJson( [
+				'success' => false,
+				'error' => $e->getMessage()
+			] );
+		}
 
 		return $this->getResponseFactory()->createJson( [
 			'success' => true,

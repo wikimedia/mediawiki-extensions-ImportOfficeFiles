@@ -81,9 +81,14 @@ officeimport.ui.ImportProgressPage.prototype.startImport = function ( uploadId, 
 	mw.loader.using( [ 'ext.importofficefiles.api' ], function () {
 		const api = new officeimport.api.Api();
 		api.startImport( uploadId, fileName, data ).done( function ( response ) {
-			this.emit( 'importRunning', response.processId, fileName );
+			if ( response.processId ) {
+				this.emit( 'importRunning', response.processId, fileName );
+			} else {
+				// Import process failed to start
+				this.emit( 'importFailed', 'Import process failed to start', response.error );
+			}
 		}.bind( this ) ).fail( function ( error ) {
-			// Import process failed to start
+			// Probably API is unreachable currently, or there is some fatal
 			this.emit( 'importFailed', 'Import process failed to start', error );
 		}.bind( this ) );
 	}.bind( this ) );
