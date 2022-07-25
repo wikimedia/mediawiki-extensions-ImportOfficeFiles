@@ -3,12 +3,15 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\Rest;
 
 use Config;
+use MediaWiki\Extension\ImportOfficeFiles\ModuleFactory;
+use MediaWiki\Extension\ImportOfficeFiles\Workspace;
 use MediaWiki\Rest\HttpException;
 use MediaWiki\Rest\Response;
 use MediaWiki\Rest\SimpleHandler;
 use Message;
 use MWCryptRand;
 use RequestContext;
+use SplFileInfo;
 use UploadBase;
 use UploadFromFile;
 
@@ -84,6 +87,14 @@ class FileStorageHandler extends SimpleHandler {
 
 		$files['file']->moveTo( $path . $files['file']->getClientFilename() );
 
+		$file = new SplFileInfo( $path . $files['file']->getClientFilename() );
+		$hasValidModule = $this->hasValidModule( $file, $uniqueID );
+		if ( !$hasValidModule ) {
+			throw new HttpException( Message::newFromKey(
+				"importofficefiles-api-storage-error-no-valid-module"
+			) );
+		}
+
 		return $this->getResponseFactory()->createJson( [
 			'success' => true,
 			'uploadId' => $uniqueID,
@@ -91,4 +102,25 @@ class FileStorageHandler extends SimpleHandler {
 		] );
 	}
 
+	/**
+	 * @param SplFileInfo $file
+	 * @param string $uniqueID
+	 * @return bool
+	 */
+	private function hasValidModule( SplFileInfo $file, string $uniqueID ): bool {
+		$path = $this->uploadDirectory . '/cache/ImportOfficeFiles/';
+
+		$workspace = new Workspace( RequestContext::getMain()->getConfig() );
+		$workspace->init( $uniqueID );
+		$workspace->uploadSourceFile( $file );
+
+		$moduleFactory = new ModuleFactory();
+		$module = $moduleFactory->getModule( $workspace );
+
+		if ( !$module ) {
+			return false;
+		}
+
+		return true;
+	}
 }

@@ -14,7 +14,7 @@ class ItalicMarkupReplacement implements IWikiTextProcessor {
 		$wikiText = str_replace( '###PRESERVEITALIC######PRESERVEITALIC###', '', $wikiText );
 
 		$matches = explode( '###PRESERVEITALIC###', $wikiText );
-		if ( !$matches || count( $matches ) < 1 ) {
+		if ( !$matches || count( $matches ) <= 1 ) {
 			return $wikiText;
 		}
 

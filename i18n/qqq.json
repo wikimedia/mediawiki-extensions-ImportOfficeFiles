@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hallo Welt GmbH"
+			"Hallo Welt GmbH",
+			"Robby"
 		]
 	},
 	"importofficefiles-desc": "Description of ImportOfficeFiles for [[Special:Version]]",
-	"importofficefiles-ui-action-new-import-text": "Text label for action new import",
-	"importofficefiles-ui-action-new-import-title": "Title for label action new import",
+	"importofficefiles-ui-action-import-msword-text": "Text label for action to create pages from a Microsoft Word file",
+	"importofficefiles-ui-action-import-msword-title": "Title for action to create pages from a Microsoft Word file",
 	"importofficefiles-ui-import-dialog-title": "Title for dialog where a file can be imported",
 	"importofficefiles-ui-import-completed": "Success message in dialog after file was imported",
 	"importofficefiles-ui-import-in-progress": "Status message in dialog during importing file",
@@ -23,8 +24,8 @@
 	"importofficefiles-ui-dialog-settings-structure-label-checkbox": "Label for checkbox to select options if content should be divided",
 	"importofficefiles-ui-dialog-settings-conflicts-title": "Label for setting conflicts with title",
 	"importofficefiles-ui-dialog-settings-conflicts-behavior-label": "Label for setting how conflicts with page title should be handled",
-	"importofficefiles-ui-dialog-settings-conflicts-rename": "Label for option rename",
-	"importofficefiles-ui-dialog-settings-conflicts-override": "Label for option override",
+	"importofficefiles-ui-dialog-settings-conflicts-rename": "Label for option rename\n{{identical|Rename}}",
+	"importofficefiles-ui-dialog-settings-conflicts-override": "Label for option override\n{{identical|Override}}",
 	"importofficefiles-ui-dialog-settings-choose-split-level-label": "Label for dropdown widget to select split level of content",
 	"importofficefiles-ui-dialog-settings-split-level-1": "Label for option level 1 in dropdown",
 	"importofficefiles-ui-dialog-settings-split-level-2": "Label for option level 2 in dropdown",
@@ -34,6 +35,7 @@
 	"importofficefiles-ui-dialog-link-import-files-text": "Label for import page with link to file collection",
 	"importofficefiles-api-storage-error-no-available-file": "Error message returned by an API module in case a requested file was not found",
 	"importofficefiles-api-storage-error-save-temp": "Error message returned by an API module in case the temporary directory could not be written",
+	"importofficefiles-api-storage-error-no-valid-module": "Error message returned by an API module in case no module to handle this file was found",
 	"importofficefiles-ui-progress-import-images-step": "Label, associated with import process step, displayed above import progress bar",
 	"importofficefiles-ui-progress-import-pages-step": "Label, associated with import process step, displayed above import progress bar",
 	"importofficefiles-ui-progress-remove-files-step": "Label, associated with import process step, displayed above import progress bar",

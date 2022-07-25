@@ -9,7 +9,7 @@ use MediaWiki\Extension\ImportOfficeFiles\IAnalyzer;
 use MediaWiki\Extension\ImportOfficeFiles\IConverter;
 use MediaWiki\Extension\ImportOfficeFiles\IModule;
 use MediaWiki\Extension\ImportOfficeFiles\IModuleMimeValidator;
-use MediaWiki\Extension\ImportOfficeFiles\MimeValidator\MSOfficeMimeValidator;
+use MediaWiki\Extension\ImportOfficeFiles\MimeValidator;
 
 class MSOfficeWord implements IModule {
 
@@ -80,7 +80,7 @@ class MSOfficeWord implements IModule {
 	 * @return IModuleMimeValidator
 	 */
 	private function getMimeValidator(): IModuleMimeValidator {
-		return new MSOfficeMimeValidator( $this->config );
+		return new MimeValidator( $this, $this->config );
 	}
 
 	/**
@@ -89,5 +89,19 @@ class MSOfficeWord implements IModule {
 	 */
 	public function setWorkspace( $workspace ) {
 		$this->workspace = $workspace;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getSupportedMimeTypes(): array {
+		return [ 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ];
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getSupportedFileExtensions(): array {
+		return [ 'docx' ];
 	}
 }

@@ -13,10 +13,7 @@ class ModuleFactory {
 	 * @return IModule|null
 	 */
 	public function getModule( $workspace ): ?IModule {
-		$extensionRegistry = ExtensionRegistry::getInstance();
-		$moduleSpecs = $extensionRegistry->getAttribute(
-			'ImportOfficeFilesModuleRegistry'
-		);
+		$moduleSpecs = $this->getModuleSpecs();
 
 		$module = null;
 		$objectFactory = MediaWikiServices::getInstance()->getObjectFactory();
@@ -34,10 +31,42 @@ class ModuleFactory {
 			}
 		}
 
-		if ( $module === null ) {
-			throw new Exception( "No module defined for this file type" );
+		return $module;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getSupportedMimeTypes(): array {
+		$moduleSpecs = $this->getModuleSpecs();
+
+		$mimeTypes = [];
+		$objectFactory = MediaWikiServices::getInstance()->getObjectFactory();
+		foreach ( $moduleSpecs as $name => $specs ) {
+			$curModule = $objectFactory->createObject( $specs );
+
+			if ( !( $curModule instanceof IModule ) ) {
+				throw new Exception( "$name is not instance of IModule" );
+			}
+
+			$mimeTypes = array_merge(
+				$mimeTypes,
+				$curModule->getSupportedMimeTypes()
+			);
 		}
 
-		return $module;
+		return $mimeTypes;
+	}
+
+	/**
+	 * @return array
+	 */
+	private function getModuleSpecs(): array {
+		$extensionRegistry = ExtensionRegistry::getInstance();
+		$moduleSpecs = $extensionRegistry->getAttribute(
+			'ImportOfficeFilesModuleRegistry'
+		);
+
+		return $moduleSpecs;
 	}
 }

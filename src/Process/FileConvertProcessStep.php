@@ -211,6 +211,12 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 	 */
 	private function runAnalyzer( Workspace $workspace ): AnalyzerResult {
 		$this->logger->debug( "Start analyzing ..." );
+
+		if ( $this->module === null ) {
+			$this->logger->debug( "No module found." );
+			return false;
+		}
+
 		$analyzer = $this->module->getAnalyzer();
 		$result = $analyzer->analyze( $workspace );
 		$status = $result->getStatus();
