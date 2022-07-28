@@ -79,7 +79,7 @@ class MSOfficeWordConverter implements IConverter {
 		$this->saveXML( $converted );
 
 		$converterData = [
-			'file' => $this->resultDir . 'import.xml',
+			'file' => $this->resultDir . '/import.xml',
 			'images' => $mediaDir,
 			'file-extensions' => $fileExtensions
 		];
