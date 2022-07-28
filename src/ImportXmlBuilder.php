@@ -20,7 +20,7 @@ class ImportXmlBuilder {
 		}
 
 		$xml = '<page>
-	<title>' . $title . '</title>
+	<title>' . htmlspecialchars( $title ) . '</title>
 	<revision>' . $contributor . '
 		<model>wikitext</model>
 		<format>text/x-wiki</format>
