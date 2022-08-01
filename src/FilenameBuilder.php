@@ -14,6 +14,11 @@ class FilenameBuilder {
 	public function build(
 		string $namespace, string $baseTitle, string $filename, bool $nsFileRepoCompat = false
 		): string {
+		if ( strpos( $baseTitle, $namespace . ':' ) === 0 ||
+			strpos( $baseTitle, $namespace . '_' ) === 0 ) {
+			$baseTitle = substr( $baseTitle, strlen( $namespace ) + 1 );
+		}
+
 		if ( $namespace !== '' ) {
 			if ( $nsFileRepoCompat === true ) {
 				$namespace = $namespace . ':';
