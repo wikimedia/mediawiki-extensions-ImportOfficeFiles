@@ -40,5 +40,21 @@ class FilenameBuilderTest extends TestCase {
 		);
 		$expected = "TestCase:Some_base_title_Some_sub_page_image3.jpg";
 		$this->assertEquals( $expected, $actual );
+
+		$actual = $builder->build(
+			'TestCase',
+			'TestCase:Some base title',
+			'image1.jpg'
+		);
+		$expected = "TestCase_Some_base_title_image1.jpg";
+		$this->assertEquals( $expected, $actual );
+
+		$actual = $builder->build(
+			'TestCase',
+			'TestCase_Some base title',
+			'image1.jpg'
+		);
+		$expected = "TestCase_Some_base_title_image1.jpg";
+		$this->assertEquals( $expected, $actual );
 	}
 }
