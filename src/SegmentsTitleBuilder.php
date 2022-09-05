@@ -134,19 +134,23 @@ class SegmentsTitleBuilder {
 	 * @return array
 	 */
 	private function makeTitleSafe( string $label, array $titleParts ): array {
-		// Remove illegal chars
-		$label = str_replace( [ "/", ":", "\t", "\n" ], ' ', $label );
-
 		// Remove wikitext placeholder
 		$label = preg_replace( "/###PRESERVE(.*?)###/", '', $label );
+
+		// Remove illegal chars
+		$illegalChars = [
+			"/", ":", "\t", "\n",
+			"<", ">", "[", "]",
+			"#", "{", "}", "|"
+		];
+		$label = str_replace( $illegalChars, ' ', $label );
 
 		$titleParts[] = $label;
 		$titleText = implode( "/", $titleParts );
 
 		$services = MediaWikiServices::getInstance();
 
-		/** var TitleFactory */
-		$titleFactory = $services->get( 'TitleFactory' );
+		$titleFactory = $services->getTitleFactory();
 
 		if ( $this->hasNamespace ) {
 			$title = $titleFactory->newFromText( "{$this->namespace}:{$titleText}" );
@@ -158,6 +162,10 @@ class SegmentsTitleBuilder {
 			}
 		} else {
 			$title = $titleFactory->newFromText( $titleText );
+		}
+
+		if ( $title === null ) {
+			$i = 1;
 		}
 
 		$titleText = $title->getText();
