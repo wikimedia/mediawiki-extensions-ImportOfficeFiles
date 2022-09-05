@@ -5,5 +5,7 @@
 		]
 	},
 	"importofficefiles-ui-action-import-msword-title": "Raaj seeidaid Microsoft Word -teâttõõzzâst",
+	"importofficefiles-ui-dialog-action-cancel": "Jõõsk",
+	"importofficefiles-ui-dialog-label-select-file": "Vaʹlljed teâttõõzz",
 	"importofficefiles-ui-dialog-settings-conflicts-rename": "Uuʹd ođđ nõõm"
 }
