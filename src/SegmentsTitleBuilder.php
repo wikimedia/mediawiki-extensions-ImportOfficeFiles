@@ -164,10 +164,6 @@ class SegmentsTitleBuilder {
 			$title = $titleFactory->newFromText( $titleText );
 		}
 
-		if ( $title === null ) {
-			$i = 1;
-		}
-
 		$titleText = $title->getText();
 
 		if ( $this->uncollide ) {
