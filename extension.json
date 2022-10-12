@@ -84,6 +84,9 @@
 				},
 				"underline": {
 					"factory": "\\MediaWiki\\Extension\\ImportOfficeFiles\\Reader\\Property\\Underline::factory"
+				},
+				"justify": {
+					"factory": "\\MediaWiki\\Extension\\ImportOfficeFiles\\Reader\\Property\\JustifyContent::factory"
 				}
 			}
 		}
@@ -241,7 +244,7 @@
 			"public": true
 		},
 		"ImportOfficeFilesWord2007TagPropertyProcessorPipeline": {
-			"value": [ "style", "color", "highlight", "shadow", "verticalalign", "italic", "strikethrough", "underline", "bold" ],
+			"value": [ "style", "color", "justify", "highlight", "shadow", "verticalalign", "italic", "strikethrough", "underline", "bold" ],
 			"public": true
 		}
 	},
