@@ -8,6 +8,11 @@ use MediaWiki\Extension\ImportOfficeFiles\Reader\Tag\Paragraph\ListItem;
 class Paragraph extends TagProcessorBase {
 
 	/**
+	 * @inheritDoc
+	 */
+	protected $wrapHtmlTag = 'p';
+
+	/**
 	 * @param DOMNode $node
 	 * @return string
 	 */
