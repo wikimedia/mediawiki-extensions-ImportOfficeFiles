@@ -44,6 +44,7 @@ class SanitizeHeading {
 
 			$text = $this->removeHtml( $curText );
 			$text = $this->removeWikiMarkup( $text );
+			// Do not trim wikiText. This prevent removing headings.
 			$curHeading = preg_quote( $curHeading );
 			$wikiText = preg_replace( "#$curHeading#m", $eq . $text . $eq, $wikiText );
 
@@ -58,8 +59,12 @@ class SanitizeHeading {
 	 */
 	private function removeHtml( $text ): string {
 		$matches = [];
-		$status = preg_match_all( "#(<.*?>)(.*?)(<\/.*?>)#m", $text, $matches );
 
+		// Remove marker html
+		$text = preg_replace( "#(<[^>]*?><\/[^>]*?>)#m", '', $text );
+
+		// Remove wrapper html
+		$status = preg_match_all( "#(<[^>]*?>)(.*?)(<\/[^>]*?>)#m", $text, $matches );
 		if ( !$status || ( $status === 0 ) ) {
 			return $text;
 		}
@@ -70,6 +75,7 @@ class SanitizeHeading {
 			$curMatch = preg_quote( $matches[0][$index] );
 			$text = preg_replace( "#$curMatch#m", $matches[2][$index], $text );
 		}
+
 		return $text;
 	}
 
