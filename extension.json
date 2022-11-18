@@ -88,6 +88,9 @@
 			}
 		}
 	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\ImportOfficeFiles\\": "src/",
 		"MediaWiki\\Extension\\ImportOfficeFiles\\Tests\\": "tests/phpunit"
@@ -187,14 +190,9 @@
 			]
 		},
 		{
-			"path": "/officeimport/file_analyze/start/{uploadId}/{filename}",
+			"path": "/officeimport/file_analyze/{uploadId}/{filename}",
 			"method": "GET",
 			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\Rest\\FileAnalyzeHandler"
-		},
-		{
-			"path": "/officeimport/file_analyze/status/{processId}",
-			"method": "GET",
-			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\Rest\\ProcessStatusHandler"
 		},
 		{
 			"path": "/officeimport/file_structure/{uploadId}",
@@ -215,23 +213,31 @@
 			]
 		},
 		{
-			"path": "/officeimport/file_import/start/{uploadId}/{filename}",
+			"path": "/officeimport/file_import/images/{uploadId}",
 			"method": "GET",
-			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\Rest\\FileImportHandler",
+			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\Rest\\ImportProcess\\ImportImagesHandler",
 			"services": [
 				"MainConfig",
-				"ConfigFactory"
+				"ImportOfficeFilesImporter"
 			]
 		},
 		{
-			"path": "/officeimport/file_import/status/{processId}",
+			"path": "/officeimport/file_import/pages/{uploadId}",
 			"method": "GET",
-			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\Rest\\ProcessStatusHandler"
+			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\Rest\\ImportProcess\\ImportPagesHandler",
+			"services": [
+				"MainConfig",
+				"ImportOfficeFilesImporter"
+			]
 		},
 		{
-			"path": "/officeimport/file_import/proceed/{processId}",
-			"method": "POST",
-			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\Rest\\ImportProceedHandler"
+			"path": "/officeimport/file_import/remove_temporary_files/{uploadId}",
+			"method": "GET",
+			"class": "MediaWiki\\Extension\\ImportOfficeFiles\\Rest\\ImportProcess\\RemoveTemporaryFilesHandler",
+			"services": [
+				"MainConfig",
+				"ImportOfficeFilesImporter"
+			]
 		}
 	],
 	"config_prefix": "wg",

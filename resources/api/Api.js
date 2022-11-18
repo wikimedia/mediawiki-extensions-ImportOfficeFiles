@@ -7,27 +7,33 @@ officeimport.api.Api.prototype.getPagesStructure = function ( uploadId ) {
 	return this.get( 'file_structure/{0}'.format( uploadId ) );
 };
 
-officeimport.api.Api.prototype.get = function ( path, data ) {
+officeimport.api.Api.prototype.get = function ( path, data, timeout ) {
 	data = data || {};
-	return this.ajax( path, data, 'GET' );
+	return this.ajax( path, data, 'GET', timeout );
 };
 
-officeimport.api.Api.prototype.post = function ( path, params ) {
+officeimport.api.Api.prototype.post = function ( path, params, timeout ) {
 	params = params || {};
-	return this.ajax( path, params, 'POST' );
+	return this.ajax( path, params, 'POST', timeout );
 };
 
-officeimport.api.Api.prototype.ajax = function ( path, data, method ) {
+officeimport.api.Api.prototype.ajax = function ( path, data, method, timeout ) {
 	data = data || {};
 	const dfd = $.Deferred();
 
-	$.ajax( {
+	const config = {
 		method: method,
 		url: this.makeUrl( path ),
 		data: data,
 		contentType: 'application/json',
 		dataType: 'json'
-	} ).done( function ( response ) {
+	};
+
+	if ( typeof timeout !== 'undefined' ) {
+		config.timeout = timeout;
+	}
+
+	$.ajax( config ).done( function ( response ) {
 		dfd.resolve( response );
 	} ).fail( function ( xhr, type, status ) {
 		// eslint-disable-next-line no-console
@@ -77,14 +83,11 @@ officeimport.api.Api.prototype.uploadFile = function ( file ) {
 	return dfd.promise();
 };
 
-officeimport.api.Api.prototype.startAnalyze = function ( uploadId, filename, data ) {
-	return this.get( 'file_analyze/start/{0}/{1}'.format( uploadId, encodeURIComponent( filename ) ),
-		JSON.stringify( { config: data } )
+officeimport.api.Api.prototype.doAnalyze = function ( uploadId, filename, data ) {
+	return this.get( 'file_analyze/{0}/{1}'.format( uploadId, encodeURIComponent( filename ) ),
+		JSON.stringify( { config: data } ),
+		300 * 1000
 	);
-};
-
-officeimport.api.Api.prototype.getAnalyzeStatus = function ( processId ) {
-	return this.get( 'file_analyze/status/{0}'.format( processId ) );
 };
 
 officeimport.api.Api.prototype.getContent = function ( uploadId, title ) {
@@ -93,16 +96,14 @@ officeimport.api.Api.prototype.getContent = function ( uploadId, title ) {
 	);
 };
 
-officeimport.api.Api.prototype.startImport = function ( uploadId, filename, config ) {
-	return this.get( 'file_import/start/{0}/{1}'.format( uploadId, encodeURIComponent( filename ) ),
-		JSON.stringify( { config: config } )
-	);
+officeimport.api.Api.prototype.importImages = function ( uploadId ) {
+	return this.get( 'file_import/images/{0}'.format( uploadId ), {}, 300 * 1000 );
 };
 
-officeimport.api.Api.prototype.getImportStatus = function ( processId ) {
-	return this.get( 'file_import/status/{0}'.format( processId ) );
+officeimport.api.Api.prototype.importPages = function ( uploadId ) {
+	return this.get( 'file_import/pages/{0}'.format( uploadId ), {}, 300 * 1000 );
 };
 
-officeimport.api.Api.prototype.importNextStep = function ( processId ) {
-	return this.post( 'file_import/proceed/{0}'.format( processId ) );
+officeimport.api.Api.prototype.removeTemporaryFiles = function ( uploadId ) {
+	return this.get( 'file_import/remove_temporary_files/{0}'.format( uploadId ) );
 };

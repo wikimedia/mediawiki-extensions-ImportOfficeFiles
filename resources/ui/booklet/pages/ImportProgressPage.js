@@ -20,20 +20,6 @@ officeimport.ui.ImportProgressPage = function ( name, cfg ) {
 		'remove-files-step'
 	];
 
-	/**
-	 * Process status API calls are executed with some intervals.
-	 * If current process step is finished - then the API call to
-	 * proceed to the next step is executed.
-	 *
-	 * And there can be a case when one API call was not finished yet, but another one starts.
-	 * It may cause some problems, like when we try to proceed to the next step twice in a row.
-	 * So we need to know if process status API call is running at the moment, to execute them
-	 * strictly one by one.
-	 *
-	 * @type {boolean}
-	 */
-	this.isStatusApiCallRunning = false;
-
 	this.progressBarValue = 0;
 	this.progressBarStep = 33;
 
@@ -75,99 +61,45 @@ officeimport.ui.ImportProgressPage.prototype.onImportDone = function ( pages, ti
  *
  * @param {string} uploadId ID of workspace directory, where file was uploaded to
  * @param {string} fileName Uploaded filename
- * @param {Object} data Some additional data/configuration
  */
-officeimport.ui.ImportProgressPage.prototype.startImport = function ( uploadId, fileName, data ) {
+officeimport.ui.ImportProgressPage.prototype.startImport = function ( uploadId ) {
 	mw.loader.using( [ 'ext.importofficefiles.api' ], function () {
 		const api = new officeimport.api.Api();
-		api.startImport( uploadId, fileName, data ).done( function ( response ) {
-			if ( response.processId ) {
-				this.emit( 'importRunning', response.processId, fileName );
+		api.importImages( uploadId ).done( function ( response ) {
+			if ( response.success ) {
+				this.progressBarValue += this.progressBarStep;
+				this.currentStep++;
+
+				this.updateProgressUI();
+
+				api.importPages( uploadId ).done( function ( importPagesResponse ) {
+					if ( importPagesResponse.success ) {
+						this.progressBarValue += this.progressBarStep;
+						this.currentStep++;
+
+						this.updateProgressUI();
+
+						api.removeTemporaryFiles( uploadId )
+						.done( function ( removeTempFilesResponse ) {
+							if ( removeTempFilesResponse.success ) {
+								this.emit( 'importDone' );
+							}
+						}.bind( this ) ).fail( function ( error ) {
+							this.emit( 'importFailed', 'Removing of temporary files failed', error );
+						}.bind( this ) );
+					} else {
+						this.emit( 'importFailed', 'Import pages failed', importPagesResponse );
+					}
+				}.bind( this ) ).fail( function ( error ) {
+					this.emit( 'importFailed', 'Import pages failed to start', error );
+				}.bind( this ) );
 			} else {
 				// Import process failed to start
-				this.emit( 'importFailed', 'Import process failed to start', response.error );
+				this.emit( 'importFailed', 'Import images failed', response );
 			}
 		}.bind( this ) ).fail( function ( error ) {
 			// Probably API is unreachable currently, or there is some fatal
-			this.emit( 'importFailed', 'Import process failed to start', error );
-		}.bind( this ) );
-	}.bind( this ) );
-};
-
-/**
- * Checks status of import process and proceed to the next process step if previous was finished.
- *
- * Process is split to several process steps, which are executed one be one.
- * If process is terminated (which means that all steps were executed) - then import is done.
- *
- * @param {string} processId Process UUID
- * @param {number} timer Timer ID, used to turn it off in case of errors or if process was finished
- */
-officeimport.ui.ImportProgressPage.prototype.checkImportStatus = function ( processId, timer ) {
-	this.updateProgressUI();
-
-	if ( this.isStatusApiCallRunning ) {
-		return;
-	}
-
-	mw.loader.using( [ 'ext.importofficefiles.api' ], function () {
-		this.isStatusApiCallRunning = true;
-
-		const api = new officeimport.api.Api();
-		api.getImportStatus( processId ).done( function ( response ) {
-			if ( response.state === 'terminated' ) {
-				if ( response.exitCode === 0 ) {
-					this.emit( 'importDone', response.pid, timer );
-				} else {
-					// Wrong exit code after process termination, something went wrong
-					this.emit( 'importFailed', 'Wrong exit code after process termination', response );
-					clearInterval( timer );
-				}
-			} else if ( response.state === 'interrupted' ) {
-				// If one process step is already finished, we should not check status again,
-				// before next step will start
-				// We will re-start this timer after next step starts
-				// clearInterval( timer );
-
-				if ( response.exitCode === 0 ) {
-					this.emit( 'importDone', response.pid, timer );
-				}
-
-				if ( !response.output.lastStep ) {
-					// No information about last step, it means that something went wrong
-					this.emit( 'importFailed', 'No information about last step provided', response );
-					clearInterval( timer );
-				}
-
-				this.progressBarValue += this.progressBarStep;
-
-				// Even if the last step was already executed - we anyway need to proceed
-				// with import process to correctly finish this process.
-				// eslint-disable-next-line no-shadow
-				api.importNextStep( processId ).done( function ( response ) {
-					if ( !response.success ) {
-						// One of the steps failed to start, we should not continue in such case
-						this.emit( 'importFailed', response.error, response );
-						clearInterval( timer );
-					}
-
-					this.isStatusApiCallRunning = false;
-
-					// If this is the last step - we should not increment that
-					if ( this.currentStep !== this.steps.length - 1 ) {
-						this.currentStep++;
-					}
-				}.bind( this ) ).fail( function ( error ) {
-					// Some unexpected exception was thrown when one of steps tried to start
-					this.emit( 'importFailed', 'Next process step failed to start', error );
-					clearInterval( timer );
-				}.bind( this ) );
-			} else {
-				this.isStatusApiCallRunning = false;
-			}
-		}.bind( this ) ).fail( function ( error ) {
-			// Getting import process status failed
-			this.emit( 'importFailed', 'Getting import process status failed', error );
+			this.emit( 'importFailed', 'Import images failed to start', error );
 		}.bind( this ) );
 	}.bind( this ) );
 };

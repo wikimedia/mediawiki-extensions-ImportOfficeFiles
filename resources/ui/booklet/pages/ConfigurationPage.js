@@ -151,13 +151,13 @@ officeimport.ui.ConfigurationPage.prototype.analyzeFile = function ( uploadId, f
 
 	mw.loader.using( [ 'ext.importofficefiles.api' ], function () {
 		const api = new officeimport.api.Api();
-		api.startAnalyze( uploadId, fileName, data ).done( function ( response ) {
-			if ( response.processId ) {
-				const timer = setInterval( function () {
-					this.checkAnalyzeStatus( response.processId, timer, dfd );
-				}.bind( this ), 1000 );
+		api.doAnalyze( uploadId, fileName, data ).done( function ( response ) {
+			if ( response.success ) {
+				this.emit( 'analyzeDone' );
+				dfd.resolve();
 			} else {
-				dfd.reject( 'Analyze process did not start correctly' );
+				this.emit( 'analyzeFailed' );
+				dfd.reject( response.error );
 			}
 		}.bind( this ) ).fail( function ( error ) {
 			this.emit( 'analyzeFailed', error );
@@ -167,28 +167,6 @@ officeimport.ui.ConfigurationPage.prototype.analyzeFile = function ( uploadId, f
 
 	return dfd.promise();
 };
-
-officeimport.ui.ConfigurationPage.prototype.checkAnalyzeStatus =
-	function ( processId, timer, dfd ) {
-		mw.loader.using( [ 'ext.importofficefiles.api' ], function () {
-			const api = new officeimport.api.Api();
-			api.getAnalyzeStatus( processId ).done( function ( response ) {
-				if ( response.state === 'terminated' ) {
-					if ( response.exitCode === 0 ) {
-						this.emit( 'analyzeDone', response.pid, timer );
-						dfd.resolve( response.pid, timer );
-					} else {
-						clearInterval( timer );
-						this.emit( 'analyzeFailed', response.exitStatus );
-						dfd.reject( response.exitStatus );
-					}
-				}
-			}.bind( this ) ).fail( function ( error ) {
-				clearInterval( timer );
-				dfd.reject( error );
-			} );
-		}.bind( this ) );
-	};
 
 officeimport.ui.ConfigurationPage.prototype.setDefaultValue = function ( filename ) {
 	filename = filename.replace( /\..*/, '' );

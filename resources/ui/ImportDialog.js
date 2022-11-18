@@ -112,17 +112,9 @@ officeimport.ui.ImportDialog.prototype.switchPage = function ( name, data ) {
 			this.setSize( 'medium' );
 			this.actions.setAbilities( { import: false, done: false, back: false, next: false } );
 
-			page.startImport( this.uploadId, this.fileName, data.config );
+			page.startImport( this.uploadId );
 			page.connect( this, {
-				// eslint-disable-next-line no-unused-vars
-				importRunning: function ( processId, fileName ) {
-					const timer = setInterval( function () {
-						page.checkImportStatus( processId, timer );
-					}, 500 );
-				},
-				importDone: function ( processId, timer ) {
-					clearInterval( timer );
-
+				importDone: function () {
 					page.onImportDone( data.pageTitles, data.pageTitles[ 0 ] );
 					this.actions.setMode( 'ImportDone' );
 					this.actions.setAbilities( { done: true } );
@@ -246,10 +238,8 @@ officeimport.ui.ImportDialog.prototype.getActionProcess = function ( action ) {
 						data = this.booklet.getCurrentPage().getData();
 
 						page.analyzeFile( this.uploadId, this.fileName, data )
-							.done( function ( processId, timer ) {
-								clearInterval( timer );
+							.done( function () {
 
-								this.processId = processId;
 								this.targetTitle = data.title;
 								this.switchNextPage( {} );
 
