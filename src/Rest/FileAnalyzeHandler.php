@@ -3,10 +3,8 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\Rest;
 
 use Exception;
-use MediaWiki\Extension\ImportOfficeFiles\Process\FileConvertProcessStep;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Extension\ImportOfficeFiles\Process\FileConvert;
 use MediaWiki\Rest\SimpleHandler;
-use MWStake\MediaWiki\Component\ProcessManager\ManagedProcess;
 use RequestContext;
 use Wikimedia\ParamValidator\ParamValidator;
 use function Sabre\HTTP\decodePath;
@@ -29,25 +27,17 @@ class FileAnalyzeHandler extends SimpleHandler {
 
 		$context = RequestContext::getMain();
 
-		$process = new ManagedProcess( [
-			'file-convert-step' => [
-				'class' => FileConvertProcessStep::class,
-				'args' => [
-					$uploadId,
-					$file,
-					$title,
-					$structure,
-					$conflict,
-					$context->getUser()->getName()
-				]
-			]
-		], 300 );
-
-		/** @var \MWStake\MediaWiki\Component\ProcessManager\ProcessManager $processManager */
-		$processManager = MediaWikiServices::getInstance()->getService( 'ProcessManager' );
-
 		try {
-			$processId = $processManager->startProcess( $process );
+			$fileConvert = new FileConvert(
+				$uploadId,
+				$file,
+				$title,
+				$structure,
+				$conflict,
+				$context->getUser()->getName()
+			);
+
+			$fileConvert->execute();
 		} catch ( Exception $e ) {
 			return $this->getResponseFactory()->createJson( [
 				'success' => false,
@@ -56,8 +46,7 @@ class FileAnalyzeHandler extends SimpleHandler {
 		}
 
 		return $this->getResponseFactory()->createJson( [
-			'success' => true,
-			'processId' => $processId
+			'success' => true
 		] );
 	}
 

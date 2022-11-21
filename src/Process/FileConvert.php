@@ -11,12 +11,11 @@ use MediaWiki\Extension\ImportOfficeFiles\Modules\MSOfficeWord;
 use MediaWiki\Extension\ImportOfficeFiles\Workspace;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
-use MWStake\MediaWiki\Component\ProcessManager\IProcessStep;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use SplFileInfo;
 
-class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
+class FileConvert implements LoggerAwareInterface {
 
 	/**
 	 * @var LoggerInterface
