@@ -3,7 +3,8 @@
 		"authors": [
 			"Hallo Welt GmbH",
 			"Brettchenweber",
-			"Mschlindwein"
+			"Mschlindwein",
+			"Umherirrender"
 		]
 	},
 	"importofficefiles-desc": "Erlaubt das Importieren von Office-Dateien als Wikiseiten",
@@ -11,7 +12,7 @@
 	"importofficefiles-ui-action-import-msword-title": "Seiten mit einer Microsoft-Word-Datei erzeugen",
 	"importofficefiles-ui-import-dialog-title": "Datei importieren",
 	"importofficefiles-ui-import-completed": "Import abgeschlossen!",
-	"importofficefiles-ui-import-in-progress": "Import wird durchgeführt ...",
+	"importofficefiles-ui-import-in-progress": "Import wird durchgeführt …",
 	"importofficefiles-ui-dialog-action-cancel": "Abbrechen",
 	"importofficefiles-ui-dialog-action-import": "Importieren",
 	"importofficefiles-ui-dialog-action-next": "Weiter",
@@ -37,9 +38,9 @@
 	"importofficefiles-api-storage-error-no-available-file": "Keine Dateien zum Hochladen verfügbar",
 	"importofficefiles-api-storage-error-save-temp": "Keine Zwischenspeicherung möglich",
 	"importofficefiles-api-storage-error-no-valid-module": "Kein Modul zur Verarbeitung dieser Datei verfügbar",
-	"importofficefiles-ui-progress-import-images-step": "Bilder importieren...",
-	"importofficefiles-ui-progress-import-pages-step": "Seiten importieren...",
-	"importofficefiles-ui-progress-remove-files-step": "Temporäre Dateien entfernen...",
+	"importofficefiles-ui-progress-import-images-step": "Bilder importieren …",
+	"importofficefiles-ui-progress-import-pages-step": "Seiten importieren …",
+	"importofficefiles-ui-progress-remove-files-step": "Temporäre Dateien entfernen …",
 	"importofficefiles-ui-import-error": "Während des Imports sind Fehler aufgetreten.",
 	"importofficefiles-ui-analyze-error": "Der Analyseprozess ist aus irgendeinem Grund fehlgeschlagen."
 }
