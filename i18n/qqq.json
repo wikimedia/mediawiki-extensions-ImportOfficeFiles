@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Hallo Welt GmbH",
-			"Robby"
+			"Robby",
+			"Umherirrender"
 		]
 	},
-	"importofficefiles-desc": "Description of ImportOfficeFiles for [[Special:Version]]",
+	"importofficefiles-desc": "{{desc|name=ImportOfficeFiles|url=https://www.mediawiki.org/wiki/Extension:ImportOfficeFiles}}",
 	"importofficefiles-ui-action-import-msword-text": "Text label for action to create pages from a Microsoft Word file",
 	"importofficefiles-ui-action-import-msword-title": "Title for action to create pages from a Microsoft Word file",
 	"importofficefiles-ui-import-dialog-title": "Title for dialog where a file can be imported",
