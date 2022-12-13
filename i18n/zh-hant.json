@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"捍粵者"
 		]
 	},
 	"importofficefiles-desc": "允許將辦公檔案以 wikipages 匯入",
@@ -9,7 +10,7 @@
 	"importofficefiles-ui-action-import-msword-title": "從 Microsoft Word 檔案建立頁面",
 	"importofficefiles-ui-import-dialog-title": "匯入檔案",
 	"importofficefiles-ui-import-completed": "匯入完成！",
-	"importofficefiles-ui-import-in-progress": "匯入進行中…",
+	"importofficefiles-ui-import-in-progress": "匯入中…",
 	"importofficefiles-ui-dialog-action-cancel": "取消",
 	"importofficefiles-ui-dialog-action-import": "匯入",
 	"importofficefiles-ui-dialog-action-next": "下一步",
