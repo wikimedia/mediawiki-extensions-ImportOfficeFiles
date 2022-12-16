@@ -6,6 +6,9 @@ use MediaWiki\Extension\ImportOfficeFiles\ITagPropertyProcessor;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Color;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\Tag\HtmlWrapper;
 
+/**
+ * @covers \MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Color
+ */
 class ColorTest extends TagPropertyProcessorTestBase {
 
 	/**

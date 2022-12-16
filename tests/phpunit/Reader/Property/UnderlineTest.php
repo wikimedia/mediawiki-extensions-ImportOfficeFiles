@@ -5,6 +5,9 @@ namespace MediaWiki\Extension\ImportOfficeFiles\Tests\Reader\Property;
 use MediaWiki\Extension\ImportOfficeFiles\ITagPropertyProcessor;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Underline;
 
+/**
+ * @covers \MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Underline
+ */
 class UnderlineTest extends TagPropertyProcessorTestBase {
 
 	/**

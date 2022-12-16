@@ -5,6 +5,9 @@ namespace MediaWiki\Extension\ImportOfficeFiles\Tests\Reader\Property;
 use MediaWiki\Extension\ImportOfficeFiles\ITagPropertyProcessor;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Bold;
 
+/**
+ * @covers \MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Bold
+ */
 class BoldTest extends TagPropertyProcessorTestBase {
 
 	/**

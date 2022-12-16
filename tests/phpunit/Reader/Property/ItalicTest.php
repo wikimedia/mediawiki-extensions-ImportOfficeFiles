@@ -5,6 +5,9 @@ namespace MediaWiki\Extension\ImportOfficeFiles\Tests\Reader\Property;
 use MediaWiki\Extension\ImportOfficeFiles\ITagPropertyProcessor;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Italic;
 
+/**
+ * @covers \MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Italic
+ */
 class ItalicTest extends TagPropertyProcessorTestBase {
 
 	/**

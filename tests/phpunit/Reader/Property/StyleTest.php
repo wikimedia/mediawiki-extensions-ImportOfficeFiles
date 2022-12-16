@@ -7,6 +7,9 @@ use MediaWiki\Extension\ImportOfficeFiles\Reader\Component\Word2007DocumentData;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Style;
 use MediaWiki\Extension\ImportOfficeFiles\Tests\Reader\DummyDocumentData;
 
+/**
+ * @covers \MediaWiki\Extension\ImportOfficeFiles\Reader\Property\Style
+ */
 class StyleTest extends TagPropertyProcessorTestBase {
 
 	/**

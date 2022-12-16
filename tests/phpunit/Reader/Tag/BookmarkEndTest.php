@@ -2,6 +2,9 @@
 
 namespace MediaWiki\Extension\ImportOfficeFiles\Tests\Reader\Tag;
 
+/**
+ * @covers \MediaWiki\Extension\ImportOfficeFiles\Reader\Tag\BookmarkEnd
+ */
 class BookmarkEndTest extends TagProcessorTestBase {
 
 	/**
