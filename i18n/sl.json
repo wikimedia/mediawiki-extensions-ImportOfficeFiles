@@ -4,5 +4,9 @@
 			"Eleassar"
 		]
 	},
-	"importofficefiles-ui-dialog-configuration-settings-title": "Konfiguriranje nastavitev uvoza"
+	"importofficefiles-ui-dialog-action-cancel": "Prekliči",
+	"importofficefiles-ui-dialog-configuration-settings-title": "Konfiguriranje nastavitev uvoza",
+	"importofficefiles-ui-dialog-settings-page-title": "Naslov",
+	"importofficefiles-ui-dialog-settings-conflicts-title": "Navzkrižje z naslovom strani",
+	"importofficefiles-ui-dialog-preview-title": "Predogled"
 }
