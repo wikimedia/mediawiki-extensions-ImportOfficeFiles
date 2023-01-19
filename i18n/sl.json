@@ -5,6 +5,7 @@
 		]
 	},
 	"importofficefiles-ui-dialog-action-cancel": "Prekliči",
+	"importofficefiles-ui-dialog-action-done": "Opravljeno",
 	"importofficefiles-ui-dialog-label-select-file": "Izberi datoteko",
 	"importofficefiles-ui-dialog-configuration-settings-title": "Konfiguriranje nastavitev uvoza",
 	"importofficefiles-ui-dialog-settings-page-title": "Naslov",
