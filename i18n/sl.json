@@ -10,5 +10,6 @@
 	"importofficefiles-ui-dialog-settings-page-title": "Naslov",
 	"importofficefiles-ui-dialog-settings-conflicts-title": "Navzkrižje z naslovom strani",
 	"importofficefiles-ui-dialog-label-select-file": "Izberi datoteko",
-	"importofficefiles-api-storage-error-no-valid-module": "Za obdelavo te datoteke ni na voljo noben modul"
+	"importofficefiles-api-storage-error-no-valid-module": "Za obdelavo te datoteke ni na voljo noben modul",
+	"importofficefiles-ui-dialog-action-done": "Opravljeno"
 }
