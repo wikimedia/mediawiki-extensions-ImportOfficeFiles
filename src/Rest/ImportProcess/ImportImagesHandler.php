@@ -26,6 +26,9 @@ class ImportImagesHandler extends ImportProcessHandler {
 		$this->workspace->init( $uploadId, $this->workspaceDir );
 		$imagesDir = $this->workspace->getPath() . '/result/images/';
 
+		// Fix for Windows path
+		$imagesDir = str_replace( '\\', '/', $imagesDir );
+
 		// There is an issue in the farm, somewhere in the path slashes are duplicated
 		// Like that: "$IP/_sf_instances//Instance_2/images"
 		// It will break images namings, so get rid of that here
