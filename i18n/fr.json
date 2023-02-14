@@ -9,7 +9,7 @@
 	"importofficefiles-ui-action-import-msword-title": "Créer des pages à partir d’un fichier Microsoft Word",
 	"importofficefiles-ui-import-dialog-title": "Importer le fichier",
 	"importofficefiles-ui-import-completed": "Import terminé !",
-	"importofficefiles-ui-import-in-progress": "Import en cours...",
+	"importofficefiles-ui-import-in-progress": "Importation en cours...",
 	"importofficefiles-ui-dialog-action-cancel": "Annuler",
 	"importofficefiles-ui-dialog-action-import": "Importer",
 	"importofficefiles-ui-dialog-action-next": "Suivant",
