@@ -6,7 +6,7 @@
 		"Daniel Vogel",
 		"Alexei Kulbii"
 	],
-	"url": "http://www.hallowelt.com",
+	"url": "https://en.wiki.bluespice.com/wiki/Reference:ImportOfficeFiles",
 	"descriptionmsg": "importofficefiles-desc",
 	"requires": {
 		"MediaWiki": ">= 1.35.0"
