@@ -167,7 +167,7 @@ abstract class TagProcessorBase implements ITagProcessor {
 			}
 		}
 
-		if ( $htmlWrapper !== null ) {
+		if ( $htmlWrapper !== null && $wikiText !== '' ) {
 			$wikiText = $htmlWrapper->wrap( $wikiText );
 		}
 
