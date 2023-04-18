@@ -4,7 +4,7 @@ officeimport.api.Api = function () {
 OO.initClass( officeimport.api.Api );
 
 officeimport.api.Api.prototype.getPagesStructure = function ( uploadId ) {
-	return this.get( 'file_structure/{0}'.format( uploadId ) );
+	return this.get( 'file_structure/' + uploadId );
 };
 
 officeimport.api.Api.prototype.get = function ( path, data ) {
@@ -43,7 +43,7 @@ officeimport.api.Api.prototype.makeUrl = function ( path ) {
 		path = path.slice( 1 );
 	}
 
-	return mw.util.wikiScript( 'rest' ) + '/officeimport/{0}'.format( path );
+	return mw.util.wikiScript( 'rest' ) + '/officeimport/' + path;
 };
 
 officeimport.api.Api.prototype.uploadFile = function ( file ) {
@@ -78,31 +78,31 @@ officeimport.api.Api.prototype.uploadFile = function ( file ) {
 };
 
 officeimport.api.Api.prototype.startAnalyze = function ( uploadId, filename, data ) {
-	return this.get( 'file_analyze/start/{0}/{1}'.format( uploadId, encodeURIComponent( filename ) ),
+	return this.get( 'file_analyze/start/' + uploadId + '/' + encodeURIComponent( filename ),
 		JSON.stringify( { config: data } )
 	);
 };
 
 officeimport.api.Api.prototype.getAnalyzeStatus = function ( processId ) {
-	return this.get( 'file_analyze/status/{0}'.format( processId ) );
+	return this.get( 'file_analyze/status/' + processId );
 };
 
 officeimport.api.Api.prototype.getContent = function ( uploadId, title ) {
-	return this.get( 'file_content/{0}'.format( uploadId ),
+	return this.get( 'file_content/' + uploadId,
 		JSON.stringify( { title: title } )
 	);
 };
 
 officeimport.api.Api.prototype.startImport = function ( uploadId, filename, config ) {
-	return this.get( 'file_import/start/{0}/{1}'.format( uploadId, encodeURIComponent( filename ) ),
+	return this.get( 'file_import/start/' + uploadId + '/' + encodeURIComponent( filename ),
 		JSON.stringify( { config: config } )
 	);
 };
 
 officeimport.api.Api.prototype.getImportStatus = function ( processId ) {
-	return this.get( 'file_import/status/{0}'.format( processId ) );
+	return this.get( 'file_import/status/' + processId );
 };
 
 officeimport.api.Api.prototype.importNextStep = function ( processId ) {
-	return this.post( 'file_import/proceed/{0}'.format( processId ) );
+	return this.post( 'file_import/proceed/' + processId );
 };
