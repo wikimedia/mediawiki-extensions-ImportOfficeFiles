@@ -148,12 +148,13 @@ class Importer implements LoggerAwareInterface {
 		$relPath = trim( $relPath, '/' );
 
 		$parts = explode( '/', $relPath );
-		$root = $parts[0];
-		$title = implode( '_', $parts );
+		$title = $file->getFilename();
 
 		// MediaWiki normalizes multiple spaces/undescores into one single score/underscore
-		$title = str_replace( ' ', '_', $title );
+		// TODO: Move this to class FilenameBuilder
 		$title = preg_replace( '#(_)+#si', '_', $title );
+
+		// TODO: Remove $parts with next minor release
 		$parts = explode( '_', $title );
 
 		$targetTitle = Title::makeTitle( NS_FILE, $title );
@@ -164,7 +165,7 @@ class Importer implements LoggerAwareInterface {
 			&$targetTitle,
 			&$repo,
 			$parts,
-			$root
+			$dirPath
 		] );
 
 		$repoFile = $repo->newFile( $targetTitle );
