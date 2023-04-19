@@ -80,13 +80,13 @@ officeimport.ui.ImportProgressPage.prototype.startImport = function ( uploadId )
 						this.updateProgressUI();
 
 						api.removeTemporaryFiles( uploadId )
-						.done( function ( removeTempFilesResponse ) {
-							if ( removeTempFilesResponse.success ) {
-								this.emit( 'importDone' );
-							}
-						}.bind( this ) ).fail( function ( error ) {
-							this.emit( 'importFailed', 'Removing of temporary files failed', error );
-						}.bind( this ) );
+							.done( function ( removeTempFilesResponse ) {
+								if ( removeTempFilesResponse.success ) {
+									this.emit( 'importDone' );
+								}
+							}.bind( this ) ).fail( function ( error ) {
+								this.emit( 'importFailed', 'Removing of temporary files failed', error );
+							}.bind( this ) );
 					} else {
 						this.emit( 'importFailed', 'Import pages failed', importPagesResponse );
 					}
