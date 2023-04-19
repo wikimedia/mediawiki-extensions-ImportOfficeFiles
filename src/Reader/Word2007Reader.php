@@ -51,7 +51,7 @@ class Word2007Reader {
 	 * @return string|bool
 	 */
 	private function unzipFile( $wordFile ): ?string {
-		$path = $wordFile->getPathInfo();
+		$path = $wordFile->getPath();
 
 		$zip = new ZipArchive();
 		if ( $zip->open( $wordFile ) === true ) {
