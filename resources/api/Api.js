@@ -4,7 +4,7 @@ officeimport.api.Api = function () {
 OO.initClass( officeimport.api.Api );
 
 officeimport.api.Api.prototype.getPagesStructure = function ( uploadId ) {
-	return this.get( 'file_structure/{0}'.format( uploadId ) );
+	return this.get( 'file_structure/' + uploadId );
 };
 
 officeimport.api.Api.prototype.get = function ( path, data, timeout ) {
@@ -49,7 +49,7 @@ officeimport.api.Api.prototype.makeUrl = function ( path ) {
 		path = path.slice( 1 );
 	}
 
-	return mw.util.wikiScript( 'rest' ) + '/officeimport/{0}'.format( path );
+	return mw.util.wikiScript( 'rest' ) + '/officeimport/' + path;
 };
 
 officeimport.api.Api.prototype.uploadFile = function ( file ) {
@@ -84,26 +84,26 @@ officeimport.api.Api.prototype.uploadFile = function ( file ) {
 };
 
 officeimport.api.Api.prototype.doAnalyze = function ( uploadId, filename, data ) {
-	return this.get( 'file_analyze/{0}/{1}'.format( uploadId, encodeURIComponent( filename ) ),
+	return this.get( 'file_analyze/' + uploadId + '/' + encodeURIComponent( filename ),
 		JSON.stringify( { config: data } ),
 		300 * 1000
 	);
 };
 
 officeimport.api.Api.prototype.getContent = function ( uploadId, title ) {
-	return this.get( 'file_content/{0}'.format( uploadId ),
+	return this.get( 'file_content/' + uploadId,
 		JSON.stringify( { title: title } )
 	);
 };
 
-officeimport.api.Api.prototype.importImages = function ( uploadId ) {
-	return this.get( 'file_import/images/{0}'.format( uploadId ), {}, 300 * 1000 );
+officeimport.api.Api.prototype.importImages = function ( uploadId, filename, config ) {
+	return this.get( 'file_import/images/' + uploadId, {}, 300 * 1000 );
 };
 
 officeimport.api.Api.prototype.importPages = function ( uploadId ) {
-	return this.get( 'file_import/pages/{0}'.format( uploadId ), {}, 300 * 1000 );
+	return this.get( 'file_import/pages/' + uploadId, {}, 300 * 1000 );
 };
 
 officeimport.api.Api.prototype.removeTemporaryFiles = function ( uploadId ) {
-	return this.get( 'file_import/remove_temporary_files/{0}'.format( uploadId ) );
+	return this.get( 'file_import/remove_temporary_files/' + uploadId );
 };
