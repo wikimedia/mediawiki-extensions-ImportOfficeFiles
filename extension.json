@@ -6,7 +6,7 @@
 		"Daniel Vogel",
 		"Alexei Kulbii"
 	],
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"url": "https://en.wiki.bluespice.com/wiki/Reference:ImportOfficeFiles",
 	"descriptionmsg": "importofficefiles-desc",
 	"requires": {
