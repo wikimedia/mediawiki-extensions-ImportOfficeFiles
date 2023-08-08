@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\Process\ImportProcess;
 
 use Exception;
+use MediaWiki\Extension\ImportOfficeFiles\Integration\BlueSpiceFarmingTrait;
 use MediaWiki\Extension\ImportOfficeFiles\Workspace;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -13,6 +14,8 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
 class ImportPagesStep implements InterruptingProcessStep, LoggerAwareInterface {
+
+	use BlueSpiceFarmingTrait;
 
 	/**
 	 * @var Workspace
@@ -67,14 +70,17 @@ class ImportPagesStep implements InterruptingProcessStep, LoggerAwareInterface {
 
 		$this->logger->debug( 'Importing pages from XML: ' . $importXmlPath );
 
+		$params = [
+			$GLOBALS['wgPhpCli'],
+			$this->importXmlScript,
+			$importXmlPath,
+			'--username-prefix=""'
+		];
+		$this->extendParams( $params );
+
 		try {
 			// php {$IP}/maintenance/importDump.php images/cache/ImportOfficeFiles/{uploadId}/result/import.xml
-			$processPages = new Process(
-				[ $GLOBALS['wgPhpCli'],
-				$this->importXmlScript,
-				$importXmlPath,
-				'--username-prefix=""'
-			] );
+			$processPages = new Process( $params );
 			$processPages->run();
 		} catch ( Exception $e ) {
 			return [ 'output_pages' => $e->getMessage() ];
