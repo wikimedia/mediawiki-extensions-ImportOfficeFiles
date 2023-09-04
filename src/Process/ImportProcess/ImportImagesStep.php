@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\Process\ImportProcess;
 
 use Exception;
+use MediaWiki\Extension\ImportOfficeFiles\Integration\BlueSpiceFarmingTrait;
 use MediaWiki\Extension\ImportOfficeFiles\Workspace;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -13,6 +14,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
 class ImportImagesStep implements InterruptingProcessStep, LoggerAwareInterface {
+	use BlueSpiceFarmingTrait;
 
 	/**
 	 * @var Workspace
@@ -88,6 +90,7 @@ class ImportImagesStep implements InterruptingProcessStep, LoggerAwareInterface 
 				'--summary= ',
 				'--overwrite= '
 			];
+			$this->extendParams( $params );
 
 			if ( $this->username !== '' ) {
 				$params[] = '--user=' . $this->username;
