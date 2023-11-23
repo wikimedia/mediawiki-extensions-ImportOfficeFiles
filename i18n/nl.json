@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vistaus",
-			"McDutchie"
+			"McDutchie",
+			"Vistaus"
 		]
 	},
 	"importofficefiles-desc": "Maakt het importeren van Office-bestanden als wikipagina’s mogelijk",
