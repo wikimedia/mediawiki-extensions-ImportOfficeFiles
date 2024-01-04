@@ -45,6 +45,7 @@ officeimport.ui.ImportDialog.prototype.initialize = function () {
 		expanded: false,
 		outlined: false,
 		showMenu: false,
+		$overlay: this.$overlay,
 		// When auto-focus is enabled - for some reason after changing page is being set twice,
 		// which is wrong and breaks stuff.
 		// It can be fixed by disabling "autoFocus"

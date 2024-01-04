@@ -1,6 +1,6 @@
 officeimport.ui.ConfigurationPage = function ( name, cfg ) {
 	officeimport.ui.ConfigurationPage.parent.call( this, name, cfg );
-
+	this.$overlay = cfg.$overlay;
 	this.layout = new OO.ui.PanelLayout( {
 		padded: true,
 		expanded: false
@@ -32,7 +32,7 @@ officeimport.ui.ConfigurationPage.prototype.getElements = function () {
 	this.fileStructureCheckbox = new OO.ui.CheckboxInputWidget();
 
 	this.fileStructure = new OO.ui.DropdownWidget( {
-		$overlay: true,
+		$overlay: this.$overlay,
 		menu: {
 			items: [
 				new OO.ui.MenuOptionWidget( {
@@ -61,7 +61,7 @@ officeimport.ui.ConfigurationPage.prototype.getElements = function () {
 	this.fileStructureCheckbox.on( 'change', this.toggleSplitProperty, [], this );
 
 	this.titleConflicts = new OO.ui.DropdownWidget( {
-		$overlay: true,
+		$overlay: this.$overlay,
 		menu: {
 			items: [
 				new OO.ui.MenuOptionWidget( {
