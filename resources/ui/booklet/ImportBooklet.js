@@ -1,6 +1,6 @@
 officeimport.ui.ImportBooklet = function ( cfg ) {
 	officeimport.ui.ImportBooklet.super.call( this, cfg );
-
+	this.$overlay = cfg.$overlay;
 	this.makePages();
 };
 
@@ -12,7 +12,8 @@ officeimport.ui.ImportBooklet.prototype.makePages = function () {
 			expanded: false
 		} ),
 		new officeimport.ui.ConfigurationPage( 'Configuration', {
-			expanded: false
+			expanded: false,
+			$overlay: this.$overlay
 		} ),
 		new officeimport.ui.StructurePreviewPage( 'StructurePreview', {
 			expanded: false
