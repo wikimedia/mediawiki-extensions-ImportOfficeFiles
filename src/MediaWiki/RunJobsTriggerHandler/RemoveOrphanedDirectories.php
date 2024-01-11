@@ -74,7 +74,7 @@ final class RemoveOrphanedDirectories implements IHandler, LoggerAwareInterface 
 	/**
 	 * @inheritDoc
 	 */
-	public function setLogger( LoggerInterface $logger ) {
+	public function setLogger( LoggerInterface $logger ): void {
 		$this->logger = $logger;
 	}
 
