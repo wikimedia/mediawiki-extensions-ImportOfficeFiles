@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Alshamiri1",
-			"Asma"
+			"Asma",
+			"أيوب"
 		]
 	},
-	"importofficefiles-ui-import-dialog-title": "ملف الاستيراد",
+	"importofficefiles-ui-import-dialog-title": "استيراد ملف",
 	"importofficefiles-ui-import-completed": "اكتمل الاستيراد!",
 	"importofficefiles-ui-import-in-progress": "جارٍ الاستيراد ...",
 	"importofficefiles-ui-dialog-action-cancel": "إلغاء",
