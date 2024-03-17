@@ -9,9 +9,9 @@ use PHPUnit\Framework\TestCase;
  * @covers \MediaWiki\Extension\ImportOfficeFiles\FilenameBuilder
  */
 class FilenameBuilderTest extends TestCase {
-/**
- * @covers \MediaWiki\Extension\ImportOfficeFiles\FilenameBuilder::build
- */
+	/**
+	 * @covers \MediaWiki\Extension\ImportOfficeFiles\FilenameBuilder::build
+	 */
 	public function testBuild() {
 		$builder = new FilenameBuilder();
 

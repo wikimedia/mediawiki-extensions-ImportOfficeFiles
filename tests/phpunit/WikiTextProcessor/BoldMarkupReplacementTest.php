@@ -48,9 +48,9 @@ class BoldMarkupReplacementTest extends TestCase {
 		return $text;
 	}
 
-/**
- * @return string
- */
+	/**
+	 * @return string
+	 */
 	private function getExpectedText(): string {
 		$text = "Lorem ipsum dolor '''sit''' ''amet'', consectetuer '''adipiscing elit'''.";
 		$text .= " ''Aenean'''' ''''commodo'' ligula '''''eget''''' dolor. '''Aenean ''massa'''''\n";

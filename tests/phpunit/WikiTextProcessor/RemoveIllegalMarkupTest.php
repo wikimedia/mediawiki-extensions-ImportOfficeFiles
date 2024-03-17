@@ -48,9 +48,9 @@ class RemoveIllegalMarkupTest extends TestCase {
 		return $text;
 	}
 
-/**
- * @return string
- */
+	/**
+	 * @return string
+	 */
 	private function getExpectedText(): string {
 		$text = "Lorem ipsum dolor sit amet,";
 		$text .= " consectetuer adipiscing elit.\n";
