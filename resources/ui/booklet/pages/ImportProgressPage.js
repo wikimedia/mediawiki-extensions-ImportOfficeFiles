@@ -60,10 +60,17 @@ officeimport.ui.ImportProgressPage.prototype.onImportDone = function ( pages, ti
 	const pageTitle = params.prefix + '/' + title;
 	this.targetTitle = mw.Title.newFromText( pageTitle, namespaceKey );
 
-	this.setImportDoneUI();
-
 	const linklist = this.getPageList( pages );
-	this.exportList( linklist );
+
+	let pageCollectionCreated = true;
+
+	this.exportList( linklist ).fail( function () {
+		// Error code we catch here:
+		// protectednamespace-interface
+		pageCollectionCreated = false;
+	} ).always( function () {
+		this.setImportDoneUI( pageCollectionCreated );
+	}.bind( this ) );
 };
 
 /**
@@ -186,7 +193,7 @@ officeimport.ui.ImportProgressPage.prototype.updateProgressUI = function () {
 	this.progressBar.setProgress( this.progressBarValue );
 };
 
-officeimport.ui.ImportProgressPage.prototype.setImportDoneUI = function () {
+officeimport.ui.ImportProgressPage.prototype.setImportDoneUI = function ( pageCollectionCreated ) {
 	this.progressBar.setProgress( 100 );
 	this.$status.text( '' );
 	this.fieldLayout.toggle( false );
@@ -197,14 +204,24 @@ officeimport.ui.ImportProgressPage.prototype.setImportDoneUI = function () {
 
 	this.$element.append( labelSuccess.$element );
 
-	const $link = $( '<a>' ).attr( 'href', this.targetTitle.getUrl() );
-	$link.attr( 'title', this.targetTitle.getPrefixedText() );
-	$link.html( this.targetTitle.getPrefixedText() );
+	if ( pageCollectionCreated ) {
+		const $link = $( '<a>' ).attr( 'href', this.targetTitle.getUrl() );
+		$link.attr( 'title', this.targetTitle.getPrefixedText() );
+		$link.html( this.targetTitle.getPrefixedText() );
 
-	const $linkHtml = $( '<div>' ).addClass( 'import-list' ).append(
-		mw.message( 'importofficefiles-ui-dialog-link-import-files-text', $link ).parse()
-	);
-	this.$element.append( $linkHtml );
+		const $linkHtml = $( '<div>' ).addClass( 'import-list' ).append(
+			mw.message( 'importofficefiles-ui-dialog-link-import-files-text', $link ).parse()
+		);
+		this.$element.append( $linkHtml );
+	} else {
+		const $errorLabel = $( '<div>' ).addClass( 'import-list' ).append(
+			mw.message(
+				'importofficefiles-ui-dialog-page-collection-protected-namespace',
+				this.targetTitle.getNamespacePrefix()
+			).parse()
+		);
+		this.$element.append( $errorLabel );
+	}
 };
 
 officeimport.ui.ImportProgressPage.prototype.getPageList = function ( pages ) {
