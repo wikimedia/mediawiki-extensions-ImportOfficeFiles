@@ -34,6 +34,7 @@
 	"importofficefiles-ui-dialog-preview-title": "Title for dialog page preview",
 	"importofficefiles-ui-dialog-preview-label": "Label for preview widget with pages which will be imported",
 	"importofficefiles-ui-dialog-link-import-files-text": "Label for import page with link to file collection",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Error message in case the \"page collection\" page could not be created in the MediaWiki namespace",
 	"importofficefiles-api-storage-error-no-available-file": "Error message returned by an API module in case a requested file was not found",
 	"importofficefiles-api-storage-error-save-temp": "Error message returned by an API module in case the temporary directory could not be written",
 	"importofficefiles-api-storage-error-no-valid-module": "Error message returned by an API module in case no module to handle this file was found",
