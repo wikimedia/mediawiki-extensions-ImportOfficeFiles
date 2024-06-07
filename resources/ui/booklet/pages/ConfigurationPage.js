@@ -8,9 +8,7 @@ officeimport.ui.ConfigurationPage = function ( name, cfg ) {
 
 	const formElements = this.getElements();
 	this.layout.$element.append(
-		formElements.map( function ( item ) {
-			return item.$element;
-		} )
+		formElements.map( ( item ) => item.$element )
 	);
 
 	this.$element.append( this.layout.$element );
@@ -149,30 +147,30 @@ officeimport.ui.ConfigurationPage.prototype.getData = function () {
 officeimport.ui.ConfigurationPage.prototype.analyzeFile = function ( uploadId, fileName, data ) {
 	const dfd = $.Deferred();
 
-	mw.loader.using( [ 'ext.importofficefiles.api' ], function () {
+	mw.loader.using( [ 'ext.importofficefiles.api' ], () => {
 		const api = new officeimport.api.Api();
-		api.startAnalyze( uploadId, fileName, data ).done( function ( response ) {
+		api.startAnalyze( uploadId, fileName, data ).done( ( response ) => {
 			if ( response.processId ) {
-				const timer = setInterval( function () {
+				const timer = setInterval( () => {
 					this.checkAnalyzeStatus( response.processId, timer, dfd );
-				}.bind( this ), 1000 );
+				}, 1000 );
 			} else {
 				dfd.reject( 'Analyze process did not start correctly' );
 			}
-		}.bind( this ) ).fail( function ( error ) {
+		} ).fail( ( error ) => {
 			this.emit( 'analyzeFailed', error );
 			dfd.reject( error );
-		}.bind( this ) );
-	}.bind( this ) );
+		} );
+	} );
 
 	return dfd.promise();
 };
 
 officeimport.ui.ConfigurationPage.prototype.checkAnalyzeStatus =
 	function ( processId, timer, dfd ) {
-		mw.loader.using( [ 'ext.importofficefiles.api' ], function () {
+		mw.loader.using( [ 'ext.importofficefiles.api' ], () => {
 			const api = new officeimport.api.Api();
-			api.getAnalyzeStatus( processId ).done( function ( response ) {
+			api.getAnalyzeStatus( processId ).done( ( response ) => {
 				if ( response.state === 'terminated' ) {
 					if ( response.exitCode === 0 ) {
 						this.emit( 'analyzeDone', response.pid, timer );
@@ -183,11 +181,11 @@ officeimport.ui.ConfigurationPage.prototype.checkAnalyzeStatus =
 						dfd.reject( response.exitStatus );
 					}
 				}
-			}.bind( this ) ).fail( function ( error ) {
+			} ).fail( ( error ) => {
 				clearInterval( timer );
 				dfd.reject( error );
 			} );
-		}.bind( this ) );
+		} );
 	};
 
 officeimport.ui.ConfigurationPage.prototype.setDefaultValue = function ( filename ) {
