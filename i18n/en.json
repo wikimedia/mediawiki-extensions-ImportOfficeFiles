@@ -32,6 +32,7 @@
 	"importofficefiles-ui-dialog-preview-title": "Preview",
 	"importofficefiles-ui-dialog-preview-label": "The following pages will be imported",
 	"importofficefiles-ui-dialog-link-import-files-text": "List of imported files exported to $1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Note: \"pages collection\" page was not created because \"$1\" namespace is protected",
 	"importofficefiles-api-storage-error-no-available-file": "No upload files available",
 	"importofficefiles-api-storage-error-save-temp": "No temporary save possible",
 	"importofficefiles-api-storage-error-no-valid-module": "No module available to handle this file",
