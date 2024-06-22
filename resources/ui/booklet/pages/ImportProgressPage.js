@@ -64,13 +64,13 @@ officeimport.ui.ImportProgressPage.prototype.onImportDone = function ( pages, ti
 
 	let pageCollectionCreated = true;
 
-	this.exportList( linklist ).fail( function () {
+	this.exportList( linklist ).fail( () => {
 		// Error code we catch here:
 		// protectednamespace-interface
 		pageCollectionCreated = false;
-	} ).always( function () {
+	} ).always( () => {
 		this.setImportDoneUI( pageCollectionCreated );
-	}.bind( this ) );
+	} );
 };
 
 /**
