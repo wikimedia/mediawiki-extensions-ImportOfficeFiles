@@ -32,6 +32,7 @@
 	"importofficefiles-ui-dialog-preview-title": "Previsualisation",
 	"importofficefiles-ui-dialog-preview-label": "Le sequente paginas essera importate",
 	"importofficefiles-ui-dialog-link-import-files-text": "Lista de files importate exportate a $1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Nota ben: le pagina “pages collection” non ha essite create perque le spatio de nomines “$1” es protegite",
 	"importofficefiles-api-storage-error-no-available-file": "Nulle file incargate es disponibile",
 	"importofficefiles-api-storage-error-save-temp": "Le salveguarda temporari non es possibile",
 	"importofficefiles-api-storage-error-no-valid-module": "Nulle modulo es disponibile pro tractar iste file",
