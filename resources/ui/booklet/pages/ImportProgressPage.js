@@ -69,7 +69,7 @@ officeimport.ui.ImportProgressPage.prototype.onImportDone = function ( pages, ti
 		// protectednamespace-interface
 		pageCollectionCreated = false;
 	} ).always( () => {
-		this.setImportDoneUI( pageCollectionCreated );
+		this.setImportDoneUI( pageCollectionCreated , pages[0]);
 	} );
 };
 
@@ -193,7 +193,7 @@ officeimport.ui.ImportProgressPage.prototype.updateProgressUI = function () {
 	this.progressBar.setProgress( this.progressBarValue );
 };
 
-officeimport.ui.ImportProgressPage.prototype.setImportDoneUI = function ( pageCollectionCreated ) {
+officeimport.ui.ImportProgressPage.prototype.setImportDoneUI = function ( pageCollectionCreated , pagezero ) {
 	this.progressBar.setProgress( 100 );
 	this.$status.text( '' );
 	this.fieldLayout.toggle( false );
@@ -214,10 +214,15 @@ officeimport.ui.ImportProgressPage.prototype.setImportDoneUI = function ( pageCo
 		);
 		this.$element.append( $linkHtml );
 	} else {
+		const pageZeroTitle = mw.Title.newFromText( pagezero );
+		const pageZeroUrl = pageZeroTitle.getUrl();
+		const $link = $( '<a>' ).attr( 'href', pageZeroUrl );
+		$link.attr( 'title', pagezero );
+		$link.html( pagezero );
 		const $errorLabel = $( '<div>' ).addClass( 'import-list' ).append(
 			mw.message(
-				'importofficefiles-ui-dialog-page-collection-protected-namespace',
-				this.targetTitle.getNamespacePrefix()
+				'importofficefiles-ui-dialog-link-imported-page-text',
+				$link
 			).parse()
 		);
 		this.$element.append( $errorLabel );
