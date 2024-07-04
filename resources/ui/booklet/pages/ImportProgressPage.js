@@ -69,7 +69,7 @@ officeimport.ui.ImportProgressPage.prototype.onImportDone = function ( pages, ti
 		// protectednamespace-interface
 		pageCollectionCreated = false;
 	} ).always( () => {
-		this.setImportDoneUI( pageCollectionCreated , pages[0]);
+		this.setImportDoneUI( pageCollectionCreated, pages[ 0 ] );
 	} );
 };
 
@@ -193,7 +193,7 @@ officeimport.ui.ImportProgressPage.prototype.updateProgressUI = function () {
 	this.progressBar.setProgress( this.progressBarValue );
 };
 
-officeimport.ui.ImportProgressPage.prototype.setImportDoneUI = function ( pageCollectionCreated , pagezero ) {
+officeimport.ui.ImportProgressPage.prototype.setImportDoneUI = function ( pageCollectionCreated, pagezero ) {
 	this.progressBar.setProgress( 100 );
 	this.$status.text( '' );
 	this.fieldLayout.toggle( false );
