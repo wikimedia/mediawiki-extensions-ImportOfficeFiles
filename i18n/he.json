@@ -32,6 +32,8 @@
 	"importofficefiles-ui-dialog-preview-title": "תצוגה מקדימה",
 	"importofficefiles-ui-dialog-preview-label": "הדפים הבאים ייובאו",
 	"importofficefiles-ui-dialog-link-import-files-text": "רשימת הקבצים המיובאים שיוצאו ל{{GRAMMAR:תחילית|$1}}",
+	"importofficefiles-ui-dialog-link-imported-page-text": "הקובץ יובא לאוסף $1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "לתשומת ליבך: דף \"אוסף דפים\" לא נוצר מכיוון שמרחב השמות \"$1\" מוגן",
 	"importofficefiles-api-storage-error-no-available-file": "אין קבצים זמינים להעלאה",
 	"importofficefiles-api-storage-error-save-temp": "אין אפשרות שמירה זמנית",
 	"importofficefiles-api-storage-error-no-valid-module": "אין מודול זמין לטיפול בקובץ הזה",
