@@ -32,6 +32,7 @@
 	"importofficefiles-ui-dialog-preview-title": "Преглед",
 	"importofficefiles-ui-dialog-preview-label": "Ќе се увезат следниве страници:",
 	"importofficefiles-ui-dialog-link-import-files-text": "Список на увезени податотеки извезени во $1",
+	"importofficefiles-ui-dialog-link-imported-page-text": "Податотеката е увезена во $1",
 	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Напомена: страницата „збирка на страници“ не е доздадена бидејќи именскиот простор „$1“ е заштитен",
 	"importofficefiles-api-storage-error-no-available-file": "Нема подигнати податотеки",
 	"importofficefiles-api-storage-error-save-temp": "Привременото зачувување не е возможно",
