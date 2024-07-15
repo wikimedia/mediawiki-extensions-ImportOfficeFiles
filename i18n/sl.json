@@ -32,6 +32,7 @@
 	"importofficefiles-ui-dialog-preview-title": "Predogled",
 	"importofficefiles-ui-dialog-preview-label": "Uvožene bodo naslednje spremembe",
 	"importofficefiles-ui-dialog-link-import-files-text": "Seznam uvoženih datotek, izvoženih v $1",
+	"importofficefiles-ui-dialog-link-imported-page-text": "Datoteka je uvožena v $1",
 	"importofficefiles-api-storage-error-no-available-file": "Na voljo ni nobena datoteka za nalaganje",
 	"importofficefiles-api-storage-error-save-temp": "Začasno shranjevanje ni mogoče",
 	"importofficefiles-api-storage-error-no-valid-module": "Za obdelavo te datoteke ni na voljo noben modul",
