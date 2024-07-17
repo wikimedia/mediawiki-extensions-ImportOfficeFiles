@@ -39,5 +39,6 @@
 	"importofficefiles-ui-progress-import-pages-step": "Uvažanje strani ...",
 	"importofficefiles-ui-progress-remove-files-step": "Odstranjevanje začasnih datotek ...",
 	"importofficefiles-ui-import-error": "Med uvozom je prišlo do napake.",
-	"importofficefiles-ui-analyze-error": "Postopek analize je iz neznanega razloga spodletel."
+	"importofficefiles-ui-analyze-error": "Postopek analize je iz neznanega razloga spodletel.",
+	"importofficefiles-ui-dialog-link-imported-page-text": "Datoteka je uvožena v $1"
 }

@@ -39,5 +39,7 @@
 	"importofficefiles-ui-progress-import-pages-step": "יבוא דפים...",
 	"importofficefiles-ui-progress-remove-files-step": "הסרת קבצים זמניים...",
 	"importofficefiles-ui-import-error": "אירעה שגיאה כלשהי במהלך היבוא.",
-	"importofficefiles-ui-analyze-error": "תהליך הניתוח נכשל מסיבה כלשהי."
+	"importofficefiles-ui-analyze-error": "תהליך הניתוח נכשל מסיבה כלשהי.",
+	"importofficefiles-ui-dialog-link-imported-page-text": "הקובץ יובא לאוסף $1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "לתשומת ליבך: דף \"אוסף דפים\" לא נוצר מכיוון שמרחב השמות \"$1\" מוגן"
 }
