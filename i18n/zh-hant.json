@@ -40,5 +40,7 @@
 	"importofficefiles-ui-progress-import-pages-step": "正在匯入頁面…",
 	"importofficefiles-ui-progress-remove-files-step": "正在移除暫存檔案…",
 	"importofficefiles-ui-import-error": "匯入過程中發生了一些錯誤。",
-	"importofficefiles-ui-analyze-error": "分析過程出於某種原因導致失敗。"
+	"importofficefiles-ui-analyze-error": "分析過程出於某種原因導致失敗。",
+	"importofficefiles-ui-dialog-link-imported-page-text": "檔案已匯入至$1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "註：因為「$1」命名空間已被保護，無法建立「頁面收藏」頁面"
 }
