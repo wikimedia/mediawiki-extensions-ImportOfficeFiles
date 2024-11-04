@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Verdy p"
+			"Verdy p",
+			"Mahabarata"
 		]
 	},
 	"importofficefiles-desc": "Permet d’importer des fichiers de bureau en tant que pages wiki",
@@ -32,6 +33,8 @@
 	"importofficefiles-ui-dialog-preview-title": "Aperçu",
 	"importofficefiles-ui-dialog-preview-label": "Les pages suivantes seront importées",
 	"importofficefiles-ui-dialog-link-import-files-text": "Liste de fichiers importés exportés vers $1",
+	"importofficefiles-ui-dialog-link-imported-page-text": "Fichier importé vers $1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Remarque : la page « collection de pages » n'a pas été créée car l'espace de noms « $1 » est protégé",
 	"importofficefiles-api-storage-error-no-available-file": "Aucun fichier téléversé disponible",
 	"importofficefiles-api-storage-error-save-temp": "Aucun enregistrement temporaire possible",
 	"importofficefiles-api-storage-error-no-valid-module": "Aucun module disponible pour gérer ce fichier",
