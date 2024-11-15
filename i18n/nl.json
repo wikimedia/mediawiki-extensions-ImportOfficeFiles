@@ -33,6 +33,8 @@
 	"importofficefiles-ui-dialog-preview-title": "Voorvertoning",
 	"importofficefiles-ui-dialog-preview-label": "De volgende pagina's worden geïmporteerd",
 	"importofficefiles-ui-dialog-link-import-files-text": "Lijst met geïmporteerde bestanden die naar $1 zijn geëxporteerd",
+	"importofficefiles-ui-dialog-link-imported-page-text": "Bestand geïmporteerd naar $1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Let op: de pagina “pages collection” is niet aangemaakt omdat de naamruimte “$1” is beveiligd",
 	"importofficefiles-api-storage-error-no-available-file": "Er zijn geen uploadbestanden beschikbaar",
 	"importofficefiles-api-storage-error-save-temp": "Geen tijdelijke opslag mogelijk",
 	"importofficefiles-api-storage-error-no-valid-module": "Er is geen module beschikbaar om dit bestand te verwerken",
