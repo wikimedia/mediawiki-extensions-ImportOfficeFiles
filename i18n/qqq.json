@@ -7,7 +7,6 @@
 		]
 	},
 	"importofficefiles-desc": "{{desc|name=ImportOfficeFiles|url=https://www.mediawiki.org/wiki/Extension:ImportOfficeFiles}}",
-	"importofficefiles-ui-action-import-msword-text": "Text label for action to create pages from a Microsoft Word file",
 	"importofficefiles-ui-action-import-msword-title": "Title for action to create pages from a Microsoft Word file",
 	"importofficefiles-ui-import-dialog-title": "Title for dialog where a file can be imported",
 	"importofficefiles-ui-import-completed": "Success message in dialog after file was imported",
@@ -43,5 +42,6 @@
 	"importofficefiles-ui-progress-import-pages-step": "Label, associated with import process step, displayed above import progress bar",
 	"importofficefiles-ui-progress-remove-files-step": "Label, associated with import process step, displayed above import progress bar",
 	"importofficefiles-ui-import-error": "Error message which is shown to user in case of error during import",
-	"importofficefiles-ui-analyze-error": "Error message which is shown to user in case of error during file analyze"
+	"importofficefiles-ui-analyze-error": "Error message which is shown to user in case of error during file analyze",
+	"importofficefiles-ui-action-import-msword-label": "Text label for action to create pages from a Microsoft Word file"
 }
