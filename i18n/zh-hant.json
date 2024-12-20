@@ -6,7 +6,6 @@
 		]
 	},
 	"importofficefiles-desc": "允許將辦公檔案以 wikipages 匯入",
-	"importofficefiles-ui-action-import-msword-text": "匯入 Word 檔案",
 	"importofficefiles-ui-action-import-msword-title": "從 Microsoft Word 檔案建立頁面",
 	"importofficefiles-ui-import-dialog-title": "匯入檔案",
 	"importofficefiles-ui-import-completed": "匯入完成！",

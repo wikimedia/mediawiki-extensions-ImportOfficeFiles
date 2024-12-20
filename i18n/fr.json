@@ -6,7 +6,6 @@
 		]
 	},
 	"importofficefiles-desc": "Permet d’importer des fichiers de bureau en tant que pages wiki",
-	"importofficefiles-ui-action-import-msword-text": "Importer un fichier Word",
 	"importofficefiles-ui-action-import-msword-title": "Créer des pages à partir d’un fichier Microsoft Word",
 	"importofficefiles-ui-import-dialog-title": "Importer le fichier",
 	"importofficefiles-ui-import-completed": "Import terminé !",
