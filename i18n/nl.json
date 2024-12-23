@@ -41,5 +41,6 @@
 	"importofficefiles-ui-progress-import-pages-step": "Bezig met importeren van pagina's…",
 	"importofficefiles-ui-progress-remove-files-step": "Tijdelijke bestanden verwijderen…",
 	"importofficefiles-ui-import-error": "Er is een fout opgetreden tijdens het importeren.",
-	"importofficefiles-ui-analyze-error": "Het analyseproces is om de een of andere reden mislukt."
+	"importofficefiles-ui-analyze-error": "Het analyseproces is om de een of andere reden mislukt.",
+	"importofficefiles-ui-action-import-msword-label": "Nieuw Word-bestand importeren"
 }
