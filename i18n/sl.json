@@ -5,7 +5,6 @@
 		]
 	},
 	"importofficefiles-desc": "Omogoča uvoz pisarniških datotek kot vikistrani",
-	"importofficefiles-ui-action-import-msword-text": "Uvoz Wordove datoteke",
 	"importofficefiles-ui-action-import-msword-title": "Ustvaritev strani iz datoteke Microsoft Word",
 	"importofficefiles-ui-import-dialog-title": "Uvozi datoteko",
 	"importofficefiles-ui-import-completed": "Uvoz končan!",

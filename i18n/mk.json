@@ -5,7 +5,6 @@
 		]
 	},
 	"importofficefiles-desc": "Овозможува увоз на податотеки од Office како викистраници",
-	"importofficefiles-ui-action-import-msword-text": "Увезете Word-податотека",
 	"importofficefiles-ui-action-import-msword-title": "Создајте страници од Microsoft Word-податотека",
 	"importofficefiles-ui-import-dialog-title": "Увези податотека",
 	"importofficefiles-ui-import-completed": "Увозот е готов!",

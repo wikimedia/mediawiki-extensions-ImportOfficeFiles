@@ -8,7 +8,6 @@
 		]
 	},
 	"importofficefiles-desc": "Erlaubt das Importieren von Office-Dateien als Wikiseiten",
-	"importofficefiles-ui-action-import-msword-text": "Word-Datei importieren",
 	"importofficefiles-ui-action-import-msword-title": "Seiten mit einer Microsoft-Word-Datei erzeugen",
 	"importofficefiles-ui-import-dialog-title": "Datei importieren",
 	"importofficefiles-ui-import-completed": "Import abgeschlossen!",
