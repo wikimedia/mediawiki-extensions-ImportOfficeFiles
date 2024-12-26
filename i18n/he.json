@@ -40,5 +40,6 @@
 	"importofficefiles-ui-progress-import-pages-step": "יבוא דפים...",
 	"importofficefiles-ui-progress-remove-files-step": "הסרת קבצים זמניים...",
 	"importofficefiles-ui-import-error": "אירעה שגיאה כלשהי במהלך היבוא.",
-	"importofficefiles-ui-analyze-error": "תהליך הניתוח נכשל מסיבה כלשהי."
+	"importofficefiles-ui-analyze-error": "תהליך הניתוח נכשל מסיבה כלשהי.",
+	"importofficefiles-ui-action-import-msword-label": "יבוא קובץ וורד חדש"
 }
