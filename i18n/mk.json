@@ -40,5 +40,6 @@
 	"importofficefiles-ui-progress-import-pages-step": "Увезувам страници...",
 	"importofficefiles-ui-progress-remove-files-step": "Отстранувам привремени податотеки...",
 	"importofficefiles-ui-import-error": "Се случи некаква грешка при увозот.",
-	"importofficefiles-ui-analyze-error": "Процесот на анализа не успеа."
+	"importofficefiles-ui-analyze-error": "Процесот на анализа не успеа.",
+	"importofficefiles-ui-action-import-msword-label": "Увоз на нова Word-податотека"
 }
