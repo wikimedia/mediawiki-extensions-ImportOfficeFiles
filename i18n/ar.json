@@ -3,7 +3,8 @@
 		"authors": [
 			"Alshamiri1",
 			"Asma",
-			"أيوب"
+			"أيوب",
+			"Meno25"
 		]
 	},
 	"importofficefiles-desc": "يسمح باستيراد ملفات المكتب على شكل صفحات ويكي",
@@ -33,6 +34,8 @@
 	"importofficefiles-ui-dialog-preview-title": "معاينة",
 	"importofficefiles-ui-dialog-preview-label": "الصفحات التالية سيتم استيرادها",
 	"importofficefiles-ui-dialog-link-import-files-text": "قائمة الملفات المستوردة التي تم تصديرها إلى $1",
+	"importofficefiles-ui-dialog-link-imported-page-text": "الملف تم استيراده إلى $1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "ملاحظة: لم يتم إنشاء صفحة \"مجموعة الصفحات\" لأن مساحة الاسم \" $1 \" محمية",
 	"importofficefiles-api-storage-error-no-available-file": "لا توجد ملفات تحميل متاحة",
 	"importofficefiles-api-storage-error-save-temp": "لا يمكن الحفظ المؤقت",
 	"importofficefiles-api-storage-error-no-valid-module": "لا توجد وحدة متاحة للتعامل مع هذا الملف",
@@ -40,5 +43,6 @@
 	"importofficefiles-ui-progress-import-pages-step": "استيراد الصفحات ...",
 	"importofficefiles-ui-progress-remove-files-step": "جاري إزالة الملفات المؤقتة ...",
 	"importofficefiles-ui-import-error": "حدث خطأ ما أثناء الاستيراد.",
-	"importofficefiles-ui-analyze-error": "فشلت عملية التحليل لسبب ما."
+	"importofficefiles-ui-analyze-error": "فشلت عملية التحليل لسبب ما.",
+	"importofficefiles-ui-action-import-msword-label": "استيراد ملف Word جديد"
 }
