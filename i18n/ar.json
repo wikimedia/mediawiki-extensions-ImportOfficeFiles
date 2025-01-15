@@ -3,8 +3,8 @@
 		"authors": [
 			"Alshamiri1",
 			"Asma",
-			"أيوب",
-			"Meno25"
+			"Meno25",
+			"أيوب"
 		]
 	},
 	"importofficefiles-desc": "يسمح باستيراد ملفات المكتب على شكل صفحات ويكي",
@@ -44,5 +44,6 @@
 	"importofficefiles-ui-progress-import-pages-step": "استيراد الصفحات ...",
 	"importofficefiles-ui-progress-remove-files-step": "جاري إزالة الملفات المؤقتة ...",
 	"importofficefiles-ui-import-error": "حدث خطأ ما أثناء الاستيراد.",
-	"importofficefiles-ui-analyze-error": "فشلت عملية التحليل لسبب ما."
+	"importofficefiles-ui-analyze-error": "فشلت عملية التحليل لسبب ما.",
+	"importofficefiles-ui-action-import-msword-label": "استيراد ملف Word جديد"
 }

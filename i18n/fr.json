@@ -42,5 +42,6 @@
 	"importofficefiles-ui-progress-import-pages-step": "Importation des pages...",
 	"importofficefiles-ui-progress-remove-files-step": "Retrait des fichiers temporaires...",
 	"importofficefiles-ui-import-error": "Une erreur est survenue durant l’import.",
-	"importofficefiles-ui-analyze-error": "Le processus d’analyse a échoué pour une certaine raison."
+	"importofficefiles-ui-analyze-error": "Le processus d’analyse a échoué pour une certaine raison.",
+	"importofficefiles-ui-action-import-msword-label": "Nouvelle importation de fichier Word"
 }

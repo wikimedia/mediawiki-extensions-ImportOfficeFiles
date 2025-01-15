@@ -43,5 +43,6 @@
 	"importofficefiles-ui-progress-import-pages-step": "Label, associated with import process step, displayed above import progress bar",
 	"importofficefiles-ui-progress-remove-files-step": "Label, associated with import process step, displayed above import progress bar",
 	"importofficefiles-ui-import-error": "Error message which is shown to user in case of error during import",
-	"importofficefiles-ui-analyze-error": "Error message which is shown to user in case of error during file analyze"
+	"importofficefiles-ui-analyze-error": "Error message which is shown to user in case of error during file analyze",
+	"importofficefiles-ui-action-import-msword-label": "Text label for action to create pages from a Microsoft Word file"
 }
