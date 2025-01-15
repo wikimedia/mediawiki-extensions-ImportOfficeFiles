@@ -41,5 +41,6 @@
 	"importofficefiles-ui-import-error": "אירעה שגיאה כלשהי במהלך היבוא.",
 	"importofficefiles-ui-analyze-error": "תהליך הניתוח נכשל מסיבה כלשהי.",
 	"importofficefiles-ui-dialog-link-imported-page-text": "הקובץ יובא לאוסף $1",
-	"importofficefiles-ui-dialog-page-collection-protected-namespace": "לתשומת ליבך: דף \"אוסף דפים\" לא נוצר מכיוון שמרחב השמות \"$1\" מוגן"
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "לתשומת ליבך: דף \"אוסף דפים\" לא נוצר מכיוון שמרחב השמות \"$1\" מוגן",
+	"importofficefiles-ui-action-import-msword-label": "יבוא קובץ וורד חדש"
 }

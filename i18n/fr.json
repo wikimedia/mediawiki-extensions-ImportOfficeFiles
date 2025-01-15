@@ -42,5 +42,6 @@
 	"importofficefiles-ui-import-error": "Une erreur est survenue durant l’import.",
 	"importofficefiles-ui-analyze-error": "Le processus d’analyse a échoué pour une certaine raison.",
 	"importofficefiles-ui-dialog-link-imported-page-text": "Fichier importé vers $1",
-	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Remarque : la page « collection de pages » n'a pas été créée car l'espace de noms « $1 » est protégé"
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Remarque : la page « collection de pages » n'a pas été créée car l'espace de noms « $1 » est protégé",
+	"importofficefiles-ui-action-import-msword-label": "Nouvelle importation de fichier Word"
 }

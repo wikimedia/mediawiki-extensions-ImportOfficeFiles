@@ -3,6 +3,7 @@
 		"authors": [
 			"Alshamiri1",
 			"Asma",
+			"Meno25",
 			"أيوب"
 		]
 	},
@@ -41,5 +42,8 @@
 	"importofficefiles-ui-dialog-settings-split-level-2": "عناوين المستوى 2",
 	"importofficefiles-ui-dialog-settings-split-level-3": "عناوين المستوى 3",
 	"importofficefiles-ui-dialog-preview-title": "معاينة",
-	"importofficefiles-api-storage-error-no-valid-module": "لا توجد وحدة متاحة للتعامل مع هذا الملف"
+	"importofficefiles-api-storage-error-no-valid-module": "لا توجد وحدة متاحة للتعامل مع هذا الملف",
+	"importofficefiles-ui-dialog-link-imported-page-text": "الملف تم استيراده إلى $1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "ملاحظة: لم يتم إنشاء صفحة \"مجموعة الصفحات\" لأن مساحة الاسم \" $1 \" محمية",
+	"importofficefiles-ui-action-import-msword-label": "استيراد ملف Word جديد"
 }

@@ -40,5 +40,8 @@
 	"importofficefiles-api-storage-error-no-valid-module": "Er is geen module beschikbaar om dit bestand te verwerken",
 	"importofficefiles-ui-progress-remove-files-step": "Tijdelijke bestanden verwijderen…",
 	"importofficefiles-ui-import-error": "Er is een fout opgetreden tijdens het importeren.",
-	"importofficefiles-ui-analyze-error": "Het analyseproces is om de een of andere reden mislukt."
+	"importofficefiles-ui-analyze-error": "Het analyseproces is om de een of andere reden mislukt.",
+	"importofficefiles-ui-dialog-link-imported-page-text": "Bestand geïmporteerd naar $1",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Let op: de pagina “pages collection” is niet aangemaakt omdat de naamruimte “$1” is beveiligd",
+	"importofficefiles-ui-action-import-msword-label": "Nieuw Word-bestand importeren"
 }
