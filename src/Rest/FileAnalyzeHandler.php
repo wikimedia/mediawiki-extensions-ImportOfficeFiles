@@ -3,11 +3,11 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\Rest;
 
 use Exception;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\ImportOfficeFiles\Process\FileConvertProcessStep;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Rest\SimpleHandler;
 use MWStake\MediaWiki\Component\ProcessManager\ManagedProcess;
-use RequestContext;
 use Wikimedia\ParamValidator\ParamValidator;
 use function Sabre\HTTP\decodePath;
 
