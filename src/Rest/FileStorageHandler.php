@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\ImportOfficeFiles\Rest;
 
 use Config;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\ImportOfficeFiles\ModuleFactory;
 use MediaWiki\Extension\ImportOfficeFiles\Workspace;
 use MediaWiki\Rest\HttpException;
@@ -10,7 +11,6 @@ use MediaWiki\Rest\Response;
 use MediaWiki\Rest\SimpleHandler;
 use Message;
 use MWCryptRand;
-use RequestContext;
 use SplFileInfo;
 use UploadBase;
 use UploadFromFile;
