@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\ImportOfficeFiles;
 
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MimeAnalyzer;
 use SplFileInfo;

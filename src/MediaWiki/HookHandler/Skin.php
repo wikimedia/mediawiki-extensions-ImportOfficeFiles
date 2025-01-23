@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\ImportOfficeFiles\MediaWiki\HookHandler;
 
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\ImportOfficeFiles\ModuleFactory;
 use MediaWiki\Permissions\PermissionManager;
 

@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\ImportOfficeFiles\Rest;
 
-use Config;
 use Exception;
+use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\ImportOfficeFiles\Process\ImportProcess\ImportImagesStep;
 use MediaWiki\Extension\ImportOfficeFiles\Process\ImportProcess\ImportPagesStep;
