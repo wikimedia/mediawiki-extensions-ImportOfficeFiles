@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\ImportOfficeFiles\MediaWiki\RunJobsTriggerHandler;
 
-use Config;
 use DateTime;
 use DirectoryIterator;
+use MediaWiki\Config\Config;
 use MediaWiki\Logger\LoggerFactory;
 use MWStake\MediaWiki\Component\RunJobsTrigger\IHandler;
 use MWStake\MediaWiki\Component\RunJobsTrigger\Interval\OnceADay;
