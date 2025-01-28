@@ -6,11 +6,11 @@ use DateTime;
 use DirectoryIterator;
 use MediaWiki\Config\Config;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Status\Status;
 use MWStake\MediaWiki\Component\RunJobsTrigger\IHandler;
 use MWStake\MediaWiki\Component\RunJobsTrigger\Interval\OnceADay;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
-use Status;
 
 final class RemoveOrphanedDirectories implements IHandler, LoggerAwareInterface {
 
