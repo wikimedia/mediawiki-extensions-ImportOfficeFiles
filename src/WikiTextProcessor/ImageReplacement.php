@@ -2,11 +2,11 @@
 
 namespace MediaWiki\Extension\ImportOfficeFiles\WikiTextProcessor;
 
-use FormatJson;
 use MediaWiki\Extension\ImportOfficeFiles\FilenameBuilder;
 use MediaWiki\Extension\ImportOfficeFiles\IWikiTextProcessor;
 use MediaWiki\Extension\ImportOfficeFiles\Modules\MSOfficeWord;
 use MediaWiki\Extension\ImportOfficeFiles\Workspace;
+use MediaWiki\Json\FormatJson;
 
 class ImageReplacement implements IWikiTextProcessor {
 
