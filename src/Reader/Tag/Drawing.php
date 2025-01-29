@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\ImportOfficeFiles\Reader\Tag;
 
 use DOMElement;
 use DOMNode;
-use FormatJson;
+use MediaWiki\Json\FormatJson;
 
 class Drawing extends TagProcessorBase {
 
