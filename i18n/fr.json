@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Verdy p",
-			"Mahabarata"
+			"Mahabarata",
+			"Verdy p"
 		]
 	},
 	"importofficefiles-desc": "Permet d’importer des fichiers de bureau en tant que pages wiki",
