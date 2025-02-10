@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\ImportOfficeFiles\Tests\Reader\Tag;
 use DOMDocument;
 use DOMNodeList;
 use DOMXPath;
-use ExtensionRegistry;
 use MediaWiki\Extension\ImportOfficeFiles\Reader\Component\Word2007DocumentData;
 use MediaWiki\Extension\ImportOfficeFiles\Tests\Reader\DummyDocumentData;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 use PHPUnit\Framework\TestCase;
 
 class TagProcessorTestBase extends TestCase {
