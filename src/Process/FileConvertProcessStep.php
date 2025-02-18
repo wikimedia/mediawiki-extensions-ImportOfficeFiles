@@ -85,6 +85,9 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 		string $conflict,
 		string $username
 	) {
+		$logger = LoggerFactory::getInstance( 'ImportOfficeFiles' );
+		$this->setLogger( $logger );
+
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		// We need integer "split" parameter
@@ -117,15 +120,14 @@ class FileConvertProcessStep implements IProcessStep, LoggerAwareInterface {
 
 		$this->baseTitle = $title;
 
+		$this->logger->debug( "Looking for source file - '$sourceFilePath'..." );
+
 		if ( !file_exists( $sourceFilePath ) ) {
 			throw new Exception( 'File does not exist' );
 		}
 		$this->source = new SplFileInfo( $sourceFilePath );
 
 		$this->username = $username;
-
-		$logger = LoggerFactory::getInstance( 'ImportOfficeFiles' );
-		$this->setLogger( $logger );
 
 		$this->logger->debug( "Convert process launched." );
 	}

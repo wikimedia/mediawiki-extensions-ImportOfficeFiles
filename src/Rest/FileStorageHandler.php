@@ -8,6 +8,7 @@ use MediaWiki\Extension\ImportOfficeFiles\ModuleFactory;
 use MediaWiki\Extension\ImportOfficeFiles\Workspace;
 use MediaWiki\Message\Message;
 use MediaWiki\Rest\HttpException;
+use MediaWiki\Rest\RequestInterface;
 use MediaWiki\Rest\Response;
 use MediaWiki\Rest\SimpleHandler;
 use MWCryptRand;
@@ -122,5 +123,14 @@ class FileStorageHandler extends SimpleHandler {
 		}
 
 		return true;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getSupportedRequestTypes(): array {
+		return [
+			RequestInterface::MULTIPART_FORM_DATA_CONTENT_TYPE
+		];
 	}
 }
