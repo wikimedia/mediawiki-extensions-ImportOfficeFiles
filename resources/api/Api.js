@@ -104,5 +104,5 @@ officeimport.api.Api.prototype.getImportStatus = function ( processId ) {
 };
 
 officeimport.api.Api.prototype.importNextStep = function ( processId ) {
-	return this.post( 'file_import/proceed/' + processId );
+	return this.post( 'file_import/proceed/' + processId, JSON.stringify( {} ) );
 };
