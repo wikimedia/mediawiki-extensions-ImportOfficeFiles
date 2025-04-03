@@ -6,6 +6,7 @@ use Exception;
 use MediaWiki\Extension\ImportOfficeFiles\Integration\BlueSpiceFarmingTrait;
 use MediaWiki\Extension\ImportOfficeFiles\Workspace;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\ProcessManager\InterruptingProcessStep;
 use Psr\Log\LoggerAwareInterface;
@@ -47,7 +48,7 @@ class ImportImagesStep implements InterruptingProcessStep, LoggerAwareInterface 
 		string $uploadDirectory,
 		string $importImagesScript,
 		string $username
-		) {
+	) {
 		$workspaceDir = $uploadDirectory . '/cache/ImportOfficeFiles';
 
 		$config = MediaWikiServices::getInstance()->getMainConfig();
@@ -82,6 +83,16 @@ class ImportImagesStep implements InterruptingProcessStep, LoggerAwareInterface 
 
 		$this->logger->debug( 'Importing images from directory: ' . $imagesDir );
 
+		// Bail out instantly if there are no images to import, otherwise we'll get an exception.
+		// It works so after this commit:
+		// https://github.com/wikimedia/mediawiki/commit/5a7c5491775ebf97f60fc7067d3d41c609358534
+		if ( $this->findImages( $imagesDir ) === [] ) {
+			return [
+				// That's mostly message for developers, no need to make translate-able
+				'output_images' => "No images were found to import.",
+			];
+		}
+
 		try {
 			$params = [
 				$GLOBALS['wgPhpCli'],
@@ -113,6 +124,44 @@ class ImportImagesStep implements InterruptingProcessStep, LoggerAwareInterface 
 		return [
 			'output_images' => $processImages->getOutput()
 		];
+	}
+
+	/**
+	 * Search a directory for files with one of a set of extensions.
+	 *
+	 * Almost full C&P from "maintenance/importImages.php" ( \ImportImages::findFiles ).
+	 *
+	 * @param string $dir Path to directory to search
+	 * @return array Array of filenames on success, or false on failure
+	 */
+	private function findImages( $dir ) {
+		if ( !is_dir( $dir ) ) {
+			return [];
+		}
+
+		$dhl = opendir( $dir );
+		if ( !$dhl ) {
+			return [];
+		}
+
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$extensions = $config->get( MainConfigNames::FileExtensions );
+
+		$files = [];
+
+		$file = readdir( $dhl );
+		while ( $file !== false ) {
+			if ( is_file( $dir . '/' . $file ) ) {
+				$ext = pathinfo( $file, PATHINFO_EXTENSION );
+				if ( in_array( strtolower( $ext ), $extensions ) ) {
+					$files[] = $dir . '/' . $file;
+				}
+			}
+
+			$file = readdir( $dhl );
+		}
+
+		return $files;
 	}
 
 }
