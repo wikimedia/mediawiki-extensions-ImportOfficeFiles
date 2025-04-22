@@ -93,8 +93,10 @@
 		}
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\ImportOfficeFiles\\": "src/",
-		"MediaWiki\\Extension\\ImportOfficeFiles\\Tests\\": "tests/phpunit"
+		"MediaWiki\\Extension\\ImportOfficeFiles\\": "src/"
+	},
+	"TestAutoloadNamespaces": {
+		"MediaWiki\\Extension\\ImportOfficeFiles\\Tests\\": "tests/phpunit/"
 	},
 	"ResourceModules": {
 		"ext.importofficefiles.bootstrap": {
