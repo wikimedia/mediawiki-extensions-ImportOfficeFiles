@@ -22,9 +22,16 @@ officeimport.ui.ConfigurationPage.prototype.getElements = function () {
 		required: true
 	} );
 	this.titleInput.connect( this, {
-		change: function ( value ) {
+		change: ( value ) => {
 			this.emit( 'configSet', value );
+			this.onTitleInputChange();
 		}
+	} );
+
+	this.titleInputFieldLayout = new OO.ui.FieldLayout( this.titleInput, {
+		label: mw.message( 'importofficefiles-ui-dialog-settings-pagetitle-label' ).text(),
+		align: 'top',
+		required: true
 	} );
 
 	this.fileStructureCheckbox = new OO.ui.CheckboxInputWidget();
@@ -90,10 +97,7 @@ officeimport.ui.ConfigurationPage.prototype.getElements = function () {
 					label: mw.message( 'importofficefiles-ui-dialog-settings-page-title' ).text(),
 					classes: [ 'label-bold' ]
 				} ),
-				new OO.ui.FieldLayout( this.titleInput, {
-					label: mw.message( 'importofficefiles-ui-dialog-settings-pagetitle-label' ).text(),
-					align: 'top'
-				} )
+				this.titleInputFieldLayout
 			]
 		} ),
 		new OO.ui.FieldsetLayout( {
@@ -192,4 +196,51 @@ officeimport.ui.ConfigurationPage.prototype.setDefaultValue = function ( filenam
 	filename = filename.replace( /\..*/, '' );
 	this.title = this.title || filename;
 	this.titleInput.setValue( this.title );
+};
+
+officeimport.ui.ConfigurationPage.prototype.onTitleInputChange = function () {
+	this.titleInput.getValidity().then( () => {
+		this.emit( 'titleValidityChanged', true );
+		this.clearErrorMessage();
+	}, () => {
+		this.emit( 'titleValidityChanged', false );
+		this.showErrorMessage();
+	} );
+};
+
+officeimport.ui.ConfigurationPage.prototype.showErrorMessage = async function () {
+	const title = this.titleInput.getValue();
+	let error;
+
+	// Client-side check for common invalid characters <>[]|{}
+	const invalidCharMatch = title.match( /[<>[\]|{}]/ );
+	if ( invalidCharMatch ) {
+		error = mw.message(
+			'importofficefiles-ui-dialog-configuration-settings-title-invalid-characters'
+		).params( invalidCharMatch[ 0 ] ).text();
+	} else {
+		// API-based check for invalidity
+		try {
+			const data = await new mw.Api().get( {
+				action: 'query',
+				prop: 'pageprops',
+				titles: title
+			} );
+
+			const pages = data?.query?.pages;
+			if ( pages && pages[ -1 ]?.invalidreason ) {
+				error = pages[ -1 ].invalidreason;
+			}
+		} catch ( e ) {}
+	}
+
+	if ( !error ) {
+		error = mw.message( 'importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback' ).text();
+	}
+
+	this.titleInputFieldLayout.setErrors( [ error ] );
+};
+
+officeimport.ui.ConfigurationPage.prototype.clearErrorMessage = function () {
+	this.titleInputFieldLayout.setErrors( [] );
 };

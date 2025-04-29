@@ -97,7 +97,11 @@ officeimport.ui.ImportDialog.prototype.switchPage = function ( name, data ) {
 			this.setSize( 'medium' );
 			this.actions.setAbilities( { import: false, done: false, back: true, next: true } );
 			page.setDefaultValue( this.fileName );
-
+			page.connect( this, {
+				titleValidityChanged: ( isValid ) => {
+					this.actions.setAbilities( { next: isValid } );
+				}
+			} );
 			break;
 		case 'StructurePreview':
 			this.setSize( 'larger' );
