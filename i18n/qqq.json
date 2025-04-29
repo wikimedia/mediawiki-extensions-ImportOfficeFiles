@@ -18,6 +18,8 @@
 	"importofficefiles-ui-dialog-action-done": "Label for action button of the dialog.\n{{Identical|Done}}",
 	"importofficefiles-ui-dialog-label-select-file": "Label for widget to choose file",
 	"importofficefiles-ui-dialog-configuration-settings-title": "Title for dialog page configuration settings",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Used as text of error message: invalid characters in title\n\nParameters:\n* $1 – the invalid character",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Used as text of error message: invalid title",
 	"importofficefiles-ui-dialog-settings-page-title": "Label for setting page title",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "Label for title input widget to choose page title",
 	"importofficefiles-ui-dialog-settings-structure-label": "Label for setting content structure",
