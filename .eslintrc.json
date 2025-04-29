@@ -1,14 +1,20 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/client-es6",
+		"wikimedia/client",
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],
+	"parserOptions": {
+		"sourceType": "commonjs",
+		"ecmaVersion": 2020
+	},
 	"globals": {
 		"officeimport": "readonly"
 	},
 	"rules": {
-		"no-implicit-globals": "off"
+		"es-x/no-async-functions": "off",
+		"es-x/no-optional-chaining": "off",
+		"max-len": "off"
 	}
 }

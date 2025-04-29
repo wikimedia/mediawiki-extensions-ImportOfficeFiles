@@ -16,6 +16,8 @@
 	"importofficefiles-ui-dialog-action-done": "Done",
 	"importofficefiles-ui-dialog-label-select-file": "Select file",
 	"importofficefiles-ui-dialog-configuration-settings-title": "Configure import settings",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "This title can't be used. It contains a character (\"$1\") that's not allowed.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "This title can't be used.",
 	"importofficefiles-ui-dialog-settings-page-title": "Title",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "Select a title for the new page",
 	"importofficefiles-ui-dialog-settings-structure-label": "Content structure",

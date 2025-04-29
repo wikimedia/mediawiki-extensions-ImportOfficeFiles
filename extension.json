@@ -131,6 +131,8 @@
 				"importofficefiles-ui-dialog-action-done",
 				"importofficefiles-ui-dialog-label-select-file",
 				"importofficefiles-ui-dialog-configuration-settings-title",
+				"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters",
+				"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback",
 				"importofficefiles-ui-dialog-settings-page-title",
 				"importofficefiles-ui-dialog-settings-pagetitle-label",
 				"importofficefiles-ui-dialog-settings-structure-label",
