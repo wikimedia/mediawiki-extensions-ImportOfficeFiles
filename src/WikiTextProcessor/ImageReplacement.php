@@ -36,9 +36,15 @@ class ImageReplacement implements IWikiTextProcessor {
 	private $nsFileRepoCompat = false;
 
 	/**
-	 * @param Workspace $workspace
+	 * @var int
 	 */
-	public function __construct( Workspace $workspace ) {
+	private $imageWidthThreshold;
+
+	/**
+	 * @param Workspace $workspace
+	 * @param int $imageWidthThreshold
+	 */
+	public function __construct( Workspace $workspace, int $imageWidthThreshold ) {
 		$this->workspace = $workspace;
 
 		$analyzerBucket = $this->workspace->loadBucket( MSOfficeWord::BUCKET_ANALYZER );
@@ -58,6 +64,8 @@ class ImageReplacement implements IWikiTextProcessor {
 		}
 
 		$this->idFilenameMap = $this->workspace->loadBucket( MSOfficeWord::BUCKET_MEDIA_ID_FILENAME );
+
+		$this->imageWidthThreshold = $imageWidthThreshold;
 	}
 
 	/**
@@ -97,6 +105,13 @@ class ImageReplacement implements IWikiTextProcessor {
 				$props .= '|border';
 			} else {
 				$props .= '|thumb|center';
+			}
+
+			// If image is too large - scale it down to configured "threshold".
+			// For that reduce width to threshold and get rid of height (so image proportions will stay).
+			if ( !empty( $width ) && $width > $this->imageWidthThreshold ) {
+				$width = $this->imageWidthThreshold;
+				$height = null;
 			}
 
 			if ( !empty( $width ) && !empty( $height ) ) {
