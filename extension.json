@@ -251,6 +251,10 @@
 		"ImportOfficeFilesWord2007TagPropertyProcessorPipeline": {
 			"value": [ "style", "color", "justify", "highlight", "shadow", "verticalalign", "italic", "strikethrough", "underline", "bold" ],
 			"public": true
+		},
+		"ImportOfficeFilesWord2007ImageWidthThreshold": {
+			"value": 700,
+			"public": true
 		}
 	},
 	"load_composer_autoloader": true,
