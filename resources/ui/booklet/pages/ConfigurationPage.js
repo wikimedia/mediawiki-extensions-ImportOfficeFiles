@@ -212,8 +212,8 @@ officeimport.ui.ConfigurationPage.prototype.showErrorMessage = async function ()
 	const title = this.titleInput.getValue();
 	let error;
 
-	// Client-side check for common invalid characters <>[]|{}
-	const invalidCharMatch = title.match( /[<>[\]|{}]/ );
+	// Client-side check for common invalid characters <>[]|{}#
+	const invalidCharMatch = title.match( /[<>[\]|{}#]/ );
 	if ( invalidCharMatch ) {
 		error = mw.message(
 			'importofficefiles-ui-dialog-configuration-settings-title-invalid-characters'
