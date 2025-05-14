@@ -83,7 +83,7 @@ class ImageReplacementTest extends TestCase {
 		$actualWikitext = $imageReplacement->process( $wikitext );
 
 		// First image is too wide, so will be scaled to threshold.
-		$expectedWikitext = '[[File:_filename1.jpg|thumb|center|x700px]]';
+		$expectedWikitext = '[[File:_filename1.jpg|thumb|center|700px]]';
 		// Second image will be processed normally.
 		$expectedWikitext .= '[[File:_filename2.png|thumb|center|100x200px]]';
 

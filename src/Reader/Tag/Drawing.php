@@ -61,7 +61,7 @@ class Drawing extends TagProcessorBase {
 
 		$ptSize = $emuSize / $emuInPt;
 
-		$pxSize = intval( $ptSize * 0.75 );
+		$pxSize = intval( $ptSize / 0.75 );
 
 		return $pxSize;
 	}
