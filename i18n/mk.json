@@ -16,6 +16,8 @@
 	"importofficefiles-ui-dialog-action-done": "Готово",
 	"importofficefiles-ui-dialog-label-select-file": "Одберете податотека",
 	"importofficefiles-ui-dialog-configuration-settings-title": "Нагодувања за увозот",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Не може да се користи овој наслов. Содржи знак („$1“) што не допуштен.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Овој наслов не може да се користи.",
 	"importofficefiles-ui-dialog-settings-page-title": "Наслов",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "Одберете наслов за новата страница",
 	"importofficefiles-ui-dialog-settings-structure-label": "Структура на содржината",
