@@ -199,40 +199,46 @@ officeimport.ui.ConfigurationPage.prototype.setDefaultValue = function ( filenam
 };
 
 officeimport.ui.ConfigurationPage.prototype.onTitleInputChange = function () {
-	this.titleInput.getValidity().then( () => {
-		this.emit( 'titleValidityChanged', true );
-		this.clearErrorMessage();
-	}, () => {
-		this.emit( 'titleValidityChanged', false );
-		this.showErrorMessage();
-	} );
-};
-
-officeimport.ui.ConfigurationPage.prototype.showErrorMessage = async function () {
-	const title = this.titleInput.getValue();
-	let error;
-
 	// Client-side check for common invalid characters <>[]|{}#
-	const invalidCharMatch = title.match( /[<>[\]|{}#]/ );
+	const invalidCharMatch = this.titleInput.getValue().match( /[<>[\]|{}#]/ );
 	if ( invalidCharMatch ) {
-		error = mw.message(
+		const error = mw.message(
 			'importofficefiles-ui-dialog-configuration-settings-title-invalid-characters'
 		).params( invalidCharMatch[ 0 ] ).text();
+		this.emit( 'titleValidityChanged', false );
+		this.showErrorMessage( error );
 	} else {
-		// API-based check for invalidity
-		try {
-			const data = await new mw.Api().get( {
-				action: 'query',
-				prop: 'pageprops',
-				titles: title
-			} );
-
-			const pages = data?.query?.pages;
-			if ( pages && pages[ -1 ]?.invalidreason ) {
-				error = pages[ -1 ].invalidreason;
-			}
-		} catch ( e ) {}
+		this.titleInput.getValidity().then( () => {
+			this.emit( 'titleValidityChanged', true );
+			this.clearErrorMessage();
+		}, () => {
+			this.emit( 'titleValidityChanged', false );
+			this.showErrorMessage();
+		} );
 	}
+};
+
+officeimport.ui.ConfigurationPage.prototype.showErrorMessage = async function ( error = null ) {
+	if ( error ) {
+		this.titleInputFieldLayout.setErrors( [ error ] );
+		return;
+	}
+
+	const title = this.titleInput.getValue();
+
+	// API-based check for invalidity
+	try {
+		const data = await new mw.Api().get( {
+			action: 'query',
+			prop: 'pageprops',
+			titles: title
+		} );
+
+		const pages = data?.query?.pages;
+		if ( pages && pages[ -1 ]?.invalidreason ) {
+			error = pages[ -1 ].invalidreason;
+		}
+	} catch ( e ) {}
 
 	if ( !error ) {
 		error = mw.message( 'importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback' ).text();
