@@ -41,5 +41,7 @@
 	"importofficefiles-ui-progress-remove-files-step": "Отстранувам привремени податотеки...",
 	"importofficefiles-ui-import-error": "Се случи некаква грешка при увозот.",
 	"importofficefiles-ui-analyze-error": "Процесот на анализа не успеа.",
-	"importofficefiles-ui-action-import-msword-label": "Увоз на нова Word-податотека"
+	"importofficefiles-ui-action-import-msword-label": "Увоз на нова Word-податотека",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Не може да се користи овој наслов. Содржи знак („$1“) што не допуштен.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Овој наслов не може да се користи."
 }
