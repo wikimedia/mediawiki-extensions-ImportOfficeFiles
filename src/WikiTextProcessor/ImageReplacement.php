@@ -117,9 +117,9 @@ class ImageReplacement implements IWikiTextProcessor {
 			if ( !empty( $width ) && !empty( $height ) ) {
 				$props .= "|{$width}x{$height}px";
 			} elseif ( !empty( $width ) ) {
-				$props .= "|x{$width}px";
+				$props .= "|{$width}px";
 			} elseif ( !empty( $height ) ) {
-				$props .= "|{$height}px";
+				$props .= "|x{$height}px";
 			}
 
 			if ( isset( $this->idFilenameMap[$id] ) ) {
