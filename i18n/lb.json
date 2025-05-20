@@ -16,6 +16,7 @@
 	"importofficefiles-ui-dialog-action-done": "Fäerdeg",
 	"importofficefiles-ui-dialog-label-select-file": "Fichier eraussichen",
 	"importofficefiles-ui-dialog-configuration-settings-title": "Astellunge fir den Import festleeën",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Dësen Titel kann net benotzt ginn.",
 	"importofficefiles-ui-dialog-settings-page-title": "Titel",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "Sicht en Titel fir déi nei Säit",
 	"importofficefiles-ui-dialog-settings-structure-label": "Struktur vum Inhalt",
@@ -25,6 +26,5 @@
 	"importofficefiles-ui-dialog-settings-conflicts-rename": "Ëmbenennen",
 	"importofficefiles-ui-dialog-settings-conflicts-override": "Iwwerschreiwen",
 	"importofficefiles-ui-dialog-preview-title": "Kucken ouni ofzespäicheren",
-	"importofficefiles-ui-dialog-preview-label": "Dës Säite ginn importéiert",
-	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Dësen Titel kann net benotzt ginn."
+	"importofficefiles-ui-dialog-preview-label": "Dës Säite ginn importéiert"
 }
