@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"importofficefiles-desc": "Erlaabt et fir Office-Fichieren als Wiki-Säiten z'importéieren",
