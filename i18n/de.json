@@ -42,5 +42,7 @@
 	"importofficefiles-ui-progress-remove-files-step": "Temporäre Dateien entfernen …",
 	"importofficefiles-ui-import-error": "Während des Imports sind Fehler aufgetreten.",
 	"importofficefiles-ui-analyze-error": "Der Analyseprozess ist aus irgendeinem Grund fehlgeschlagen.",
-	"importofficefiles-ui-action-import-msword-label": "Neuer Import einer Word-Datei"
+	"importofficefiles-ui-action-import-msword-label": "Neuer Import einer Word-Datei",
+	"importofficefiles-ui-dialog-preview-action-close": "Schließen",
+	"importofficefiles-ui-dialog-preview-btn-title": "Vorschau"
 }

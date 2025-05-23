@@ -8,8 +8,7 @@ officeimport.ui.PreviewDialog.static.name = 'previewDialog';
 officeimport.ui.PreviewDialog.static.title = 'Page preview';
 officeimport.ui.PreviewDialog.static.actions = [
 	{
-		title: 'Cancel',
-		icon: 'close',
+		label: mw.message( 'importofficefiles-ui-dialog-preview-action-close' ).text(),
 		flags: 'safe'
 	}
 ];
