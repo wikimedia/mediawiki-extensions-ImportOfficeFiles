@@ -29,11 +29,11 @@ officeimport.ui.ImportDialog.static.actions = [
 		action: 'back',
 		label: mw.message( 'importofficefiles-ui-dialog-action-back' ).text(),
 		flags: 'primary',
-		modes: [ 'SelectFile', 'Configuration', 'StructurePreview' ]
+		modes: [ 'Configuration', 'StructurePreview' ]
 	},
 	{
 		label: mw.message( 'importofficefiles-ui-dialog-action-cancel' ).text(),
-		flags: 'safe',
+		flags: [ 'safe', 'close' ],
 		modes: [ 'SelectFile', 'Configuration', 'StructurePreview', 'ImportProgress', 'ImportDone' ]
 	}
 ];

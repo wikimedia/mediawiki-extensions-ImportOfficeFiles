@@ -64,7 +64,7 @@ officeimport.ui.StructurePreviewPage.prototype.generatePagesStructure = function
 
 		const iconPreviewWidget = new OO.ui.IconWidget( {
 			icon: 'eye',
-			title: 'Preview'
+			title: mw.message( 'importofficefiles-ui-dialog-preview-btn-title' ).text()
 		} );
 
 		const fieldLayout = new OO.ui.FieldsetLayout( {

@@ -154,7 +154,9 @@
 				"importofficefiles-ui-progress-import-pages-step",
 				"importofficefiles-ui-progress-remove-files-step",
 				"importofficefiles-ui-import-error",
-				"importofficefiles-ui-analyze-error"
+				"importofficefiles-ui-analyze-error",
+				"importofficefiles-ui-dialog-preview-action-close",
+				"importofficefiles-ui-dialog-preview-btn-title"
 			]
 		},
 		"ext.importofficefiles.api": {

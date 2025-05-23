@@ -43,5 +43,7 @@
 	"importofficefiles-ui-progress-remove-files-step": "Removing temporary files...",
 	"importofficefiles-ui-import-error": "Some error happened during import.",
 	"importofficefiles-ui-analyze-error": "Analyze process failed for some reason.",
-	"importofficefiles-ui-action-import-msword-label": "New Word file import"
+	"importofficefiles-ui-action-import-msword-label": "New Word file import",
+	"importofficefiles-ui-dialog-preview-action-close": "Close",
+	"importofficefiles-ui-dialog-preview-btn-title": "Preview"
 }
