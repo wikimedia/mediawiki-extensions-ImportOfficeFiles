@@ -20,7 +20,7 @@
 	"importofficefiles-ui-dialog-action-done": "تم",
 	"importofficefiles-ui-dialog-label-select-file": "اختر الملف",
 	"importofficefiles-ui-dialog-configuration-settings-title": "تكوين إعدادات الاستيراد",
-	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "هذا العنوان لا يمكن استخدامه يحتوي على حرف (\"$1\") غير مسموح به.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "لا يمكن استخدام هذا العنوان. على انه يحتوي على حرف (\"$1\") غير مسموح به.",
 	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "لا يمكن استخدام هذا العنوان.",
 	"importofficefiles-ui-dialog-settings-page-title": "عنوان",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "اختر عنوان الصفحة الجديدة",
