@@ -16,6 +16,8 @@
 	"importofficefiles-ui-dialog-action-done": "Facite",
 	"importofficefiles-ui-dialog-label-select-file": "Seliger file",
 	"importofficefiles-ui-dialog-configuration-settings-title": "Configurar parametros de importation",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Iste titulo non pote esser usate. Illo contine un character (“$1”) que non es permittite.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Iste titulo non pote esser usate.",
 	"importofficefiles-ui-dialog-settings-page-title": "Titulo",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "Selige un titulo pro le nove pagina",
 	"importofficefiles-ui-dialog-settings-structure-label": "Structura de contento",
