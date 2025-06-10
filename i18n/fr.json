@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Mahabarata",
-			"Verdy p"
+			"Verdy p",
+			"EmDashUser002",
+			"JLTRY"
 		]
 	},
 	"importofficefiles-desc": "Permet d’importer des fichiers de bureau en tant que pages wiki",
@@ -17,6 +19,8 @@
 	"importofficefiles-ui-dialog-action-done": "Fait",
 	"importofficefiles-ui-dialog-label-select-file": "Sélectionner un fichier",
 	"importofficefiles-ui-dialog-configuration-settings-title": "Configurer les paramètres d’import",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Ce titre ne peut pas être utilisé. Il contient un caractère (« $1 ») non autorisé.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Cet titre ne peut pas être utilisé.",
 	"importofficefiles-ui-dialog-settings-page-title": "Titre",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "Sélectionner un titre pour la nouvelle page",
 	"importofficefiles-ui-dialog-settings-structure-label": "Structure du contenu",
