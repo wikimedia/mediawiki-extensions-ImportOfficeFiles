@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"123Rkhader",
 			"Alshamiri1",
 			"Asma",
 			"Meno25",
@@ -44,5 +45,7 @@
 	"importofficefiles-ui-progress-remove-files-step": "جاري إزالة الملفات المؤقتة ...",
 	"importofficefiles-ui-import-error": "حدث خطأ ما أثناء الاستيراد.",
 	"importofficefiles-ui-analyze-error": "فشلت عملية التحليل لسبب ما.",
-	"importofficefiles-ui-action-import-msword-label": "استيراد ملف Word جديد"
+	"importofficefiles-ui-action-import-msword-label": "استيراد ملف Word جديد",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "لا يمكن استخدام هذا العنوان. على انه يحتوي على حرف (\"$1\") غير مسموح به.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "لا يمكن استخدام هذا العنوان."
 }
