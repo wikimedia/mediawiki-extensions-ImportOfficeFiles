@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"YaronSh"
 		]
 	},
 	"importofficefiles-desc": "אפשרות יבוא קובצי אופיס כדפי ויקי",
@@ -41,5 +42,6 @@
 	"importofficefiles-ui-progress-remove-files-step": "הסרת קבצים זמניים...",
 	"importofficefiles-ui-import-error": "אירעה שגיאה כלשהי במהלך היבוא.",
 	"importofficefiles-ui-analyze-error": "תהליך הניתוח נכשל מסיבה כלשהי.",
-	"importofficefiles-ui-action-import-msword-label": "יבוא קובץ וורד חדש"
+	"importofficefiles-ui-action-import-msword-label": "יבוא קובץ וורד חדש",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "אי אפשר להשתמש בכותרת הזאת."
 }
