@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"YaronSh"
 		]
 	},
 	"importofficefiles-desc": "אפשרות יבוא קובצי אופיס כדפי ויקי",
@@ -16,6 +17,7 @@
 	"importofficefiles-ui-dialog-action-done": "סיום",
 	"importofficefiles-ui-dialog-label-select-file": "בחירת קובץ",
 	"importofficefiles-ui-dialog-configuration-settings-title": "הגדרת תצורת יבוא",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "אי אפשר להשתמש בכותרת הזאת.",
 	"importofficefiles-ui-dialog-settings-page-title": "כותרת",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "נא לבחור כותרת עבור הדף החדש",
 	"importofficefiles-ui-dialog-settings-structure-label": "מבנה תוכן",
