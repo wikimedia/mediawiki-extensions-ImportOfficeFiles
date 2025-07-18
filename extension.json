@@ -7,7 +7,7 @@
 		"Alexei Kulbii"
 	],
 	"url": "https://en.wiki.bluespice.com/wiki/Reference:ImportOfficeFiles",
-	"version": "3.2.0-alpha",
+	"version": "3.3.0-alpha",
 	"descriptionmsg": "importofficefiles-desc",
 	"requires": {
 		"MediaWiki": ">= 1.43.0"
