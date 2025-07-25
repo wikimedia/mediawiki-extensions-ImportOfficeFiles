@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\ImportOfficeFiles\Tests;
 use MediaWiki\Extension\ImportOfficeFiles\Segment;
 use MediaWiki\Extension\ImportOfficeFiles\SegmentList;
 use MediaWiki\Extension\ImportOfficeFiles\SegmentsTitleBuilder;
-use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
 /**
@@ -17,7 +16,7 @@ class SegmentsTitleBulderTest extends MediaWikiIntegrationTestCase {
 	 * @return void
 	 */
 	public function addDBData() {
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
+		$contLang = $this->getServiceContainer()->getContentLanguage();
 
 		$namespaces = [
 			-2 => 'Media',
