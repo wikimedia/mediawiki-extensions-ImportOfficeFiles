@@ -44,5 +44,7 @@
 	"importofficefiles-ui-progress-remove-files-step": "Label, associated with import process step, displayed above import progress bar",
 	"importofficefiles-ui-import-error": "Error message which is shown to user in case of error during import",
 	"importofficefiles-ui-analyze-error": "Error message which is shown to user in case of error during file analyze",
-	"importofficefiles-ui-action-import-msword-label": "Text label for action to create pages from a Microsoft Word file"
+	"importofficefiles-ui-action-import-msword-label": "Text label for action to create pages from a Microsoft Word file",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Used as text of error message: invalid characters in title\n\nParameters:\n* $1 – the invalid character",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Used as text of error message: invalid title"
 }

@@ -1,6 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
+			"EmDashUser002",
+			"JLTRY",
 			"Mahabarata",
 			"Verdy p"
 		]
@@ -43,5 +45,7 @@
 	"importofficefiles-ui-analyze-error": "Le processus d’analyse a échoué pour une certaine raison.",
 	"importofficefiles-ui-dialog-link-imported-page-text": "Fichier importé vers $1",
 	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Remarque : la page « collection de pages » n'a pas été créée car l'espace de noms « $1 » est protégé",
-	"importofficefiles-ui-action-import-msword-label": "Nouvelle importation de fichier Word"
+	"importofficefiles-ui-action-import-msword-label": "Nouvelle importation de fichier Word",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Ce titre ne peut pas être utilisé. Il contient un caractère (« $1 ») non autorisé.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Cet titre ne peut pas être utilisé."
 }

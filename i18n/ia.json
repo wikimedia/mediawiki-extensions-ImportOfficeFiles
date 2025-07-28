@@ -42,5 +42,7 @@
 	"importofficefiles-ui-analyze-error": "Le processo de analyse ha fallite a causa de un error incognite.",
 	"importofficefiles-ui-dialog-link-imported-page-text": "File importate in $1",
 	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Nota ben: le pagina “pages collection” non ha essite create perque le spatio de nomines “$1” es protegite",
-	"importofficefiles-ui-action-import-msword-label": "Importar un nove file Word"
+	"importofficefiles-ui-action-import-msword-label": "Importar un nove file Word",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Iste titulo non pote esser usate. Illo contine un character (“$1”) que non es permittite.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Iste titulo non pote esser usate."
 }
