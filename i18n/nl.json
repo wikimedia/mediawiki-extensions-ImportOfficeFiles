@@ -42,5 +42,7 @@
 	"importofficefiles-ui-progress-remove-files-step": "Tijdelijke bestanden verwijderen…",
 	"importofficefiles-ui-import-error": "Er is een fout opgetreden tijdens het importeren.",
 	"importofficefiles-ui-analyze-error": "Het analyseproces is om de een of andere reden mislukt.",
-	"importofficefiles-ui-action-import-msword-label": "Nieuw Word-bestand importeren"
+	"importofficefiles-ui-action-import-msword-label": "Nieuw Word-bestand importeren",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Deze titel kan niet gebruikt worden. Hij bevat een teken (“$1”) dat niet is toegestaan.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Deze titel kan niet gebruikt worden."
 }
