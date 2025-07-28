@@ -43,5 +43,7 @@
 	"importofficefiles-ui-analyze-error": "Het analyseproces is om de een of andere reden mislukt.",
 	"importofficefiles-ui-dialog-link-imported-page-text": "Bestand geïmporteerd naar $1",
 	"importofficefiles-ui-dialog-page-collection-protected-namespace": "Let op: de pagina “pages collection” is niet aangemaakt omdat de naamruimte “$1” is beveiligd",
-	"importofficefiles-ui-action-import-msword-label": "Nieuw Word-bestand importeren"
+	"importofficefiles-ui-action-import-msword-label": "Nieuw Word-bestand importeren",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Deze titel kan niet gebruikt worden. Hij bevat een teken (“$1”) dat niet is toegestaan.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Deze titel kan niet gebruikt worden."
 }
