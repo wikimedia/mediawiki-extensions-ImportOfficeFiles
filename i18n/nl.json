@@ -17,6 +17,8 @@
 	"importofficefiles-ui-dialog-action-done": "Afgerond",
 	"importofficefiles-ui-dialog-label-select-file": "Selecteer bestand",
 	"importofficefiles-ui-dialog-configuration-settings-title": "Importinstellingen aanpassen",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Deze titel kan niet gebruikt worden. Hij bevat een teken (“$1”) dat niet is toegestaan.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Deze titel kan niet gebruikt worden.",
 	"importofficefiles-ui-dialog-settings-page-title": "Titel",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "Selecteer een titel voor de nieuwe pagina",
 	"importofficefiles-ui-dialog-settings-structure-label": "Inhoudsstructuur",
