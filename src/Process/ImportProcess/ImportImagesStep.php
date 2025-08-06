@@ -93,25 +93,41 @@ class ImportImagesStep implements InterruptingProcessStep, LoggerAwareInterface 
 			];
 		}
 
+		// php {IP}/maintenance/importImages.php images/cache/ImportOfficeFiles/{uploadId}/result/images/
+		$params = [
+			$GLOBALS['wgPhpCli'],
+			$this->importImagesScript,
+			$imagesDir,
+			'--summary= ',
+			'--overwrite= '
+		];
+		$this->extendParams( $params );
+		if ( $this->username !== '' ) {
+			$params[] = '--user=' . $this->username;
+		}
+		$exceptions = "";
 		try {
-			$params = [
-				$GLOBALS['wgPhpCli'],
-				$this->importImagesScript,
-				$imagesDir,
-				'--summary= ',
-				'--overwrite= '
-			];
-			$this->extendParams( $params );
-
-			if ( $this->username !== '' ) {
-				$params[] = '--user=' . $this->username;
-			}
-
-			// php {IP}/maintenance/importImages.php images/cache/ImportOfficeFiles/{uploadId}/result/images/
 			$processImages = new Process( $params );
 			$processImages->run();
 		} catch ( Exception $e ) {
-			return [ 'output_images_exception' => $e->getMessage() ];
+			$exceptions .= $e->getMessage();
+		}
+		if ( !$processImages->isSuccessful() ) {
+			$this->logger->debug(
+				'Exception while importing images in overwrite mode, retry without overwrite.'
+			);
+			// when uploading exactly the same file again,
+			// the upload should be safely skipped without breaking the import.
+			unset( $params[array_search( '--overwrite= ', $params )] );
+			try {
+				$processImages = new Process( $params );
+				$processImages->run();
+			} catch ( Exception $e ) {
+				$exceptions .= $e->getMessage();
+				return [
+					'output_images_exception' => $exceptions
+				];
+			}
 		}
 
 		if ( !$processImages->isSuccessful() ) {
