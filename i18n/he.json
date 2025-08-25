@@ -44,5 +44,6 @@
 	"importofficefiles-ui-dialog-link-imported-page-text": "הקובץ יובא לאוסף $1",
 	"importofficefiles-ui-dialog-page-collection-protected-namespace": "לתשומת ליבך: דף \"אוסף דפים\" לא נוצר מכיוון שמרחב השמות \"$1\" מוגן",
 	"importofficefiles-ui-action-import-msword-label": "יבוא קובץ וורד חדש",
-	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "אי אפשר להשתמש בכותרת הזאת."
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "אי אפשר להשתמש בכותרת הזאת.",
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "לא ניתן להשתמש בכותרת הזאת. היא מכילה תו אסור (\"$1\")."
 }
