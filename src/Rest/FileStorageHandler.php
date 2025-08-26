@@ -112,7 +112,7 @@ class FileStorageHandler extends SimpleHandler {
 		$path = $this->uploadDirectory . '/cache/ImportOfficeFiles/';
 
 		$workspace = new Workspace( RequestContext::getMain()->getConfig() );
-		$workspace->init( $uniqueID );
+		$workspace->init( $uniqueID, $path );
 		$workspace->uploadSourceFile( $file );
 
 		$moduleFactory = new ModuleFactory();
