@@ -70,8 +70,6 @@ class ImportOfficeFile extends Maintenance {
 	 */
 	private $uncollide = false;
 
-	/**
-	 */
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'ImportOfficeFiles' );

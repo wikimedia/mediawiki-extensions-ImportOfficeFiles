@@ -39,7 +39,6 @@ class MSOfficeWord implements IModule {
 	protected $workspace = null;
 
 	/**
-	 *
 	 * @param Config $config
 	 */
 	public function __construct( $config ) {

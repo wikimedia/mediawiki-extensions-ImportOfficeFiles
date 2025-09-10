@@ -54,7 +54,6 @@ class TitleMapBuilder {
 	}
 
 	/**
-	 *
 	 * @param string $namespace
 	 * @param string $titleText
 	 * @return string
