@@ -4,6 +4,7 @@
 			"123Rkhader",
 			"Alshamiri1",
 			"Asma",
+			"Hubaishan",
 			"Meno25",
 			"أيوب"
 		]
@@ -45,7 +46,7 @@
 	"importofficefiles-ui-dialog-preview-title": "معاينة",
 	"importofficefiles-api-storage-error-no-valid-module": "لا توجد وحدة متاحة للتعامل مع هذا الملف",
 	"importofficefiles-ui-dialog-link-imported-page-text": "الملف تم استيراده إلى $1",
-	"importofficefiles-ui-dialog-page-collection-protected-namespace": "ملاحظة: لم يتم إنشاء صفحة \"مجموعة الصفحات\" لأن مساحة الاسم \" $1 \" محمية",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "ملاحظة: لم يتم إنشاء صفحة \"مجموعة الصفحات\" لأن النطاق «$1» محمي",
 	"importofficefiles-ui-action-import-msword-label": "استيراد ملف Word جديد",
 	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "لا يمكن استخدام هذا العنوان. على انه يحتوي على حرف (\"$1\") غير مسموح به.",
 	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "لا يمكن استخدام هذا العنوان."
