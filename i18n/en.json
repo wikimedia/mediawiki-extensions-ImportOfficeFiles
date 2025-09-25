@@ -44,5 +44,7 @@
 	"importofficefiles-ui-analyze-error": "Analyze process failed for some reason.",
 	"importofficefiles-ui-action-import-msword-label": "New Word file import",
 	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "This title can't be used. It contains a character (\"$1\") that's not allowed.",
-	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "This title can't be used."
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "This title can't be used.",
+	"importofficefiles-ui-dialog-preview-action-close": "Close",
+	"importofficefiles-ui-dialog-preview-btn-title": "Preview"
 }

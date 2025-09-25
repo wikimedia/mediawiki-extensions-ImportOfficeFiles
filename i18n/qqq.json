@@ -46,5 +46,7 @@
 	"importofficefiles-ui-analyze-error": "Error message which is shown to user in case of error during file analyze",
 	"importofficefiles-ui-action-import-msword-label": "Text label for action to create pages from a Microsoft Word file",
 	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Used as text of error message: invalid characters in title\n\nParameters:\n* $1 – the invalid character",
-	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Used as text of error message: invalid title"
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Used as text of error message: invalid title",
+	"importofficefiles-ui-dialog-preview-action-close": "Label for action button of the dialog.\n{{Identical|Close}}",
+	"importofficefiles-ui-dialog-preview-btn-title": "Title for icon button to open preview dialog"
 }
