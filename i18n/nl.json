@@ -44,5 +44,7 @@
 	"importofficefiles-ui-progress-remove-files-step": "Tijdelijke bestanden verwijderen…",
 	"importofficefiles-ui-import-error": "Er is een fout opgetreden tijdens het importeren.",
 	"importofficefiles-ui-analyze-error": "Het analyseproces is om de een of andere reden mislukt.",
-	"importofficefiles-ui-action-import-msword-label": "Nieuw Word-bestand importeren"
+	"importofficefiles-ui-action-import-msword-label": "Nieuw Word-bestand importeren",
+	"importofficefiles-ui-dialog-preview-action-close": "Sluiten",
+	"importofficefiles-ui-dialog-preview-btn-title": "Voorvertoning"
 }
