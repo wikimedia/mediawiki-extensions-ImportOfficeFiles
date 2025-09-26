@@ -26,5 +26,6 @@
 	"importofficefiles-ui-dialog-settings-conflicts-override": "Iwwerschreiwen",
 	"importofficefiles-ui-dialog-preview-title": "Kucken ouni ofzespäicheren",
 	"importofficefiles-ui-dialog-preview-label": "Dës Säite ginn importéiert",
-	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Dësen Titel kann net benotzt ginn."
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Dësen Titel kann net benotzt ginn.",
+	"importofficefiles-ui-dialog-preview-action-close": "Zoumaachen"
 }
