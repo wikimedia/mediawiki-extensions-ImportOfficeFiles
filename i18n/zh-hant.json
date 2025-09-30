@@ -44,5 +44,7 @@
 	"importofficefiles-ui-progress-remove-files-step": "正在移除暫存檔案…",
 	"importofficefiles-ui-import-error": "匯入過程中發生了一些錯誤。",
 	"importofficefiles-ui-analyze-error": "分析過程出於某種原因導致失敗。",
-	"importofficefiles-ui-action-import-msword-label": "新的 Word 檔案匯入"
+	"importofficefiles-ui-action-import-msword-label": "新的 Word 檔案匯入",
+	"importofficefiles-ui-dialog-preview-action-close": "關閉",
+	"importofficefiles-ui-dialog-preview-btn-title": "預覽"
 }

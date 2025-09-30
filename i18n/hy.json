@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Սերգեյ Սաֆարյան"
+			"Սերգեյ Սաֆարյան",
+			"Kareyac"
 		]
 	},
-	"importofficefiles-ui-dialog-preview-title": "Նախադիտում"
+	"importofficefiles-ui-dialog-preview-title": "Նախադիտում",
+	"importofficefiles-ui-dialog-preview-action-close": "Փակել",
+	"importofficefiles-ui-dialog-preview-btn-title": "Նախադիտում"
 }
