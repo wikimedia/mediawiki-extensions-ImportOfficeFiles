@@ -6,6 +6,7 @@
 			"Asma",
 			"Hubaishan",
 			"Meno25",
+			"Mohammed Qays",
 			"أيوب"
 		]
 	},
@@ -16,7 +17,7 @@
 	"importofficefiles-ui-dialog-action-import": "استيراد",
 	"importofficefiles-ui-dialog-action-next": "التالي",
 	"importofficefiles-ui-dialog-action-back": "رجوع",
-	"importofficefiles-ui-dialog-action-done": "تم",
+	"importofficefiles-ui-dialog-action-done": "نفذ",
 	"importofficefiles-ui-dialog-label-select-file": "اختر الملف",
 	"importofficefiles-ui-dialog-settings-page-title": "عنوان",
 	"importofficefiles-ui-dialog-settings-pagetitle-label": "اختر عنوان الصفحة الجديدة",
