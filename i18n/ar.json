@@ -6,7 +6,8 @@
 			"Asma",
 			"Meno25",
 			"أيوب",
-			"Hubaishan"
+			"Hubaishan",
+			"Mohammed Qays"
 		]
 	},
 	"importofficefiles-desc": "يسمح باستيراد ملفات المكتب على شكل صفحات ويكي",
@@ -18,7 +19,7 @@
 	"importofficefiles-ui-dialog-action-import": "استيراد",
 	"importofficefiles-ui-dialog-action-next": "التالي",
 	"importofficefiles-ui-dialog-action-back": "رجوع",
-	"importofficefiles-ui-dialog-action-done": "تم",
+	"importofficefiles-ui-dialog-action-done": "نفذ",
 	"importofficefiles-ui-dialog-label-select-file": "اختر الملف",
 	"importofficefiles-ui-dialog-configuration-settings-title": "تكوين إعدادات الاستيراد",
 	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "لا يمكن استخدام هذا العنوان. على انه يحتوي على حرف (\"$1\") غير مسموح به.",
