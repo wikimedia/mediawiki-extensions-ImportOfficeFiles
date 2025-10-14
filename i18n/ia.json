@@ -43,5 +43,7 @@
 	"importofficefiles-ui-progress-remove-files-step": "Deletion de files temporari in curso…",
 	"importofficefiles-ui-import-error": "Un error ha occurrite durante le importation.",
 	"importofficefiles-ui-analyze-error": "Le processo de analyse ha fallite a causa de un error incognite.",
-	"importofficefiles-ui-action-import-msword-label": "Importar un nove file Word"
+	"importofficefiles-ui-action-import-msword-label": "Importar un nove file Word",
+	"importofficefiles-ui-dialog-preview-action-close": "Clauder",
+	"importofficefiles-ui-dialog-preview-btn-title": "Previsualisation"
 }
