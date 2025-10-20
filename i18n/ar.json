@@ -4,7 +4,9 @@
 			"123Rkhader",
 			"Alshamiri1",
 			"Asma",
+			"Hubaishan",
 			"Meno25",
+			"Mohammed Qays",
 			"أيوب"
 		]
 	},
@@ -17,7 +19,7 @@
 	"importofficefiles-ui-dialog-action-import": "استيراد",
 	"importofficefiles-ui-dialog-action-next": "التالي",
 	"importofficefiles-ui-dialog-action-back": "رجوع",
-	"importofficefiles-ui-dialog-action-done": "تم",
+	"importofficefiles-ui-dialog-action-done": "نفذ",
 	"importofficefiles-ui-dialog-label-select-file": "اختر الملف",
 	"importofficefiles-ui-dialog-configuration-settings-title": "تكوين إعدادات الاستيراد",
 	"importofficefiles-ui-dialog-settings-page-title": "عنوان",
@@ -36,7 +38,7 @@
 	"importofficefiles-ui-dialog-preview-label": "الصفحات التالية سيتم استيرادها",
 	"importofficefiles-ui-dialog-link-import-files-text": "قائمة الملفات المستوردة التي تم تصديرها إلى $1",
 	"importofficefiles-ui-dialog-link-imported-page-text": "الملف تم استيراده إلى $1",
-	"importofficefiles-ui-dialog-page-collection-protected-namespace": "ملاحظة: لم يتم إنشاء صفحة \"مجموعة الصفحات\" لأن مساحة الاسم \" $1 \" محمية",
+	"importofficefiles-ui-dialog-page-collection-protected-namespace": "ملاحظة: لم يتم إنشاء صفحة \"مجموعة الصفحات\" لأن النطاق «$1» محمي",
 	"importofficefiles-api-storage-error-no-available-file": "لا توجد ملفات تحميل متاحة",
 	"importofficefiles-api-storage-error-save-temp": "لا يمكن الحفظ المؤقت",
 	"importofficefiles-api-storage-error-no-valid-module": "لا توجد وحدة متاحة للتعامل مع هذا الملف",
@@ -47,5 +49,7 @@
 	"importofficefiles-ui-analyze-error": "فشلت عملية التحليل لسبب ما.",
 	"importofficefiles-ui-action-import-msword-label": "استيراد ملف Word جديد",
 	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "لا يمكن استخدام هذا العنوان. على انه يحتوي على حرف (\"$1\") غير مسموح به.",
-	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "لا يمكن استخدام هذا العنوان."
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "لا يمكن استخدام هذا العنوان.",
+	"importofficefiles-ui-dialog-preview-action-close": "يغلق",
+	"importofficefiles-ui-dialog-preview-btn-title": "عرض مسبق"
 }

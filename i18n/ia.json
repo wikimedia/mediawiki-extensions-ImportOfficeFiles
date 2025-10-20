@@ -43,5 +43,7 @@
 	"importofficefiles-ui-analyze-error": "Le processo de analyse ha fallite a causa de un error incognite.",
 	"importofficefiles-ui-action-import-msword-label": "Importar un nove file Word",
 	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "Iste titulo non pote esser usate. Illo contine un character (“$1”) que non es permittite.",
-	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Iste titulo non pote esser usate."
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "Iste titulo non pote esser usate.",
+	"importofficefiles-ui-dialog-preview-action-close": "Clauder",
+	"importofficefiles-ui-dialog-preview-btn-title": "Previsualisation"
 }

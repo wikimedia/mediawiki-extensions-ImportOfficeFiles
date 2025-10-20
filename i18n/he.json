@@ -44,5 +44,7 @@
 	"importofficefiles-ui-analyze-error": "תהליך הניתוח נכשל מסיבה כלשהי.",
 	"importofficefiles-ui-action-import-msword-label": "יבוא קובץ וורד חדש",
 	"importofficefiles-ui-dialog-configuration-settings-title-invalid-fallback": "אי אפשר להשתמש בכותרת הזאת.",
-	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "לא ניתן להשתמש בכותרת הזאת. היא מכילה תו אסור (\"$1\")."
+	"importofficefiles-ui-dialog-configuration-settings-title-invalid-characters": "לא ניתן להשתמש בכותרת הזאת. היא מכילה תו אסור (\"$1\").",
+	"importofficefiles-ui-dialog-preview-action-close": "סגירה",
+	"importofficefiles-ui-dialog-preview-btn-title": "תצוגה מקדימה"
 }
