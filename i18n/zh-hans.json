@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Peterxy12",
-			"GuoPC"
+			"GuoPC",
+			"Peterxy12"
 		]
 	},
 	"importofficefiles-desc": "允许将Office文件导入为wiki页面",
