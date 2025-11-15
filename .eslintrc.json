@@ -16,6 +16,7 @@
 		"es-x/no-async-functions": "off",
 		"es-x/no-optional-chaining": "off",
 		"max-len": "off",
-		"no-jquery/no-done-fail": "warn"
+		"no-jquery/no-done-fail": "warn",
+		"mediawiki/no-unlabeled-buttonwidget": "warn"
 	}
 }
