@@ -34,7 +34,7 @@ officeimport.ui.ImportDialog.static.actions = [
 	{
 		label: mw.message( 'importofficefiles-ui-dialog-action-cancel' ).text(),
 		flags: [ 'safe', 'close' ],
-		modes: [ 'SelectFile', 'Configuration', 'StructurePreview', 'ImportProgress', 'ImportDone' ]
+		modes: [ 'SelectFile', 'Configuration', 'StructurePreview' ]
 	}
 ];
 
