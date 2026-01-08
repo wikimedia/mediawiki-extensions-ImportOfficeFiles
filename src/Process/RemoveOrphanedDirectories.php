@@ -1,30 +1,22 @@
 <?php
 
-namespace MediaWiki\Extension\ImportOfficeFiles\MediaWiki\RunJobsTriggerHandler;
+namespace MediaWiki\Extension\ImportOfficeFiles\Process;
 
 use DateTime;
 use DirectoryIterator;
 use MediaWiki\Config\Config;
 use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\Status\Status;
-use MWStake\MediaWiki\Component\RunJobsTrigger\IHandler;
-use MWStake\MediaWiki\Component\RunJobsTrigger\Interval\OnceADay;
+use MWStake\MediaWiki\Component\ProcessManager\IProcessStep;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 
-final class RemoveOrphanedDirectories implements IHandler, LoggerAwareInterface {
+final class RemoveOrphanedDirectories implements IProcessStep, LoggerAwareInterface {
 
-	public const HANDLER_KEY = 'ext-importofficefiles-remove-orphaned-directories';
+	/** @var LoggerInterface */
+	private LoggerInterface $logger;
 
-	/**
-	 * @var LoggerInterface
-	 */
-	private $logger;
-
-	/**
-	 * @var string
-	 */
-	private $uploadDirectory;
+	/** @var string */
+	private string $uploadDirectory;
 
 	/**
 	 * @param Config $mainConfig
@@ -39,13 +31,14 @@ final class RemoveOrphanedDirectories implements IHandler, LoggerAwareInterface 
 	/**
 	 * @inheritDoc
 	 */
-	public function run() {
+	public function execute( $data = [] ): array {
 		$this->logger->info( "Start removal of orphaned 'ImportOfficeFiles' subdirectories..." );
 
 		$importOfficeDir = $this->uploadDirectory . '/cache/ImportOfficeFiles';
 		if ( !file_exists( $importOfficeDir ) ) {
 			$this->logger->info( "'ImportOfficeFiles' directory does not exist, nothing to do here." );
-			return Status::newGood();
+
+			return [];
 		}
 
 		$iterator = new DirectoryIterator( $importOfficeDir );
@@ -68,7 +61,7 @@ final class RemoveOrphanedDirectories implements IHandler, LoggerAwareInterface 
 			}
 		}
 
-		return Status::newGood();
+		return [];
 	}
 
 	/**
@@ -77,19 +70,4 @@ final class RemoveOrphanedDirectories implements IHandler, LoggerAwareInterface 
 	public function setLogger( LoggerInterface $logger ): void {
 		$this->logger = $logger;
 	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function getInterval() {
-		return new OnceADay();
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function getKey() {
-		return self::HANDLER_KEY;
-	}
-
 }
