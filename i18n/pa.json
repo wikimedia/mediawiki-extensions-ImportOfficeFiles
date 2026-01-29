@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cabal"
+		]
+	},
+	"importofficefiles-ui-import-dialog-title": "ਫਾਈਲ ਦਰਾਮਦ ਕਰੋ",
+	"importofficefiles-ui-import-completed": "ਦਰਾਮਦ ਪੂਰੀ ਹੋਈ!",
+	"importofficefiles-ui-import-in-progress": "ਦਰਾਮਦ ਜਾਰੀ ਏ...",
+	"importofficefiles-ui-dialog-action-cancel": "ਰੱਦ ਕਰੋ",
+	"importofficefiles-ui-dialog-action-import": "ਦਰਾਮਦ",
+	"importofficefiles-ui-dialog-action-next": "ਅਗਲਾ",
+	"importofficefiles-ui-dialog-action-back": "ਪਿਛਾਂਹ",
+	"importofficefiles-ui-dialog-action-done": "ਪੂਰਾ ਹੋਇਆ",
+	"importofficefiles-ui-dialog-label-select-file": "ਫਾਇਲ ਚੁਣੋ",
+	"importofficefiles-ui-dialog-settings-page-title": "ਸਿਰਲੇਖ",
+	"importofficefiles-ui-dialog-settings-structure-label": "ਵਸਤ-ਵਲ਼ੇਵਾਂ ਬਣਤਰ",
+	"importofficefiles-ui-dialog-settings-conflicts-rename": "ਨਾਂ ਬਦਲੋ",
+	"importofficefiles-ui-dialog-preview-title": "ਝਾਤ",
+	"importofficefiles-ui-progress-import-images-step": "ਚਿੱਤਰ ਦਰਾਮਦ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ...",
+	"importofficefiles-ui-progress-import-pages-step": "ਵਰਕੇ ਦਰਾਮਦ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ...",
+	"importofficefiles-ui-progress-remove-files-step": "ਆਰਜ਼ੀ ਫਾਇਲਾਂ ਹਟਾਈਆਂ ਜਾ ਰਹੀਆਂ ਹਨ...",
+	"importofficefiles-ui-dialog-preview-action-close": "ਬੰਦ ਕਰੋ",
+	"importofficefiles-ui-dialog-preview-btn-title": "ਝਾਤ"
+}
