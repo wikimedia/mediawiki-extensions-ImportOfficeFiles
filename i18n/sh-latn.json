@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"Aca"
 		]
 	},
 	"importofficefiles-ui-action-import-msword-title": "Napravite stranice iz Microsoft Word datoteke",
@@ -11,7 +12,7 @@
 	"importofficefiles-ui-dialog-action-next": "Sljedeće",
 	"importofficefiles-ui-dialog-action-back": "Nazad",
 	"importofficefiles-ui-dialog-action-done": "Gotovo",
-	"importofficefiles-ui-dialog-label-select-file": "Odaberi datoteku",
+	"importofficefiles-ui-dialog-label-select-file": "Izaberite datoteku",
 	"importofficefiles-ui-dialog-settings-page-title": "Naslov",
-	"importofficefiles-ui-dialog-settings-pagetitle-label": "Odaberi naslov za novu stranicu"
+	"importofficefiles-ui-dialog-settings-pagetitle-label": "Izaberite naslov za novu stranicu"
 }
