@@ -26,7 +26,7 @@ class RemoveHeading {
 		$heading = array_pop( $headingParts );
 
 		// Prepare $heading text for regex
-		$quotedHeading = preg_quote( $heading );
+		$quotedHeading = preg_quote( $heading, '/' );
 		/* In $heading invalid characters are replaced by ' '. To match them in
 		 * wikitext the ' ' is replaced by a regex
 		 */

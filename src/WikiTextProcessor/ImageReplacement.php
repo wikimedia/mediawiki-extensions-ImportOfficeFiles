@@ -131,7 +131,7 @@ class ImageReplacement implements IWikiTextProcessor {
 
 				$replacement = "[[File:{$wikiFilename}{$props}]]";
 
-				$regexMatch = preg_quote( $match );
+				$regexMatch = preg_quote( $match, '/' );
 				$wikiText = preg_replace( "/###PRESERVEIMAGE $regexMatch###/m", $replacement, $wikiText );
 
 				$this->workspace->addToBucket(
