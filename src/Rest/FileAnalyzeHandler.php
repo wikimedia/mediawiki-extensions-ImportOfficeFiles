@@ -6,6 +6,7 @@ use Exception;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\ImportOfficeFiles\Process\FileConvertProcessStep;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Rest\Response;
 use MediaWiki\Rest\SimpleHandler;
 use MWStake\MediaWiki\Component\ProcessManager\ManagedProcess;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -15,6 +16,9 @@ class FileAnalyzeHandler extends SimpleHandler {
 	public function __construct() {
 	}
 
+	/**
+	 * @return Response
+	 */
 	public function run() {
 		$request = $this->getRequest();
 		$uploadId = $request->getPathParam( "uploadId" );
