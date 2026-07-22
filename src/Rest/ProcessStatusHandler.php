@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\ImportOfficeFiles\Rest;
 
 use Exception;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Rest\Response;
 use MediaWiki\Rest\SimpleHandler;
 use Wikimedia\ParamValidator\ParamValidator;
 
@@ -20,6 +21,9 @@ class ProcessStatusHandler extends SimpleHandler {
 		];
 	}
 
+	/**
+	 * @return Response
+	 */
 	public function run() {
 		$request = $this->getRequest();
 		$processId = $request->getPathParam( 'processId' );
