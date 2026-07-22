@@ -24,7 +24,6 @@ class FileStorageHandler extends SimpleHandler {
 	private $uploadDirectory = '';
 
 	/**
-	 *
 	 * @param Config $config
 	 */
 	public function __construct( $config ) {
