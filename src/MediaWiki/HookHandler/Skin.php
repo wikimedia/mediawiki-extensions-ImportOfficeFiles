@@ -31,7 +31,7 @@ class Skin {
 	 * @param \SkinTemplate $skinTemplate
 	 * @param array &$links
 	 */
-	public function onSkinTemplateNavigation__Universal( $skinTemplate, &$links ): void {
+	public function onSkinTemplateNavigation__Universal( $skinTemplate, &$links ): void { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
 		$user = $skinTemplate->getUser();
 		if ( !$this->permissionManager->userHasRight( $user, 'createpage' ) ) {
 			return;
