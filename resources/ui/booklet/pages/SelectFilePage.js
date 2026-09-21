@@ -3,7 +3,7 @@ officeimport.ui.SelectFilePage = function ( name, cfg ) {
 
 	const supportedMimeTypes = mw.config.get( 'importOfficeFilesSupportedMimeTypes' );
 
-	this.fileWidget = new OO.ui.SelectFileWidget( {
+	this.fileWidget = new OO.ui.SelectFileInputWidget( {
 		name: 'upload',
 		showDropTarget: true,
 		accept: supportedMimeTypes
