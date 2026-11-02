@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\ImportOfficeFiles\MediaWiki\HookHandler;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\ImportOfficeFiles\ModuleFactory;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Skin\SkinTemplate;
 
 class Skin {
 
@@ -28,7 +29,7 @@ class Skin {
 	}
 
 	/**
-	 * @param \SkinTemplate $skinTemplate
+	 * @param SkinTemplate $skinTemplate
 	 * @param array &$links
 	 */
 	public function onSkinTemplateNavigation__Universal( $skinTemplate, &$links ): void { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
